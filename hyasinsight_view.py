@@ -63,9 +63,9 @@ def display_view(provides, all_app_runs, context):
                'lookup malware record hash': 'hyasinsight_display_view.html',
                'lookup os indicator hash': 'hyasinsight_display_view.html',
                'lookup ssl certificate hash': 'hyasinsight_display_view.html',
-               'lookup Mobile Geolocation Information ipv4':
+               'lookup mobile geolocation information ipv4':
                    'hyasinsight_display_view.html',
-               'lookup Mobile Geolocation Information ipv6':
+               'lookup mobile geolocation information ipv6':
                    'hyasinsight_display_view.html'
                }
     return actions[provides]

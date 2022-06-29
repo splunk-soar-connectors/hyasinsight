@@ -1,7 +1,7 @@
 {
     "appid": "5c279257-0571-4c90-967d-df21c15123ec",
     "name": "Hyas Insight",
-    "description": "This app implements investigative actions that return Hyas Insight Records for the given Indicators.",
+    "description": "This app implements investigative actions that return Hyas Insight Records for the given Indicators",
     "type": "investigative",
     "product_vendor": "Hyas",
     "logo": "logo_hyasinsight.svg",
@@ -249,16 +249,6 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.parameter.email",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "www.hyas.com"
-                    ]
-                },
-                {
                     "data_path": "action_result.*.actor_ipv4",
                     "data_type": "string",
                     "contains": [
@@ -436,250 +426,232 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.parameter.email",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "www.hyas.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.actor_ipv4",
-                    "data_type": "string",
-                    "contains": [
-                        "ip"
-                    ],
-                    "example_values": [
-                        "197.210.84.34"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.c2_domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "himionsa.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.c2_ipv4",
-                    "data_type": "string",
-                    "contains": [
-                        "ip"
-                    ],
-                    "example_values": [
-                        "80.78.22.32"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.c2_url",
-                    "data_type": "string",
-                    "contains": [
-                        "url"
-                    ],
-                    "example_values": [
-                        "http://www.glowtey.com/mtc/config.php?action=recoveries"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.datetime",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        "2020/09/15 08:12:44"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.email",
-                    "data_type": "string",
-                    "contains": [
-                        "email"
-                    ],
-                    "example_values": [
-                        "ip@allbayrak.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.email_domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "allbayrak.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.referrer_domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "webmail.allbayrak.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.referrer_ipv4",
-                    "data_type": "string",
-                    "contains": [
-                        "ip"
-                    ],
-                    "example_values": [
-                        "46.173.218.219"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.referrer_url",
-                    "data_type": "string",
-                    "contains": [
-                        "url"
-                    ],
-                    "example_values": [
-                        "http://webmail.allbayrak.com/roundcube/?_task=mail&amp;_caps=pdf%3D1%2Cflash%3D0%2Ctiff%3D0%2Cwebp%3D1&amp;_uid=8&amp;_mbox=INBOX&amp;_framed=1&amp;_action=preview"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.sha256",
-                    "data_type": "string",
-                    "contains": [
-                        "sha256"
-                    ],
-                    "example_values": [
-                        "281af32d4b70417c5027c9590f494aa9026c540a5c8af407dc3d464afe0a23ae"
-                    ]
-                },
-                {
-                    "data_path": "action_result.parameter.ip",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "www.hyas.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.actor_ipv4",
-                    "data_type": "string",
-                    "contains": [
-                        "ip"
-                    ],
-                    "example_values": [
-                        "197.210.84.34"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.c2_domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "himionsa.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.c2_ipv4",
-                    "data_type": "string",
-                    "contains": [
-                        "ip"
-                    ],
-                    "example_values": [
-                        "80.78.22.32"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.c2_url",
-                    "data_type": "string",
-                    "contains": [
-                        "url"
-                    ],
-                    "example_values": [
-                        "http://www.glowtey.com/mtc/config.php?action=recoveries"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.datetime",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        "2020/09/15 08:12:44"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.email",
-                    "data_type": "string",
-                    "contains": [
-                        "email"
-                    ],
-                    "example_values": [
-                        "ip@allbayrak.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.email_domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "allbayrak.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.referrer_domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "webmail.allbayrak.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.referrer_ipv4",
-                    "data_type": "string",
-                    "contains": [
-                        "ip"
-                    ],
-                    "example_values": [
-                        "46.173.218.219"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.referrer_url",
-                    "data_type": "string",
-                    "contains": [
-                        "url"
-                    ],
-                    "example_values": [
-                        "http://webmail.allbayrak.com/roundcube/?_task=mail&amp;_caps=pdf%3D1%2Cflash%3D0%2Ctiff%3D0%2Cwebp%3D1&amp;_uid=8&amp;_mbox=INBOX&amp;_framed=1&amp;_action=preview"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.sha256",
-                    "data_type": "string",
-                    "contains": [
-                        "sha256"
-                    ],
-                    "example_values": [
-                        "281af32d4b70417c5027c9590f494aa9026c540a5c8af407dc3d464afe0a23ae"
-                    ]
-                },
-                {
                     "data_path": "action_result.parameter.ip",
                     "data_type": "string",
                     "contains": [
                         "ip",
+                        "ipv4",
                         "ipv6"
                     ],
-                    "column_name": "ip",
-                    "column_order": 0
+                    "example_values": [
+                        "www.hyas.com"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.actor_ipv4",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ],
+                    "example_values": [
+                        "197.210.84.34"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.c2_domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ],
+                    "example_values": [
+                        "himionsa.com"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.c2_ipv4",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ],
+                    "example_values": [
+                        "80.78.22.32"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.c2_url",
+                    "data_type": "string",
+                    "contains": [
+                        "url"
+                    ],
+                    "example_values": [
+                        "http://www.glowtey.com/mtc/config.php?action=recoveries"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.datetime",
+                    "data_type": "string",
+                    "contains": [],
+                    "example_values": [
+                        "2020/09/15 08:12:44"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.email",
+                    "data_type": "string",
+                    "contains": [
+                        "email"
+                    ],
+                    "example_values": [
+                        "ip@allbayrak.com"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.email_domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ],
+                    "example_values": [
+                        "allbayrak.com"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.referrer_domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ],
+                    "example_values": [
+                        "webmail.allbayrak.com"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.referrer_ipv4",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ],
+                    "example_values": [
+                        "46.173.218.219"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.referrer_url",
+                    "data_type": "string",
+                    "contains": [
+                        "url"
+                    ],
+                    "example_values": [
+                        "http://webmail.allbayrak.com/roundcube/?_task=mail&amp;_caps=pdf%3D1%2Cflash%3D0%2Ctiff%3D0%2Cwebp%3D1&amp;_uid=8&amp;_mbox=INBOX&amp;_framed=1&amp;_action=preview"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.sha256",
+                    "data_type": "string",
+                    "contains": [
+                        "sha256"
+                    ],
+                    "example_values": [
+                        "281af32d4b70417c5027c9590f494aa9026c540a5c8af407dc3d464afe0a23ae"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.actor_ipv4",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ],
+                    "example_values": [
+                        "197.210.84.34"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.c2_domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ],
+                    "example_values": [
+                        "himionsa.com"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.c2_ipv4",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ],
+                    "example_values": [
+                        "80.78.22.32"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.c2_url",
+                    "data_type": "string",
+                    "contains": [
+                        "url"
+                    ],
+                    "example_values": [
+                        "http://www.glowtey.com/mtc/config.php?action=recoveries"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.datetime",
+                    "data_type": "string",
+                    "contains": [],
+                    "example_values": [
+                        "2020/09/15 08:12:44"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.email",
+                    "data_type": "string",
+                    "contains": [
+                        "email"
+                    ],
+                    "example_values": [
+                        "ip@allbayrak.com"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.email_domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ],
+                    "example_values": [
+                        "allbayrak.com"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.referrer_domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ],
+                    "example_values": [
+                        "webmail.allbayrak.com"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.referrer_ipv4",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ],
+                    "example_values": [
+                        "46.173.218.219"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.referrer_url",
+                    "data_type": "string",
+                    "contains": [
+                        "url"
+                    ],
+                    "example_values": [
+                        "http://webmail.allbayrak.com/roundcube/?_task=mail&amp;_caps=pdf%3D1%2Cflash%3D0%2Ctiff%3D0%2Cwebp%3D1&amp;_uid=8&amp;_mbox=INBOX&amp;_framed=1&amp;_action=preview"
+                    ]
+                },
+                {
+                    "data_path": "action_result.*.sha256",
+                    "data_type": "string",
+                    "contains": [
+                        "sha256"
+                    ],
+                    "example_values": [
+                        "281af32d4b70417c5027c9590f494aa9026c540a5c8af407dc3d464afe0a23ae"
+                    ]
                 },
                 {
                     "data_path": "action_result.status",
@@ -743,7 +715,7 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.parameter.sha256",
+                    "data_path": "action_result.parameter.hash",
                     "data_type": "string",
                     "contains": [
                         "hash"
@@ -1376,15 +1348,6 @@
                     ]
                 },
                 {
-                    "data_path": "action_result.parameter.email",
-                    "data_type": "string",
-                    "contains": [
-                        "email"
-                    ],
-                    "column_name": "email",
-                    "column_order": 0
-                },
-                {
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "status",
@@ -1762,15 +1725,6 @@
                     ]
                 },
                 {
-                    "data_path": "action_result.parameter.email",
-                    "data_type": "string",
-                    "contains": [
-                        "email"
-                    ],
-                    "column_name": "email",
-                    "column_order": 0
-                },
-                {
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "status",
@@ -1892,16 +1846,6 @@
                     "example_values": [
                         "DarkMagicSource@github"
                     ]
-                },
-                {
-                    "data_path": "action_result.parameter.ip",
-                    "data_type": "string",
-                    "contains": [
-                        "ip",
-                        "ipv6"
-                    ],
-                    "column_name": "ip",
-                    "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
@@ -2526,16 +2470,6 @@
                     "example_values": [
                         "Thu, 26 Sep 2019 23:20:31 GMT"
                     ]
-                },
-                {
-                    "data_path": "action_result.parameter.ip",
-                    "data_type": "string",
-                    "contains": [
-                        "ip",
-                        "ipv6"
-                    ],
-                    "column_name": "ip",
-                    "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
@@ -4026,7 +3960,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup Mobile Geolocation Information ipv4",
+            "action": "lookup mobile geolocation information ipv4",
             "identifier": "lookup_mobile_geolocation_information_ipv4",
             "description": "Perform this action to get the Mobile Geolocation Information IPv4 Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -4166,7 +4100,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup Mobile Geolocation Information ipv6",
+            "action": "lookup mobile geolocation information ipv6",
             "identifier": "lookup_mobile_geolocation_information_ipv6",
             "description": "Perform this action to get the Mobile Geolocation Information IPv6 Lookup Data for Hyas Insight",
             "type": "investigate",
