@@ -831,12 +831,12 @@
                     ]
                 },
                 {
-                    "data_path": "action_result.parameter.sha256",
+                    "data_path": "action_result.parameter.hash",
                     "data_type": "string",
                     "contains": [
                         "sha256"
                     ],
-                    "column_name": "sha256",
+                    "column_name": "hash",
                     "column_order": 0
                 },
                 {
@@ -1894,7 +1894,7 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.parameter.ip",
+                    "data_path": "action_result.parameter.ipv4",
                     "data_type": "string",
                     "contains": [
                         "ip"
@@ -2029,7 +2029,7 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.parameter.ip",
+                    "data_path": "action_result.parameter.ipv4",
                     "data_type": "string",
                     "contains": [
                         "ip"
@@ -3041,7 +3041,7 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.parameter.ip",
+                    "data_path": "action_result.parameter.ipv4",
                     "data_type": "string",
                     "contains": [
                         "ip"
@@ -3264,7 +3264,7 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.*.scan_result_av_name",
+                    "data_path": "action_result.*.av_name",
                     "data_type": "string",
                     "contains": [],
                     "example_values": [
@@ -3272,7 +3272,7 @@
                     ]
                 },
                 {
-                    "data_path": "action_result.*.scan_result_def_time",
+                    "data_path": "action_result.*.def_time",
                     "data_type": "string",
                     "contains": [],
                     "example_values": [
@@ -3280,7 +3280,7 @@
                     ]
                 },
                 {
-                    "data_path": "action_result.*.scan_result_threat_found",
+                    "data_path": "action_result.*.threat_found",
                     "data_type": "string",
                     "contains": [],
                     "example_values": [
@@ -3648,7 +3648,7 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.parameter.ip",
+                    "data_path": "action_result.parameter.hash",
                     "data_type": "string",
                     "contains": [
                         "ip"
