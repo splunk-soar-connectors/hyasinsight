@@ -117,7 +117,6 @@
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2020/09/15 08:12:44"
                     ]
@@ -188,15 +187,16 @@
                     "contains": [
                         "domain"
                     ],
-                    "column_name": "domain",
+                    "column_name": "Domain",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
+                    "column_name": "Status",
                     "example_values": [
-                        "success Failed"
+                        "success",
+                        "failed"
                     ],
                     "column_order": 1
                 },
@@ -291,7 +291,6 @@
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2020/09/15 08:12:44"
                     ]
@@ -362,15 +361,16 @@
                     "contains": [
                         "email"
                     ],
-                    "column_name": "email",
+                    "column_name": "Email",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
+                    "column_name": "Status",
                     "example_values": [
-                        "success Failed"
+                        "success",
+                        "failed"
                     ],
                     "column_order": 1
                 },
@@ -432,7 +432,7 @@
                         "ip",
                         "ipv6"
                     ],
-                    "column_name": "ip",
+                    "column_name": "IP",
                     "column_order": 0
                 },
                 {
@@ -478,7 +478,6 @@
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2020/09/15 08:12:44"
                     ]
@@ -586,7 +585,6 @@
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2020/09/15 08:12:44"
                     ]
@@ -654,9 +652,10 @@
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
+                    "column_name": "Status",
                     "example_values": [
-                        "success Failed"
+                        "success",
+                        "failed"
                     ],
                     "column_order": 1
                 },
@@ -765,7 +764,6 @@
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2020/09/15 08:12:44"
                     ]
@@ -836,15 +834,16 @@
                     "contains": [
                         "sha256"
                     ],
-                    "column_name": "hash",
+                    "column_name": "Hash",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
+                    "column_name": "Status",
                     "example_values": [
-                        "success Failed"
+                        "success",
+                        "failed"
                     ],
                     "column_order": 1
                 },
@@ -909,7 +908,6 @@
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2016-12-07T06:05:05.230927Z"
                     ]
@@ -937,7 +935,6 @@
                 {
                     "data_path": "action_result.*.city",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "scottsdale"
                     ]
@@ -945,7 +942,6 @@
                 {
                     "data_path": "action_result.*.country",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "US"
                     ]
@@ -953,7 +949,6 @@
                 {
                     "data_path": "action_result.*.address",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "domainsbyproxy.com|14455 n. hayden road"
                     ]
@@ -971,7 +966,6 @@
                 {
                     "data_path": "action_result.*.domain_created_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2001-05-02T00:00:00"
                     ]
@@ -979,7 +973,6 @@
                 {
                     "data_path": "action_result.*.domain_expires_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2026-05-02T00:00:00 "
                     ]
@@ -987,7 +980,6 @@
                 {
                     "data_path": "action_result.*.domain_updated_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2017-06-28T04:45:22 "
                     ]
@@ -1005,7 +997,6 @@
                 {
                     "data_path": "action_result.*.idn_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "None"
                     ]
@@ -1013,7 +1004,6 @@
                 {
                     "data_path": "action_result.*.name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "hyas"
                     ]
@@ -1031,7 +1021,6 @@
                 {
                     "data_path": "action_result.*.organization",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "hyas"
                     ]
@@ -1039,7 +1028,6 @@
                 {
                     "data_path": "action_result.*.phone_phone",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "+14806242599 "
                     ]
@@ -1047,7 +1035,6 @@
                 {
                     "data_path": "action_result.*.phone_phone_info_carrier",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         " "
                     ]
@@ -1055,7 +1042,6 @@
                 {
                     "data_path": "action_result.*.phone_phone_info_country",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "United States"
                     ]
@@ -1063,23 +1049,17 @@
                 {
                     "data_path": "action_result.*.phone_phone_info_geo",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Arizona"
                     ]
                 },
                 {
                     "data_path": "action_result.*.state",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.privacy_punch",
                     "data_type": "boolean",
-                    "contains": [],
                     "example_values": [
                         "False"
                     ]
@@ -1087,7 +1067,6 @@
                 {
                     "data_path": "action_result.*.registrar",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "godaddy.com, llc"
                     ]
@@ -1098,14 +1077,18 @@
                     "contains": [
                         "domain"
                     ],
-                    "column_name": "domain",
+                    "column_name": "Domain",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -1155,13 +1138,12 @@
                     "contains": [
                         "email"
                     ],
-                    "column_name": "email",
+                    "column_name": "Email",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2016-12-07T06:05:05.230927Z"
                     ]
@@ -1189,7 +1171,6 @@
                 {
                     "data_path": "action_result.*.city",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "scottsdale"
                     ]
@@ -1197,7 +1178,6 @@
                 {
                     "data_path": "action_result.*.country",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "US"
                     ]
@@ -1205,7 +1185,6 @@
                 {
                     "data_path": "action_result.*.address",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "domainsbyproxy.com|14455 n. hayden road"
                     ]
@@ -1223,7 +1202,6 @@
                 {
                     "data_path": "action_result.*.domain_created_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2001-05-02T00:00:00"
                     ]
@@ -1231,7 +1209,6 @@
                 {
                     "data_path": "action_result.*.domain_expires_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2026-05-02T00:00:00 "
                     ]
@@ -1239,7 +1216,6 @@
                 {
                     "data_path": "action_result.*.domain_updated_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2017-06-28T04:45:22 "
                     ]
@@ -1257,7 +1233,6 @@
                 {
                     "data_path": "action_result.*.idn_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "None"
                     ]
@@ -1265,7 +1240,6 @@
                 {
                     "data_path": "action_result.*.name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "hyas"
                     ]
@@ -1283,7 +1257,6 @@
                 {
                     "data_path": "action_result.*.organization",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "hyas"
                     ]
@@ -1291,7 +1264,6 @@
                 {
                     "data_path": "action_result.*.phone_phone",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "+14806242599 "
                     ]
@@ -1299,7 +1271,6 @@
                 {
                     "data_path": "action_result.*.phone_phone_info_carrier",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         " "
                     ]
@@ -1307,7 +1278,6 @@
                 {
                     "data_path": "action_result.*.phone_phone_info_country",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "United States"
                     ]
@@ -1315,23 +1285,17 @@
                 {
                     "data_path": "action_result.*.phone_phone_info_geo",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Arizona"
                     ]
                 },
                 {
                     "data_path": "action_result.*.state",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.privacy_punch",
                     "data_type": "boolean",
-                    "contains": [],
                     "example_values": [
                         "False"
                     ]
@@ -1339,7 +1303,6 @@
                 {
                     "data_path": "action_result.*.registrar",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "godaddy.com, llc"
                     ]
@@ -1347,8 +1310,12 @@
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -1406,7 +1373,6 @@
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2016-12-07T06:05:05.230927Z"
                     ]
@@ -1434,7 +1400,6 @@
                 {
                     "data_path": "action_result.*.city",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "scottsdale"
                     ]
@@ -1442,7 +1407,6 @@
                 {
                     "data_path": "action_result.*.country",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "US"
                     ]
@@ -1450,7 +1414,6 @@
                 {
                     "data_path": "action_result.*.address",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "domainsbyproxy.com|14455 n. hayden road"
                     ]
@@ -1468,7 +1431,6 @@
                 {
                     "data_path": "action_result.*.domain_created_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2001-05-02T00:00:00"
                     ]
@@ -1476,7 +1438,6 @@
                 {
                     "data_path": "action_result.*.domain_expires_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2026-05-02T00:00:00 "
                     ]
@@ -1484,7 +1445,6 @@
                 {
                     "data_path": "action_result.*.domain_updated_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2017-06-28T04:45:22 "
                     ]
@@ -1502,7 +1462,6 @@
                 {
                     "data_path": "action_result.*.idn_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "None"
                     ]
@@ -1510,7 +1469,6 @@
                 {
                     "data_path": "action_result.*.name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "hyas"
                     ]
@@ -1528,7 +1486,6 @@
                 {
                     "data_path": "action_result.*.organization",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "hyas"
                     ]
@@ -1536,7 +1493,6 @@
                 {
                     "data_path": "action_result.*.phone_phone",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "+14806242599 "
                     ]
@@ -1544,7 +1500,6 @@
                 {
                     "data_path": "action_result.*.phone_phone_info_carrier",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         " "
                     ]
@@ -1552,7 +1507,6 @@
                 {
                     "data_path": "action_result.*.phone_phone_info_country",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "United States"
                     ]
@@ -1560,23 +1514,17 @@
                 {
                     "data_path": "action_result.*.phone_phone_info_geo",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Arizona"
                     ]
                 },
                 {
                     "data_path": "action_result.*.state",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.privacy_punch",
                     "data_type": "boolean",
-                    "contains": [],
                     "example_values": [
                         "False"
                     ]
@@ -1584,7 +1532,6 @@
                 {
                     "data_path": "action_result.*.registrar",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "godaddy.com, llc"
                     ]
@@ -1596,14 +1543,18 @@
                         "phone",
                         "phone number"
                     ],
-                    "column_name": "phone",
+                    "column_name": "Phone",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -1653,13 +1604,12 @@
                     "contains": [
                         "email"
                     ],
-                    "column_name": "email",
+                    "column_name": "Email",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.*.a_record",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "4.4.4.4"
                     ]
@@ -1667,7 +1617,6 @@
                 {
                     "data_path": "action_result.*.account",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "free"
                     ]
@@ -1675,7 +1624,6 @@
                 {
                     "data_path": "action_result.*.created",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2022-03-14T11:05:14Z"
                     ]
@@ -1723,8 +1671,12 @@
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -1776,13 +1728,12 @@
                         "ip",
                         "ipv6"
                     ],
-                    "column_name": "ip",
+                    "column_name": "IP",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.*.a_record",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "4.4.4.4"
                     ]
@@ -1790,7 +1741,6 @@
                 {
                     "data_path": "action_result.*.account",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "free"
                     ]
@@ -1798,7 +1748,6 @@
                 {
                     "data_path": "action_result.*.created",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2022-03-14T11:05:14Z"
                     ]
@@ -1846,8 +1795,12 @@
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -1906,7 +1859,6 @@
                 {
                     "data_path": "action_result.*.count",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "4.4.4.4"
                     ]
@@ -1914,7 +1866,6 @@
                 {
                     "data_path": "action_result.*.country_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Netherlands"
                     ]
@@ -1922,7 +1873,6 @@
                 {
                     "data_path": "action_result.*.data_port",
                     "data_type": "numeric",
-                    "contains": [],
                     "example_values": [
                         "5552"
                     ]
@@ -1930,7 +1880,6 @@
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "numeric",
-                    "contains": [],
                     "example_values": [
                         "2020-06-25T00:08:32Z"
                     ]
@@ -1948,7 +1897,6 @@
                 {
                     "data_path": "action_result.*.last_seen",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2020-06-25T00:08:32Z"
                     ]
@@ -1956,7 +1904,6 @@
                 {
                     "data_path": "action_result.*.organization_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Shahkar Towse'e Tejarat Mana PJSC"
                     ]
@@ -1964,7 +1911,6 @@
                 {
                     "data_path": "action_result.*.sink_source",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "192.169.69.25"
                     ]
@@ -1975,14 +1921,18 @@
                     "contains": [
                         "ip"
                     ],
-                    "column_name": "ipv4",
+                    "column_name": "IPV4",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -2051,7 +2001,6 @@
                 {
                     "data_path": "action_result.*.md5_count",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "8"
                     ]
@@ -2062,14 +2011,18 @@
                     "contains": [
                         "ip"
                     ],
-                    "column_name": "ipv4",
+                    "column_name": "IPV4",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -2136,7 +2089,6 @@
                 {
                     "data_path": "action_result.*.md5_count",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "8"
                     ]
@@ -2147,14 +2099,18 @@
                     "contains": [
                         "domain"
                     ],
-                    "column_name": "domain",
+                    "column_name": "Domain",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -2206,13 +2162,12 @@
                         "ip",
                         "ipv6"
                     ],
-                    "column_name": "ip",
+                    "column_name": "IP",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.*.geo_geo_city_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "San Francisco"
                     ]
@@ -2220,7 +2175,6 @@
                 {
                     "data_path": "action_result.*.geo_geo_country_iso_code",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "US"
                     ]
@@ -2228,7 +2182,6 @@
                 {
                     "data_path": "action_result.*.geo_geo_country_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "United States"
                     ]
@@ -2236,7 +2189,6 @@
                 {
                     "data_path": "action_result.*.geo_geo_location_latitude",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "37.7621 "
                     ]
@@ -2244,7 +2196,6 @@
                 {
                     "data_path": "action_result.*.geo_geo_location_longitude",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "-122.3971"
                     ]
@@ -2252,7 +2203,6 @@
                 {
                     "data_path": "action_result.*.geo_geo_postal_code",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "94107"
                     ]
@@ -2260,7 +2210,6 @@
                 {
                     "data_path": "action_result.*.geo_isp_autonomous_system_number",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "AS13335"
                     ]
@@ -2268,7 +2217,6 @@
                 {
                     "data_path": "action_result.*.geo_isp_isp",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Cloudflare, Inc."
                     ]
@@ -2276,7 +2224,6 @@
                 {
                     "data_path": "action_result.*.geo_isp_organization",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Cloudflare, Inc."
                     ]
@@ -2294,7 +2241,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_cert_key",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "261757a2d2d31aa6dcabc27bb8b2395a207c6f52"
                     ]
@@ -2302,7 +2248,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_expire_date",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2020-09-25T12:00:00Z"
                     ]
@@ -2310,7 +2255,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_issue_date",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2019-09-26T00:00:00Z"
                     ]
@@ -2318,7 +2262,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_commonName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "CloudFlare Inc ECC CA-2"
                     ]
@@ -2326,7 +2269,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_countryName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "US"
                     ]
@@ -2334,7 +2276,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_localityName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "San Francisco"
                     ]
@@ -2342,23 +2283,17 @@
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_organizationName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "CloudFlare, Inc."
                     ]
                 },
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_organizationalUnitName",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_stateOrProvinceName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "CA"
                     ]
@@ -2366,7 +2301,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_md5",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "89c377cd36286e287b118a8013ba2296"
                     ]
@@ -2374,7 +2308,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_serial_number",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "11233593787305851059064306644706338579"
                     ]
@@ -2382,7 +2315,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_sha1",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "261757a2d2d31aa6dcabc27bb8b2395a207c6f52"
                     ]
@@ -2390,7 +2322,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_sha_256",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "7118e559e93b9cf442f1c93fc9ed908f904c60d74fae82107b276b137cea5357"
                     ]
@@ -2398,7 +2329,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_sig_algo",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "ecdsa-with-sha256"
                     ]
@@ -2406,7 +2336,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_ssl_version",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2"
                     ]
@@ -2414,7 +2343,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_subject_commonName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "sni.cloudflaressl.com"
                     ]
@@ -2422,7 +2350,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_subject_countryName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "US"
                     ]
@@ -2430,7 +2357,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_subject_localityName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "San Francisco"
                     ]
@@ -2438,23 +2364,17 @@
                 {
                     "data_path": "action_result.*.ssl_cert_subject_organizationName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Cloudflare, Inc."
                     ]
                 },
                 {
                     "data_path": "action_result.*.ssl_cert_subject_organizationalUnitName",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.ssl_cert_subject_stateOrProvinceName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "CA"
                     ]
@@ -2462,7 +2382,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_timestamp",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Thu, 26 Sep 2019 23:20:31 GMT"
                     ]
@@ -2470,8 +2389,12 @@
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -2528,7 +2451,6 @@
                 {
                     "data_path": "action_result.*.count",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "1"
                     ]
@@ -2546,7 +2468,6 @@
                 {
                     "data_path": "action_result.*.first_seen",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2014-07-30T00:00:00Z"
                     ]
@@ -2554,7 +2475,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_city_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Jaboat\u00e3o dos Guararapes"
                     ]
@@ -2562,7 +2482,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_country_iso_code",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "BR"
                     ]
@@ -2570,7 +2489,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_country_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Brazil"
                     ]
@@ -2578,7 +2496,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_location_latitude",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "-8.1128"
                     ]
@@ -2586,7 +2503,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_location_longitude",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "-35.0147"
                     ]
@@ -2594,7 +2510,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_postal_code",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "54000-000"
                     ]
@@ -2612,7 +2527,6 @@
                 {
                     "data_path": "action_result.*.ip_isp_autonomous_system_number",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "AS7738"
                     ]
@@ -2620,7 +2534,6 @@
                 {
                     "data_path": "action_result.*.ip_isp_autonomous_system_organization",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Telemar Norte Leste S.A."
                     ]
@@ -2638,7 +2551,6 @@
                 {
                     "data_path": "action_result.*.ip_isp_isp",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Telemar Norte Leste S.A."
                     ]
@@ -2646,7 +2558,6 @@
                 {
                     "data_path": "action_result.*.ip_isp_organization",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Telemar Norte Leste S.A."
                     ]
@@ -2664,7 +2575,6 @@
                 {
                     "data_path": "action_result.*.last_seen",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2019-08-03T00:00:00Z"
                     ]
@@ -2672,7 +2582,6 @@
                 {
                     "data_path": "action_result.*.sources",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "zetalytics"
                     ]
@@ -2683,14 +2592,18 @@
                     "contains": [
                         "domain"
                     ],
-                    "column_name": "domain",
+                    "column_name": "Domain",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -2747,7 +2660,6 @@
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2022-03-14T11:05:14Z"
                     ]
@@ -2775,7 +2687,6 @@
                 {
                     "data_path": "action_result.*.address",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Domainsbyproxy.com\n2155 E Warner Rd"
                     ]
@@ -2783,7 +2694,6 @@
                 {
                     "data_path": "action_result.*.city",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Temple"
                     ]
@@ -2791,7 +2701,6 @@
                 {
                     "data_path": "action_result.*.country",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "United States"
                     ]
@@ -2809,7 +2718,6 @@
                 {
                     "data_path": "action_result.*.domain_created_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2001-05-01T23:42:14"
                     ]
@@ -2817,7 +2725,6 @@
                 {
                     "data_path": "action_result.*.domain_expires_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2026-05-01T23:42:14"
                     ]
@@ -2825,7 +2732,6 @@
                 {
                     "data_path": "action_result.*.domain_updated_datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2020-06-30T17:43:35"
                     ]
@@ -2843,7 +2749,6 @@
                 {
                     "data_path": "action_result.*.idn_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "None"
                     ]
@@ -2851,7 +2756,6 @@
                 {
                     "data_path": "action_result.*.name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Registration"
                     ]
@@ -2869,7 +2773,6 @@
                 {
                     "data_path": "action_result.*.organization",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Domains By Proxy, LLC"
                     ]
@@ -2887,7 +2790,6 @@
                 {
                     "data_path": "action_result.*.state",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Arizona"
                     ]
@@ -2895,7 +2797,6 @@
                 {
                     "data_path": "action_result.*.registrar",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "whois_pii_city godaddy.com, llc"
                     ]
@@ -2903,7 +2804,6 @@
                 {
                     "data_path": "action_result.*.whois_nameserver_domain",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "ns10.domaincontrol.com"
                     ]
@@ -2911,7 +2811,6 @@
                 {
                     "data_path": "action_result.*.whois_pii_address",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Domainsbyproxy.com 2155 E Warner Rd"
                     ]
@@ -2919,7 +2818,6 @@
                 {
                     "data_path": "action_result.*.whois_pii_city",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Temple"
                     ]
@@ -2927,7 +2825,6 @@
                 {
                     "data_path": "action_result.*.whois_pii_email",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "select contact domain holder link at https://www.godaddy.com/whois/results.aspx?domain=hyas.com "
                     ]
@@ -2935,7 +2832,6 @@
                 {
                     "data_path": "action_result.*.whois_pii_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Registration Private"
                     ]
@@ -2943,7 +2839,6 @@
                 {
                     "data_path": "action_result.*.whois_pii_organization",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Domains By Proxy, LLC"
                     ]
@@ -2951,7 +2846,6 @@
                 {
                     "data_path": "action_result.*.whois_pii_state",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Arizona"
                     ]
@@ -2959,7 +2853,6 @@
                 {
                     "data_path": "action_result.*.whois_pii_geo_country_alpha_2",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "United States"
                     ]
@@ -2967,7 +2860,6 @@
                 {
                     "data_path": "action_result.*.whois_pii_phone_e164",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "+14806242599"
                     ]
@@ -2975,7 +2867,6 @@
                 {
                     "data_path": "action_result.*.privacy_punch",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "False"
                     ]
@@ -2986,14 +2877,18 @@
                     "contains": [
                         "domain"
                     ],
-                    "column_name": "domain",
+                    "column_name": "Domain",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -3053,7 +2948,6 @@
                 {
                     "data_path": "action_result.*.count",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "1"
                     ]
@@ -3071,7 +2965,6 @@
                 {
                     "data_path": "action_result.*.first_seen",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2014-07-30T00:00:00Z"
                     ]
@@ -3079,7 +2972,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_city_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Jaboat\u00e3o dos Guararapes"
                     ]
@@ -3087,7 +2979,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_country_iso_code",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "BR"
                     ]
@@ -3095,7 +2986,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_country_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Brazil"
                     ]
@@ -3103,7 +2993,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_location_latitude",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "-8.1128"
                     ]
@@ -3111,7 +3000,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_location_longitude",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "-35.0147"
                     ]
@@ -3119,7 +3007,6 @@
                 {
                     "data_path": "action_result.*.ip_geo_postal_code",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "54000-000"
                     ]
@@ -3137,7 +3024,6 @@
                 {
                     "data_path": "action_result.*.ip_isp_autonomous_system_number",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "AS7738"
                     ]
@@ -3145,7 +3031,6 @@
                 {
                     "data_path": "action_result.*.ip_isp_autonomous_system_organization",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Telemar Norte Leste S.A."
                     ]
@@ -3163,7 +3048,6 @@
                 {
                     "data_path": "action_result.*.ip_isp_isp",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Telemar Norte Leste S.A."
                     ]
@@ -3171,7 +3055,6 @@
                 {
                     "data_path": "action_result.*.ip_isp_organization",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Telemar Norte Leste S.A."
                     ]
@@ -3189,7 +3072,6 @@
                 {
                     "data_path": "action_result.*.last_seen",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2019-08-03T00:00:00Z"
                     ]
@@ -3197,7 +3079,6 @@
                 {
                     "data_path": "action_result.*.sources",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "zetalytics"
                     ]
@@ -3209,14 +3090,18 @@
                         "ip",
                         "ipv6"
                     ],
-                    "column_name": "ipv4",
+                    "column_name": "IPV4",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -3266,7 +3151,6 @@
                 {
                     "data_path": "action_result.*.av_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Quick Heal"
                     ]
@@ -3274,7 +3158,6 @@
                 {
                     "data_path": "action_result.*.def_time",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2017-03-07T00:00:00Z"
                     ]
@@ -3282,7 +3165,6 @@
                 {
                     "data_path": "action_result.*.threat_found",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Backdoor.Zegost.MUE.A8"
                     ]
@@ -3293,14 +3175,18 @@
                     "contains": [
                         "md5"
                     ],
-                    "column_name": "hash",
+                    "column_name": "Hash",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -3350,7 +3236,6 @@
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2017-03-07T00:00:00Z"
                     ]
@@ -3384,14 +3269,18 @@
                         "sha256",
                         "sha1"
                     ],
-                    "column_name": "hash",
+                    "column_name": "Hash",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -3440,24 +3329,15 @@
             "output": [
                 {
                     "data_path": "action_result.*.context",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.data",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2022-06-28T08:02:19.942Z"
                     ]
@@ -3474,16 +3354,11 @@
                 },
                 {
                     "data_path": "action_result.*.domain_2tld",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.first_seen",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2022-06-28T08:02:19.942Z"
                     ]
@@ -3511,34 +3386,21 @@
                 {
                     "data_path": "action_result.*.last_seen",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2022-06-28T08:07:09.083Z"
                     ]
                 },
                 {
                     "data_path": "action_result.*.md5",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.os_indicators_id",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.os_indicators_source_id",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.sha1",
@@ -3563,7 +3425,6 @@
                 {
                     "data_path": "action_result.*.source_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Rapid7 Open Data SSL Certificates"
                     ]
@@ -3571,18 +3432,13 @@
                 {
                     "data_path": "action_result.*.source_url",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "https://opendata.rapid7.com/sonar.ssl/"
                     ]
                 },
                 {
                     "data_path": "action_result.*.uri",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.parameter.hash",
@@ -3593,14 +3449,18 @@
                         "sha1",
                         "sha256"
                     ],
-                    "column_name": "hash",
+                    "column_name": "Hash",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -3660,7 +3520,6 @@
                 {
                     "data_path": "action_result.*.geo_geo_city_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "San Francisco"
                     ]
@@ -3668,7 +3527,6 @@
                 {
                     "data_path": "action_result.*.geo_geo_country_iso_code",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "US"
                     ]
@@ -3676,7 +3534,6 @@
                 {
                     "data_path": "action_result.*.geo_geo_country_name",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "United States"
                     ]
@@ -3684,7 +3541,6 @@
                 {
                     "data_path": "action_result.*.geo_geo_location_latitude",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "37.7621 "
                     ]
@@ -3692,7 +3548,6 @@
                 {
                     "data_path": "action_result.*.geo_geo_location_longitude",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "-122.3971"
                     ]
@@ -3700,7 +3555,6 @@
                 {
                     "data_path": "action_result.*.geo_geo_postal_code",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "94107"
                     ]
@@ -3708,7 +3562,6 @@
                 {
                     "data_path": "action_result.*.geo_isp_autonomous_system_number",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "AS13335"
                     ]
@@ -3716,7 +3569,6 @@
                 {
                     "data_path": "action_result.*.geo_isp_isp",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Cloudflare, Inc."
                     ]
@@ -3724,7 +3576,6 @@
                 {
                     "data_path": "action_result.*.geo_isp_organization",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Cloudflare, Inc."
                     ]
@@ -3742,7 +3593,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_cert_key",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "261757a2d2d31aa6dcabc27bb8b2395a207c6f52"
                     ]
@@ -3750,7 +3600,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_expire_date",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2020-09-25T12:00:00Z"
                     ]
@@ -3758,7 +3607,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_issue_date",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2019-09-26T00:00:00Z"
                     ]
@@ -3766,7 +3614,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_commonName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "CloudFlare Inc ECC CA-2"
                     ]
@@ -3774,7 +3621,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_countryName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "US"
                     ]
@@ -3782,7 +3628,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_localityName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "San Francisco"
                     ]
@@ -3790,23 +3635,17 @@
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_organizationName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "CloudFlare, Inc."
                     ]
                 },
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_organizationalUnitName",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.ssl_cert_issuer_stateOrProvinceName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "CA"
                     ]
@@ -3814,7 +3653,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_md5",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "89c377cd36286e287b118a8013ba2296"
                     ]
@@ -3822,7 +3660,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_serial_number",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "11233593787305851059064306644706338579"
                     ]
@@ -3830,7 +3667,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_sha1",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "261757a2d2d31aa6dcabc27bb8b2395a207c6f52"
                     ]
@@ -3838,7 +3674,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_sha_256",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "7118e559e93b9cf442f1c93fc9ed908f904c60d74fae82107b276b137cea5357"
                     ]
@@ -3846,7 +3681,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_sig_algo",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "ecdsa-with-sha256"
                     ]
@@ -3854,7 +3688,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_ssl_version",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2"
                     ]
@@ -3862,7 +3695,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_subject_commonName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "sni.cloudflaressl.com"
                     ]
@@ -3870,7 +3702,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_subject_countryName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "US"
                     ]
@@ -3878,7 +3709,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_subject_localityName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "San Francisco"
                     ]
@@ -3886,23 +3716,17 @@
                 {
                     "data_path": "action_result.*.ssl_cert_subject_organizationName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Cloudflare, Inc."
                     ]
                 },
                 {
                     "data_path": "action_result.*.ssl_cert_subject_organizationalUnitName",
-                    "data_type": "string",
-                    "contains": [],
-                    "example_values": [
-                        ""
-                    ]
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.*.ssl_cert_subject_stateOrProvinceName",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "CA"
                     ]
@@ -3910,7 +3734,6 @@
                 {
                     "data_path": "action_result.*.ssl_cert_timestamp",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "Thu, 26 Sep 2019 23:20:31 GMT"
                     ]
@@ -3924,14 +3747,18 @@
                         "sha1",
                         "sha256"
                     ],
-                    "column_name": "hash",
+                    "column_name": "Hash",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -3984,13 +3811,12 @@
                     "contains": [
                         "ip"
                     ],
-                    "column_name": "ipv4",
+                    "column_name": "IPV4",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2020-07-09T09:53:35Z"
                     ]
@@ -3998,7 +3824,6 @@
                 {
                     "data_path": "action_result.*.device_geo_id",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "9120a69e-cc23-451a-a55d-4223e0cec88b"
                     ]
@@ -4006,7 +3831,6 @@
                 {
                     "data_path": "action_result.*.device_user_agent",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "15.3.1"
                     ]
@@ -4014,7 +3838,6 @@
                 {
                     "data_path": "action_result.*.geo_country_alpha_2",
                     "data_type": "numeric",
-                    "contains": [],
                     "example_values": [
                         "AU"
                     ]
@@ -4022,7 +3845,6 @@
                 {
                     "data_path": "action_result.*.geo_horizontal_accuracy",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         15.6
                     ]
@@ -4030,7 +3852,6 @@
                 {
                     "data_path": "action_result.*.ipv4",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "1.157.132.70"
                     ]
@@ -4038,7 +3859,6 @@
                 {
                     "data_path": "action_result.*.ipv6",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "fe80::be54:51ff:feeb:bf98"
                     ]
@@ -4046,7 +3866,6 @@
                 {
                     "data_path": "action_result.*.latitude",
                     "data_type": "numeric",
-                    "contains": [],
                     "example_values": [
                         -33.732083
                     ]
@@ -4054,7 +3873,6 @@
                 {
                     "data_path": "action_result.*.longitude",
                     "data_type": "numeric",
-                    "contains": [],
                     "example_values": [
                         151.156693
                     ]
@@ -4062,7 +3880,6 @@
                 {
                     "data_path": "action_result.*.wifi_bssid",
                     "data_type": "numeric",
-                    "contains": [],
                     "example_values": [
                         "bc:30:d9:cd:3b:fe"
                     ]
@@ -4070,8 +3887,12 @@
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
@@ -4123,13 +3944,12 @@
                         "ip",
                         "ipv6"
                     ],
-                    "column_name": "ipv6",
+                    "column_name": "IPV6",
                     "column_order": 0
                 },
                 {
                     "data_path": "action_result.*.datetime",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "2020-07-09T09:53:35Z"
                     ]
@@ -4137,7 +3957,6 @@
                 {
                     "data_path": "action_result.*.device_geo_id",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "9120a69e-cc23-451a-a55d-4223e0cec88b"
                     ]
@@ -4145,7 +3964,6 @@
                 {
                     "data_path": "action_result.*.device_user_agent",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "15.3.1"
                     ]
@@ -4153,7 +3971,6 @@
                 {
                     "data_path": "action_result.*.geo_country_alpha_2",
                     "data_type": "numeric",
-                    "contains": [],
                     "example_values": [
                         "AU"
                     ]
@@ -4161,7 +3978,6 @@
                 {
                     "data_path": "action_result.*.geo_horizontal_accuracy",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         15.6
                     ]
@@ -4169,7 +3985,6 @@
                 {
                     "data_path": "action_result.*.ipv4",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "1.157.132.70"
                     ]
@@ -4177,7 +3992,6 @@
                 {
                     "data_path": "action_result.*.ipv6",
                     "data_type": "string",
-                    "contains": [],
                     "example_values": [
                         "fe80::be54:51ff:feeb:bf98"
                     ]
@@ -4185,7 +3999,6 @@
                 {
                     "data_path": "action_result.*.latitude",
                     "data_type": "numeric",
-                    "contains": [],
                     "example_values": [
                         -33.732083
                     ]
@@ -4193,7 +4006,6 @@
                 {
                     "data_path": "action_result.*.longitude",
                     "data_type": "numeric",
-                    "contains": [],
                     "example_values": [
                         151.156693
                     ]
@@ -4201,7 +4013,6 @@
                 {
                     "data_path": "action_result.*.wifi_bssid",
                     "data_type": "numeric",
-                    "contains": [],
                     "example_values": [
                         "bc:30:d9:cd:3b:fe"
                     ]
@@ -4209,8 +4020,12 @@
                 {
                     "data_path": "action_result.status",
                     "data_type": "string",
-                    "column_name": "status",
-                    "column_order": 1
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
                 },
                 {
                     "data_path": "action_result.message",
