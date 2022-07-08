@@ -8,6 +8,7 @@
 from __future__ import print_function, unicode_literals
 
 import json
+import re
 
 import phantom.app as phantom
 import requests
@@ -296,7 +297,7 @@ class HyasInsightConnector(BaseConnector):
         # For now return Error with a message,
         # in case of success we don't set the message, but use the summary
 
-    def _handle_lookup_c2_domain(self, param):
+    def _handle_lookup_command_and_control_domain(self, param):
         # Implement the handler here
         # use self.save_progress(...) to send progress messages back to the
         # platform
@@ -314,7 +315,7 @@ class HyasInsightConnector(BaseConnector):
         self.save_progress("Checking the Indicator value")
         self.handle_all_actions(param, endpoint, indictor_type)
 
-    def _handle_lookup_c2_email(self, param):
+    def _handle_lookup_command_and_control_email(self, param):
         # Implement the handler here
         # use self.save_progress(...) to send progress messages back to the
         # platform
@@ -332,7 +333,7 @@ class HyasInsightConnector(BaseConnector):
         self.save_progress("Checking the Indicator value")
         self.handle_all_actions(param, endpoint, indictor_type)
 
-    def _handle_lookup_c2_ip(self, param):
+    def _handle_lookup_command_and_control_ip(self, param):
         # Implement the handler here
         # use self.save_progress(...) to send progress messages back to the
         # platform
@@ -563,39 +564,80 @@ class HyasInsightConnector(BaseConnector):
                 return ioc_name
         return None
 
-    def _handle_lookup_mobile_geolocation_information_ipv4(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
+    def _handle_lookup_mobile_geolocation_information_ip(self, param):
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = IPV4
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_value = param['ip']
+
+        if bool(re.fullmatch(IP_REG, indicator_value)):
+            indicator_type = IPV4
+        elif bool(re.fullmatch(IPV6_REG, indicator_value)):
+            indicator_type = IPV6
+        else:
+            indicator_type = IP
         # Add an action result object to self (BaseConnector) to represent
         # the action for this param
+
         endpoint = DEVICEGEO
+        all_response = {}
 
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
-        self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
-
-    def _handle_lookup_mobile_geolocation_information_ipv6(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = IPV6
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
-        endpoint = DEVICEGEO
+        if self.validating_ioc(
+                action_result,
+                indicator_type,
+                indicator_value
+        ):
+            payload = json.dumps({
+                'applied_filters': {
+                    indicator_type: indicator_value
+                }
+            })
+            ret_val, response = self._make_rest_call(
+                endpoint,
+                action_result,
+                data=payload,
+                headers=self._headers,
+            )
+            self.debug_print(response)
+            if phantom.is_fail(ret_val):
+                # the call to the 3rd party device or service failed, action
+                # result should contain all the error details
+                # for now the return is commented out, but after
+                # implementation, return from here
+                # return action_result.get_status()
+                return ret_val
 
-        # Access action parameters passed in the 'param' dictionary
+            # Now post process the data,  uncomment code as you deem fit
 
-        # Required values can be accessed directly
-        self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+            # Add the response into the data section
+            try:
+                all_response[endpoint] = self.get_flatten_json_response(
+                    response)
+
+                action_result.add_data(all_response)
+                return action_result.set_status(phantom.APP_SUCCESS)
+            except:
+                return action_result.set_status(
+                    phantom.APP_ERROR,
+                    "unable to flatten json response.",
+                    None,
+                )
+
+            # Add a dictionary that is made up of the most important values
+            # from data into the summary
+            # summary = action_result.update_summary({})
+            # summary['num_data'] = len(action_result['data'])
+
+            # Return success, no need to set the message, only the status
+            # BaseConnector will create a textual message based off of the
+            # summary dictionary
+            # return action_result.set_status(phantom.APP_SUCCESS)
+
+        return action_result.set_status(
+            phantom.APP_ERROR, HYAS_ERR_MSG_INVALID_INDICATOR_VALUE
+        )
 
     def handle_all_actions(self, param, endpoint, indictor_type):
         action_result = self.add_action_result(ActionResult(dict(param)))
@@ -824,8 +866,7 @@ class HyasInsightConnector(BaseConnector):
             phantom.APP_ERROR, MALWARE_RECORD_MD5
         )
 
-    def _handle_lookup_c2_hash(self, param):
-
+    def _handle_lookup_command_and_control_hash(self, param):
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
         action_result = self.add_action_result(ActionResult(dict(param)))
@@ -1032,17 +1073,17 @@ class HyasInsightConnector(BaseConnector):
 
         self.debug_print("action_id", self.get_action_identifier())
 
-        if action_id == 'lookup_c2_domain':
-            ret_val = self._handle_lookup_c2_domain(param)
+        if action_id == 'lookup_command_and_control_domain':
+            ret_val = self._handle_lookup_command_and_control_domain(param)
 
-        if action_id == 'lookup_c2_email':
-            ret_val = self._handle_lookup_c2_email(param)
+        if action_id == 'lookup_command_and_control_email':
+            ret_val = self._handle_lookup_command_and_control_email(param)
 
-        if action_id == 'lookup_c2_ip':
-            ret_val = self._handle_lookup_c2_ip(param)
+        if action_id == 'lookup_command_and_control_ip':
+            ret_val = self._handle_lookup_command_and_control_ip(param)
 
-        if action_id == 'lookup_c2_hash':
-            ret_val = self._handle_lookup_c2_hash(param)
+        if action_id == 'lookup_command_and_control_hash':
+            ret_val = self._handle_lookup_command_and_control_hash(param)
 
         if action_id == 'lookup_whois_domain':
             ret_val = self._handle_lookup_whois_domain(param)
@@ -1092,12 +1133,8 @@ class HyasInsightConnector(BaseConnector):
         if action_id == 'lookup_ssl_certificate_hash':
             ret_val = self._handle_lookup_ssl_certificate_hash(param)
 
-        if action_id == 'lookup_mobile_geolocation_information_ipv4':
-            ret_val = self._handle_lookup_mobile_geolocation_information_ipv4(
-                param)
-
-        if action_id == 'lookup_mobile_geolocation_information_ipv6':
-            ret_val = self._handle_lookup_mobile_geolocation_information_ipv6(
+        if action_id == 'lookup_mobile_geolocation_information_ip':
+            ret_val = self._handle_lookup_mobile_geolocation_information_ip(
                 param)
 
         if action_id == 'test_connectivity':

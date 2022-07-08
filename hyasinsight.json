@@ -45,9 +45,10 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup c2 domain",
-            "identifier": "lookup_c2_domain",
+            "action": "lookup command and control domain",
+            "identifier": "lookup_command_and_control_domain",
             "description": "Perform this action to get the C2 Domain Lookup Data for Hyas Insight",
+            "verbose": "",
             "type": "investigate",
             "read_only": true,
             "parameters": {
@@ -70,9 +71,8 @@
                     "contains": [
                         "domain"
                     ],
-                    "example_values": [
-                        "www.hyas.com"
-                    ]
+                    "column_name": "Domain",
+                    "column_order": 0
                 },
                 {
                     "data_path": "action_result.*.actor_ipv4",
@@ -182,22 +182,9 @@
                     ]
                 },
                 {
-                    "data_path": "action_result.parameter.domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "column_name": "Domain",
-                    "column_order": 0
-                },
-                {
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "Status",
-                    "example_values": [
-                        "success",
-                        "failed"
-                    ],
                     "column_order": 1
                 },
                 {
@@ -206,17 +193,11 @@
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric",
-                    "example_values": [
-                        "1"
-                    ]
+                    "data_type": "numeric"
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric",
-                    "example_values": [
-                        "1"
-                    ]
+                    "data_type": "numeric"
                 }
             ],
             "render": {
@@ -229,9 +210,10 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup c2 email",
-            "identifier": "lookup_c2_email",
+            "action": "lookup command and control email",
+            "identifier": "lookup_command_and_control_email",
             "description": "Perform this action to get the C2 Email Lookup Data for Hyas Insight",
+            "verbose": "",
             "type": "investigate",
             "read_only": true,
             "parameters": {
@@ -249,6 +231,15 @@
             },
             "output": [
                 {
+                    "data_path": "action_result.parameter.email",
+                    "data_type": "string",
+                    "contains": [
+                        "email"
+                    ],
+                    "column_name": "Email",
+                    "column_order": 0
+                },
+                {
                     "data_path": "action_result.*.actor_ipv4",
                     "data_type": "string",
                     "contains": [
@@ -356,22 +347,9 @@
                     ]
                 },
                 {
-                    "data_path": "action_result.parameter.email",
-                    "data_type": "string",
-                    "contains": [
-                        "email"
-                    ],
-                    "column_name": "Email",
-                    "column_order": 0
-                },
-                {
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "Status",
-                    "example_values": [
-                        "success",
-                        "failed"
-                    ],
                     "column_order": 1
                 },
                 {
@@ -380,17 +358,11 @@
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric",
-                    "example_values": [
-                        "1"
-                    ]
+                    "data_type": "numeric"
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric",
-                    "example_values": [
-                        "1"
-                    ]
+                    "data_type": "numeric"
                 }
             ],
             "render": {
@@ -403,9 +375,10 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup c2 ip",
-            "identifier": "lookup_c2_ip",
+            "action": "lookup command and control ip",
+            "identifier": "lookup_command_and_control_ip",
             "description": "Perform this action to get the C2 IP Lookup Data for Hyas Insight",
+            "verbose": "",
             "type": "investigate",
             "read_only": true,
             "parameters": {
@@ -416,12 +389,11 @@
                     "primary": true,
                     "contains": [
                         "ip",
+                        "ipv4",
                         "ipv6"
                     ],
                     "order": 0,
-                    "name": "ip",
-                    "id": 1,
-                    "param_name": "ip"
+                    "name": "ip"
                 }
             },
             "output": [
@@ -430,6 +402,7 @@
                     "data_type": "string",
                     "contains": [
                         "ip",
+                        "ipv4",
                         "ipv6"
                     ],
                     "column_name": "IP",
@@ -543,120 +516,9 @@
                     ]
                 },
                 {
-                    "data_path": "action_result.*.actor_ipv4",
-                    "data_type": "string",
-                    "contains": [
-                        "ip"
-                    ],
-                    "example_values": [
-                        "197.210.84.34"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.c2_domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "himionsa.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.c2_ipv4",
-                    "data_type": "string",
-                    "contains": [
-                        "ip"
-                    ],
-                    "example_values": [
-                        "80.78.22.32"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.c2_url",
-                    "data_type": "string",
-                    "contains": [
-                        "url"
-                    ],
-                    "example_values": [
-                        "http://www.glowtey.com/mtc/config.php?action=recoveries"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.datetime",
-                    "data_type": "string",
-                    "example_values": [
-                        "2020/09/15 08:12:44"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.email",
-                    "data_type": "string",
-                    "contains": [
-                        "email"
-                    ],
-                    "example_values": [
-                        "ip@allbayrak.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.email_domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "allbayrak.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.referrer_domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ],
-                    "example_values": [
-                        "webmail.allbayrak.com"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.referrer_ipv4",
-                    "data_type": "string",
-                    "contains": [
-                        "ip"
-                    ],
-                    "example_values": [
-                        "46.173.218.219"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.referrer_url",
-                    "data_type": "string",
-                    "contains": [
-                        "url"
-                    ],
-                    "example_values": [
-                        "http://webmail.allbayrak.com/roundcube/?_task=mail&amp;_caps=pdf%3D1%2Cflash%3D0%2Ctiff%3D0%2Cwebp%3D1&amp;_uid=8&amp;_mbox=INBOX&amp;_framed=1&amp;_action=preview"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.sha256",
-                    "data_type": "string",
-                    "contains": [
-                        "sha256"
-                    ],
-                    "example_values": [
-                        "281af32d4b70417c5027c9590f494aa9026c540a5c8af407dc3d464afe0a23ae"
-                    ]
-                },
-                {
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "Status",
-                    "example_values": [
-                        "success",
-                        "failed"
-                    ],
                     "column_order": 1
                 },
                 {
@@ -665,17 +527,11 @@
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric",
-                    "example_values": [
-                        "1"
-                    ]
+                    "data_type": "numeric"
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric",
-                    "example_values": [
-                        "1"
-                    ]
+                    "data_type": "numeric"
                 }
             ],
             "render": {
@@ -688,9 +544,10 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup c2 hash",
-            "identifier": "lookup_c2_hash",
+            "action": "lookup command and control hash",
+            "identifier": "lookup_command_and_control_hash",
             "description": "Perform this action to get the C2 Hash Lookup Data for Hyas Insight",
+            "verbose": "",
             "type": "investigate",
             "read_only": true,
             "parameters": {
@@ -704,10 +561,7 @@
                         "hash"
                     ],
                     "order": 0,
-                    "name": "hash",
-                    "id": 1,
-                    "param_name": "hash",
-                    "nameError": false
+                    "name": "hash"
                 }
             },
             "output": [
@@ -715,11 +569,11 @@
                     "data_path": "action_result.parameter.hash",
                     "data_type": "string",
                     "contains": [
+                        "sha256",
                         "hash"
                     ],
-                    "example_values": [
-                        "281af32d4b70417c5027c9590f494aa9026c540a5c8af407dc3d464afe0a23ae"
-                    ]
+                    "column_name": "Hash",
+                    "column_order": 0
                 },
                 {
                     "data_path": "action_result.*.actor_ipv4",
@@ -829,22 +683,9 @@
                     ]
                 },
                 {
-                    "data_path": "action_result.parameter.hash",
-                    "data_type": "string",
-                    "contains": [
-                        "sha256"
-                    ],
-                    "column_name": "Hash",
-                    "column_order": 0
-                },
-                {
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "Status",
-                    "example_values": [
-                        "success",
-                        "failed"
-                    ],
                     "column_order": 1
                 },
                 {
@@ -853,17 +694,11 @@
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric",
-                    "example_values": [
-                        "1"
-                    ]
+                    "data_type": "numeric"
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric",
-                    "example_values": [
-                        "1"
-                    ]
+                    "data_type": "numeric"
                 }
             ],
             "render": {
@@ -3783,35 +3618,41 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup mobile geolocation information ipv4",
-            "identifier": "lookup_mobile_geolocation_information_ipv4",
-            "description": "Perform this action to get the Mobile Geolocation Information IPv4 Lookup Data for Hyas Insight",
+            "action": "lookup mobile geolocation information ip",
+            "identifier": "lookup_mobile_geolocation_information_ip",
+            "description": "Perform this action to get the Mobile Geolocation Information IP Lookup Data for Hyas Insight",
+            "verbose": "",
             "type": "investigate",
             "read_only": true,
             "parameters": {
-                "ipv4": {
-                    "description": "IPv4 to get the lookup data for Hyas Insight",
+                "ip": {
+                    "description": "IP to get the lookup data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
                     "contains": [
                         "ip",
-                        "ipv4"
+                        "ipv4",
+                        "ipv6"
                     ],
+                    "value_list": [],
+                    "default": "",
                     "order": 0,
-                    "name": "ipv4",
+                    "name": "ip",
                     "id": 1,
-                    "param_name": "ipv4"
+                    "param_name": "ip"
                 }
             },
             "output": [
                 {
-                    "data_path": "action_result.parameter.ipv4",
+                    "data_path": "action_result.parameter.ip",
                     "data_type": "string",
                     "contains": [
-                        "ip"
+                        "ip",
+                        "ipv4",
+                        "ipv6"
                     ],
-                    "column_name": "IPV4",
+                    "column_name": "IP",
                     "column_order": 0
                 },
                 {
@@ -3888,144 +3729,7 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "Status",
-                    "column_order": 1,
-                    "example_values": [
-                        "success",
-                        "failed"
-                    ]
-                },
-                {
-                    "data_path": "action_result.message",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "summary.total_objects",
-                    "data_type": "numeric"
-                },
-                {
-                    "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric"
-                }
-            ],
-            "render": {
-                "type": "custom",
-                "width": 12,
-                "height": 5,
-                "view": "hyasinsight_view.display_view",
-                "title": "IP Lookup"
-            },
-            "versions": "EQ(*)"
-        },
-        {
-            "action": "lookup mobile geolocation information ipv6",
-            "identifier": "lookup_mobile_geolocation_information_ipv6",
-            "description": "Perform this action to get the Mobile Geolocation Information IPv6 Lookup Data for Hyas Insight",
-            "type": "investigate",
-            "read_only": true,
-            "parameters": {
-                "ipv6": {
-                    "description": "IPv6 to get lookup data for Hyas Insight",
-                    "data_type": "string",
-                    "required": true,
-                    "primary": true,
-                    "contains": [
-                        "ip",
-                        "ipv6"
-                    ],
-                    "order": 0,
-                    "name": "ipv6"
-                }
-            },
-            "output": [
-                {
-                    "data_path": "action_result.parameter.ipv6",
-                    "data_type": "string",
-                    "contains": [
-                        "ip",
-                        "ipv6"
-                    ],
-                    "column_name": "IPV6",
-                    "column_order": 0
-                },
-                {
-                    "data_path": "action_result.*.datetime",
-                    "data_type": "string",
-                    "example_values": [
-                        "2020-07-09T09:53:35Z"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.device_geo_id",
-                    "data_type": "string",
-                    "example_values": [
-                        "9120a69e-cc23-451a-a55d-4223e0cec88b"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.device_user_agent",
-                    "data_type": "string",
-                    "example_values": [
-                        "15.3.1"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.geo_country_alpha_2",
-                    "data_type": "numeric",
-                    "example_values": [
-                        "AU"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.geo_horizontal_accuracy",
-                    "data_type": "string",
-                    "example_values": [
-                        15.6
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.ipv4",
-                    "data_type": "string",
-                    "example_values": [
-                        "1.157.132.70"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.ipv6",
-                    "data_type": "string",
-                    "example_values": [
-                        "fe80::be54:51ff:feeb:bf98"
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.latitude",
-                    "data_type": "numeric",
-                    "example_values": [
-                        -33.732083
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.longitude",
-                    "data_type": "numeric",
-                    "example_values": [
-                        151.156693
-                    ]
-                },
-                {
-                    "data_path": "action_result.*.wifi_bssid",
-                    "data_type": "numeric",
-                    "example_values": [
-                        "bc:30:d9:cd:3b:fe"
-                    ]
-                },
-                {
-                    "data_path": "action_result.status",
-                    "data_type": "string",
-                    "column_name": "Status",
-                    "column_order": 1,
-                    "example_values": [
-                        "success",
-                        "failed"
-                    ]
+                    "column_order": 1
                 },
                 {
                     "data_path": "action_result.message",

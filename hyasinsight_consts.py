@@ -1,6 +1,4 @@
 # Define your constants here
-import re
-
 # Indicator Types
 DOMAIN = "domain"
 IP = "ip"
@@ -57,12 +55,10 @@ IPV6_REG = r"(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1," \
            r"0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0," \
            r"1}[0-9]){0,1}[0-9]))"
 
-DOMAIN_REG = re.compile(
-    r"^(?:[a-zA-Z0-9]"  # First character of the domain
-    r"(?:[a-zA-Z0-9-_]{0,61}[A-Za-z0-9])?\.)"  # Sub domain + hostname
-    r"+[A-Za-z0-9][A-Za-z0-9-_]{0,61}"  # First 61 characters of the gTLD
-    r"[A-Za-z]$"  # Last character of the gTLD
-)
+DOMAIN_REG = r"^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-_]{0," \
+                     r"61}[A-Za-z0-9])?\.)+[" \
+                     r"A-Za-z0-9][A-Za-z0-9-_]{0,61}[A-Za-z]$"
+
 EMAIL_REG = r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}"
 PHONE_REG = r"^\+?[1-9]\d{1,14}$"
 SHA_REG = "[A-Fa-f0-9]{64}"
@@ -132,28 +128,6 @@ ACTION_ID_PARAM = {
 
 }
 
-# ACTION_ID_PARAM = {
-#     "lookup_c2_domain": "c2_domain",
-#     "lookup__c2__email": "c2_email",
-#     "lookup_c2_ip": "c2_ip",
-#     "lookup_c2_sha256": "c2_sha256",
-#     "lookup_whois_domain": "whois_domain",
-#     "lookup_device_geo_ipv4": "devicegeo_ipv4",
-#     "lookup_device_geo_ipv6": "devicegeo_ipv6",
-#     "lookup_whois_email": "whois_email",
-#     "lookup_whois_phone": "whois_phone",
-#     "lookup_dynamicdns_email": "dynamicdns_email",
-#     "lookup_dynamicdns_ip": "dynamicdns_ip",
-#     "lookup_sinkhole_ip": "sinkhole_ip",
-#     "lookup_passivehash_ip": "passivehash_ip",
-#     "lookup_passivehash_domain": "passivehash_domain",
-#     "lookup_passivedns_ip": "passivedns_ip",
-#     "lookup_passivedns_domain": "passivedns_domain",
-#     "lookup_ssl_certificate_ip": "sslcertificate_ip",
-#     "lookup_current_whois_domain": "currentwhois_domain"
-#
-# }
-
 IOC_DETAILS = {
     "lookup_c2_domain": {"endpoint": C2ATTRIBUTION, "indicator_type": DOMAIN},
     "lookup__c2__email": {"endpoint": C2ATTRIBUTION, "indicator_type": EMAIL},
@@ -179,28 +153,6 @@ IOC_DETAILS = {
                                     "indicator_type": DOMAIN}
 }
 
-# IOC_DETAILS = {
-#     "c2_domain": {"endpoint": C2ATTRIBUTION, "indicator_type": DOMAIN},
-#     "c2_email": {"endpoint": C2ATTRIBUTION, "indicator_type": EMAIL},
-#     "c2_ip": {"endpoint": C2ATTRIBUTION, "indicator_type": IP},
-#     "c2_sha256": {"endpoint": C2ATTRIBUTION, "indicator_type": SHA256},
-#     "whois_domain": {"endpoint": WHOIS, "indicator_type": DOMAIN},
-#     "whois_email": {"endpoint": WHOIS, "indicator_type": EMAIL},
-#     "whois_phone": {"endpoint": WHOIS, "indicator_type": PHONE},
-#     "devicegeo_ipv4": {"endpoint": DEVICEGEO, "indicator_type": IPV4},
-#     "devicegeo_ipv6": {"endpoint": DEVICEGEO, "indicator_type": IPV6},
-#     "dynamicdns_email": {"endpoint": DYNAMICDNS, "indicator_type": EMAIL},
-#     "dynamicdns_ip": {"endpoint": DYNAMICDNS, "indicator_type": IP},
-#     "sinkhole_ip": {"endpoint": SINKHOLE, "indicator_type": IPV4},
-#     "passivehash_ip": {"endpoint": PASSIVEHASH, "indicator_type": IPV4},
-#     "passivehash_domain": {"endpoint": PASSIVEHASH, "indicator_type": DOMAIN},
-#     "passivedns_domain": {"endpoint": PASSIVEDNS, "indicator_type": DOMAIN},
-#     "passivedns_ip": {"endpoint": PASSIVEDNS, "indicator_type": IPV4},
-#     "sslcertificate_ip": {"endpoint": SSL, "indicator_type": IP},
-#     "currentwhois_domain": {"endpoint": CURRENT_WHOIS, "indicator_type":
-#     DOMAIN}
-# }
-
 ACTION_ID = ["lookup_c2_domain",
              "lookup__c2__email",
              "lookup_c2_ip",
@@ -218,4 +170,5 @@ ACTION_ID = ["lookup_c2_domain",
              "lookup_passivedns_ip",
              "lookup_passivedns_domain",
              "lookup_ssl_certificate_ip",
-             "lookup_current_whois_domain"]
+             "lookup_current_whois_domain"
+             ]

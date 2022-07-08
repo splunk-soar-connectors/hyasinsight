@@ -40,10 +40,10 @@ def display_view(provides, all_app_runs, context):
                 continue
             results.append(ctx_result)
 
-    actions = {'lookup c2 domain': 'hyasinsight_display_view.html',
-               'lookup c2 email': 'hyasinsight_display_view.html',
-               'lookup c2 ip': 'hyasinsight_display_view.html',
-               'lookup c2 hash': 'hyasinsight_display_view.html',
+    actions = {'lookup command and control domain': 'hyasinsight_display_view.html',
+               'lookup command and control email': 'hyasinsight_display_view.html',
+               'lookup command and control ip': 'hyasinsight_display_view.html',
+               'lookup command and control hash': 'hyasinsight_display_view.html',
                'lookup whois domain': 'hyasinsight_display_view.html',
                'lookup device geo ipv4': 'hyasinsight_display_view.html',
                'lookup device geo ipv6': 'hyasinsight_display_view.html',
@@ -63,9 +63,7 @@ def display_view(provides, all_app_runs, context):
                'lookup malware record hash': 'hyasinsight_display_view.html',
                'lookup os indicator hash': 'hyasinsight_display_view.html',
                'lookup ssl certificate hash': 'hyasinsight_display_view.html',
-               'lookup mobile geolocation information ipv4':
-                   'hyasinsight_display_view.html',
-               'lookup mobile geolocation information ipv6':
+               'lookup mobile geolocation information ip':
                    'hyasinsight_display_view.html'
                }
     return actions[provides]
