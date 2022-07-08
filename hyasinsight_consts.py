@@ -172,3 +172,5 @@ ACTION_ID = ["lookup_c2_domain",
              "lookup_ssl_certificate_ip",
              "lookup_current_whois_domain"
              ]
+
+DEFAULT_REQUEST_TIMEOUT = 60  # in seconds
