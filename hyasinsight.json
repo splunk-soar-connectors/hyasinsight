@@ -48,7 +48,6 @@
             "action": "lookup command and control domain",
             "identifier": "lookup_command_and_control_domain",
             "description": "Perform this action to get the C2 Domain Lookup Data for Hyas Insight",
-            "verbose": "",
             "type": "investigate",
             "read_only": true,
             "parameters": {
@@ -213,7 +212,6 @@
             "action": "lookup command and control email",
             "identifier": "lookup_command_and_control_email",
             "description": "Perform this action to get the C2 Email Lookup Data for Hyas Insight",
-            "verbose": "",
             "type": "investigate",
             "read_only": true,
             "parameters": {
@@ -378,7 +376,6 @@
             "action": "lookup command and control ip",
             "identifier": "lookup_command_and_control_ip",
             "description": "Perform this action to get the C2 IP Lookup Data for Hyas Insight",
-            "verbose": "",
             "type": "investigate",
             "read_only": true,
             "parameters": {
@@ -547,7 +544,6 @@
             "action": "lookup command and control hash",
             "identifier": "lookup_command_and_control_hash",
             "description": "Perform this action to get the C2 Hash Lookup Data for Hyas Insight",
-            "verbose": "",
             "type": "investigate",
             "read_only": true,
             "parameters": {
@@ -3621,7 +3617,6 @@
             "action": "lookup mobile geolocation information ip",
             "identifier": "lookup_mobile_geolocation_information_ip",
             "description": "Perform this action to get the Mobile Geolocation Information IP Lookup Data for Hyas Insight",
-            "verbose": "",
             "type": "investigate",
             "read_only": true,
             "parameters": {
