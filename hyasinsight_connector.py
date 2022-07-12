@@ -1084,69 +1084,69 @@ class HyasInsightConnector(BaseConnector):
 
         self.debug_print("action_id", self.get_action_identifier())
 
-        if action_id == 'lookup_command_and_control_domain':
+        if action_id == 'lookup_cc_domain':
             ret_val = self._handle_lookup_command_and_control_domain(param)
 
-        if action_id == 'lookup_command_and_control_email':
-            ret_val = self._handle_lookup_command_and_control_email(param)
+        # if action_id == 'lookup_command_and_control_email':
+        #     ret_val = self._handle_lookup_command_and_control_email(param)
 
-        if action_id == 'lookup_command_and_control_ip':
-            ret_val = self._handle_lookup_command_and_control_ip(param)
+        # if action_id == 'lookup_command_and_control_ip':
+        #     ret_val = self._handle_lookup_command_and_control_ip(param)
 
-        if action_id == 'lookup_command_and_control_hash':
-            ret_val = self._handle_lookup_command_and_control_hash(param)
+        # if action_id == 'lookup_command_and_control_hash':
+        #     ret_val = self._handle_lookup_command_and_control_hash(param)
 
-        if action_id == 'lookup_whois_domain':
-            ret_val = self._handle_lookup_whois_domain(param)
+        # if action_id == 'lookup_whois_domain':
+        #     ret_val = self._handle_lookup_whois_domain(param)
 
-        if action_id == 'lookup_whois_email':
-            ret_val = self._handle_lookup_whois_email(param)
+        # if action_id == 'lookup_whois_email':
+        #     ret_val = self._handle_lookup_whois_email(param)
 
-        if action_id == 'lookup_whois_phone':
-            ret_val = self._handle_lookup_whois_phone(param)
+        # if action_id == 'lookup_whois_phone':
+        #     ret_val = self._handle_lookup_whois_phone(param)
 
-        if action_id == 'lookup_dynamicdns_email':
-            ret_val = self._handle_lookup_dynamicdns_email(param)
+        # if action_id == 'lookup_dynamicdns_email':
+        #     ret_val = self._handle_lookup_dynamicdns_email(param)
 
-        if action_id == 'lookup_dynamicdns_ip':
-            ret_val = self._handle_lookup_dynamicdns_ip(param)
+        # if action_id == 'lookup_dynamicdns_ip':
+        #     ret_val = self._handle_lookup_dynamicdns_ip(param)
 
-        if action_id == 'lookup_sinkhole_ip':
-            ret_val = self._handle_lookup_sinkhole_ip(param)
+        # if action_id == 'lookup_sinkhole_ip':
+        #     ret_val = self._handle_lookup_sinkhole_ip(param)
 
-        if action_id == 'lookup_passivehash_ip':
-            ret_val = self._handle_lookup_passivehash_ip(param)
+        # if action_id == 'lookup_passivehash_ip':
+        #     ret_val = self._handle_lookup_passivehash_ip(param)
 
-        if action_id == 'lookup_passivehash_domain':
-            ret_val = self._handle_lookup_passivehash_domain(param)
+        # if action_id == 'lookup_passivehash_domain':
+        #     ret_val = self._handle_lookup_passivehash_domain(param)
 
-        if action_id == 'lookup_ssl_certificate_ip':
-            ret_val = self._handle_lookup_ssl_certificate_ip(param)
+        # if action_id == 'lookup_ssl_certificate_ip':
+        #     ret_val = self._handle_lookup_ssl_certificate_ip(param)
 
-        if action_id == 'lookup_passivedns_domain':
-            ret_val = self._handle_lookup_passivedns_domain(param)
+        # if action_id == 'lookup_passivedns_domain':
+        #     ret_val = self._handle_lookup_passivedns_domain(param)
 
-        if action_id == 'lookup_current_whois_domain':
-            ret_val = self._handle_lookup_current_whois_domain(param)
+        # if action_id == 'lookup_current_whois_domain':
+        #     ret_val = self._handle_lookup_current_whois_domain(param)
 
-        if action_id == 'lookup_passivedns_ip':
-            ret_val = self._handle_lookup_passivedns_ip(param)
+        # if action_id == 'lookup_passivedns_ip':
+        #     ret_val = self._handle_lookup_passivedns_ip(param)
 
-        if action_id == 'lookup_malware_information_hash':
-            ret_val = self._handle_lookup_malware_information_hash(param)
+        # if action_id == 'lookup_malware_information_hash':
+        #     ret_val = self._handle_lookup_malware_information_hash(param)
 
-        if action_id == 'lookup_malware_record_hash':
-            ret_val = self._handle_lookup_malware_record_hash(param)
+        # if action_id == 'lookup_malware_record_hash':
+        #     ret_val = self._handle_lookup_malware_record_hash(param)
 
-        if action_id == 'lookup_os_indicator_hash':
-            ret_val = self._handle_lookup_os_indicator_hash(param)
+        # if action_id == 'lookup_os_indicator_hash':
+        #     ret_val = self._handle_lookup_os_indicator_hash(param)
 
-        if action_id == 'lookup_ssl_certificate_hash':
-            ret_val = self._handle_lookup_ssl_certificate_hash(param)
+        # if action_id == 'lookup_ssl_certificate_hash':
+        #     ret_val = self._handle_lookup_ssl_certificate_hash(param)
 
-        if action_id == 'lookup_mobile_geolocation_information_ip':
-            ret_val = self._handle_lookup_mobile_geolocation_information_ip(
-                param)
+        # if action_id == 'lookup_mobile_geolocation_information_ip':
+        #     ret_val = self._handle_lookup_mobile_geolocation_information_ip(
+        #         param)
 
         if action_id == 'test_connectivity':
             ret_val = self._handle_test_connectivity(param)
