@@ -1966,7 +1966,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup ssl certificate ip",
+            "action": "lookup ssl certificateip",
             "identifier": "lookup_ssl_certificate_ip",
             "description": "Perform this action to get the SSL Certificate Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -2459,7 +2459,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup current whois domain",
+            "action": "lookup current whoisdomain",
             "identifier": "lookup_current_whois_domain",
             "description": "Perform this action to get the Whois current Domain Lookup Data for Hyas Insight",
             "type": "investigate",
