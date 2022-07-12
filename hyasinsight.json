@@ -45,7 +45,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup command and control domain",
+            "action": "lookup cc domain",
             "identifier": "lookup_command_and_control_domain",
             "description": "Perform this action to get the C2 Domain Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -209,7 +209,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup command and control email",
+            "action": "lookup cc email",
             "identifier": "lookup_command_and_control_email",
             "description": "Perform this action to get the C2 Email Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -373,7 +373,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup command and control ip",
+            "action": "lookup cc ip",
             "identifier": "lookup_command_and_control_ip",
             "description": "Perform this action to get the C2 IP Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -541,7 +541,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup command and control hash",
+            "action": "lookup cc hash",
             "identifier": "lookup_command_and_control_hash",
             "description": "Perform this action to get the C2 Hash Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -2957,7 +2957,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup malware information hash",
+            "action": "lookup malware hash",
             "identifier": "lookup_malware_information_hash",
             "description": "Perform this action to get the Malware Information Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -3042,7 +3042,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup malware record hash",
+            "action": "lookup malware recordhash",
             "identifier": "lookup_malware_record_hash",
             "description": "Perform this action to get the Malware Record hash Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -3136,7 +3136,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup os indicator hash",
+            "action": "lookup os indicatorhash",
             "identifier": "lookup_os_indicator_hash",
             "description": "Perform this action to get the OS Indicator Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -3316,7 +3316,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup ssl certificate hash",
+            "action": "lookup ssl certificatehash",
             "identifier": "lookup_ssl_certificate_hash",
             "description": "Perform this action to get the SSL Certificate hash Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -3614,7 +3614,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup mobile geolocation information ip",
+            "action": "lookup mobile geolocationinformationip",
             "identifier": "lookup_mobile_geolocation_information_ip",
             "description": "Perform this action to get the Mobile Geolocation Information IP Lookup Data for Hyas Insight",
             "type": "investigate",
