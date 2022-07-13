@@ -45,7 +45,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup command and control domain",
+            "action": "lookup commandcontrol domain",
             "identifier": "lookup_command_and_control_domain",
             "description": "Perform this action to get the C2 Domain Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -209,7 +209,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup command and control email",
+            "action": "lookup commandcontrol email",
             "identifier": "lookup_command_and_control_email",
             "description": "Perform this action to get the C2 Email Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -373,7 +373,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup command and control ip",
+            "action": "lookup commandcontrol ip",
             "identifier": "lookup_command_and_control_ip",
             "description": "Perform this action to get the C2 IP Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -541,7 +541,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup command and control hash",
+            "action": "lookup commandcontrol hash",
             "identifier": "lookup_command_and_control_hash",
             "description": "Perform this action to get the C2 Hash Lookup Data for Hyas Insight",
             "type": "investigate",
@@ -3614,7 +3614,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "lookup mobile geolocation information ip",
+            "action": "lookup devicegeo ip",
             "identifier": "lookup_mobile_geolocation_information_ip",
             "description": "Perform this action to get the Mobile Geolocation Information IP Lookup Data for Hyas Insight",
             "type": "investigate",

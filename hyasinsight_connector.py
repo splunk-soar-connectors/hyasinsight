@@ -593,8 +593,7 @@ class HyasInsightConnector(BaseConnector):
         endpoint = DEVICEGEO
         all_response = {}
 
-        self.save_progress(
-            "In action handler for: {0}".format(self.get_action_identifier()))
+        self.save_progress("Checking the Indicator value")
         if self.validating_ioc(
                 action_result,
                 indicator_type,
@@ -611,7 +610,6 @@ class HyasInsightConnector(BaseConnector):
                 data=payload,
                 headers=self._headers,
             )
-            self.debug_print(response)
             if phantom.is_fail(ret_val):
                 # the call to the 3rd party device or service failed, action
                 # result should contain all the error details
@@ -756,7 +754,7 @@ class HyasInsightConnector(BaseConnector):
         validate_indicator = self.validating_hash(action_result,
                                                   indicator_type,
                                                   indicator_value)
-        self.debug_print(validate_indicator)
+        self.save_progress("Checking the Indicator value")
         if validate_indicator:
             payload = json.dumps({
                 'applied_filters': {
@@ -825,7 +823,7 @@ class HyasInsightConnector(BaseConnector):
         validate_indicator = self.validating_hash(action_result,
                                                   indicator_type,
                                                   indicator_value)
-        self.debug_print(validate_indicator)
+        self.save_progress("Checking the Indicator value")
         if validate_indicator and validate_indicator == "md5":
             payload = json.dumps({
                 'applied_filters': {
@@ -891,7 +889,7 @@ class HyasInsightConnector(BaseConnector):
         validate_indicator = self.validating_hash(action_result,
                                                   indicator_type,
                                                   indicator_value)
-        self.debug_print(validate_indicator)
+        self.save_progress("Checking the Indicator value")
         if validate_indicator and validate_indicator == "sha256":
             payload = json.dumps({
                 'applied_filters': {
@@ -957,7 +955,7 @@ class HyasInsightConnector(BaseConnector):
         validate_indicator = self.validating_hash(action_result,
                                                   indicator_type,
                                                   indicator_value)
-        self.debug_print(validate_indicator)
+        self.save_progress("Checking the Indicator value")
         if validate_indicator:
             payload = json.dumps({
                 'applied_filters': {
@@ -1023,7 +1021,7 @@ class HyasInsightConnector(BaseConnector):
         validate_indicator = self.validating_hash(action_result,
                                                   indicator_type,
                                                   indicator_value)
-        self.debug_print(validate_indicator)
+        self.save_progress("Checking the Indicator value")
         if validate_indicator:
             payload = json.dumps({
                 'applied_filters': {
