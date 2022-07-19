@@ -116,12 +116,12 @@
         {
             "action": "lookup commandcontrol email",
             "identifier": "lookup_command_and_control_email",
-            "description": "Perform this action to get the C2 Email Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the C2 Email address Lookup Data for Hyas Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "email": {
-                    "description": "Email to get Lookup Data for Hyas Insight",
+                    "description": "Email address to get Lookup Data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -190,7 +190,7 @@
             "read_only": true,
             "parameters": {
                 "ip": {
-                    "description": "IP to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -398,12 +398,12 @@
         {
             "action": "lookup whois email",
             "identifier": "lookup_whois_email",
-            "description": "Perform this action to get the Whois Email Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Whois Email address Lookup Data for Hyas Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "email": {
-                    "description": "Email to get Lookup Data for Hyas Insight",
+                    "description": "Email address to get Lookup Data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -467,12 +467,12 @@
         {
             "action": "lookup whois phone",
             "identifier": "lookup_whois_phone",
-            "description": "Perform this action to get the Whois Phone Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Whois Phone number Lookup Data for Hyas Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "phone": {
-                    "description": "Phone to get Lookup Data for Hyas Insight",
+                    "description": "Phone number to get Lookup Data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -548,12 +548,12 @@
         {
             "action": "lookup dynamicdns email",
             "identifier": "lookup_dynamicdns_email",
-            "description": "Perform this action to get the Dynamicdns Email Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Dynamicdns Email address Lookup Data for Hyas Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "email": {
-                    "description": "Email to get Lookup Data for Hyas Insight",
+                    "description": "Email address to get Lookup Data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -617,12 +617,12 @@
         {
             "action": "lookup dynamicdns ip",
             "identifier": "lookup_dynamicdns_ip",
-            "description": "Perform this action to get the Dynamicdns IP Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Dynamicdns IP address Lookup Data for Hyas Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ip": {
-                    "description": "IP to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -688,12 +688,12 @@
         {
             "action": "lookup sinkhole ip",
             "identifier": "lookup_sinkhole_ip",
-            "description": "Perform this action to get the Sinkhole IP Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Sinkhole IP address Lookup Data for Hyas Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ipv4": {
-                    "description": "IP to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -769,12 +769,12 @@
         {
             "action": "lookup passivehash ip",
             "identifier": "lookup_passivehash_ip",
-            "description": "Perform this action to get the Passivehash IP Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Passivehash IP address Lookup Data for Hyas Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ipv4": {
-                    "description": "IP to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -934,7 +934,7 @@
             "read_only": true,
             "parameters": {
                 "ip": {
-                    "description": "IP to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1158,12 +1158,12 @@
         {
             "action": "lookup passivedns ip",
             "identifier": "lookup_passivedns_ip",
-            "description": "Perform this action to get the Passivedns IP Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Passivedns IP address Lookup Data for Hyas Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ipv4": {
-                    "description": "IP to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1548,12 +1548,12 @@
         {
             "action": "lookup devicegeo ip",
             "identifier": "lookup_mobile_geolocation_information_ip",
-            "description": "Perform this action to get the Mobile Geolocation Information IP Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Mobile Geolocation Information IP address Lookup Data for Hyas Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ip": {
-                    "description": "IP to get the lookup data for Hyas Insight",
+                    "description": "IP address to get the lookup data for Hyas Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,

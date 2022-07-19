@@ -22,6 +22,7 @@ EMAIL = "email"
 PHONE = "phone"
 IPV6 = "ipv6"
 SHA256 = "sha256"
+HASH = "hash"
 
 # Endpoints
 HYAS_BASE_URL = "https://apps.hyas.com/api/ext/"
@@ -41,6 +42,7 @@ CURRENT_WHOIS = '/whois/v1'
 CURRENT_WHOIS_NAME = 'current_whois'
 SSL_CERTS = "ssl_certs"
 ITEMS = "items"
+SCAN_RESULT = "scan_results"
 SAMPLE_INFORMATION_NAME = "sampleinfo"
 
 # test Endpoints
@@ -85,7 +87,7 @@ MD5_REG = r"(^[a-fA-F0-9]{32}$)"
 SHA1_REG = r'\b[0-9a-fA-F]{40}\b'
 SHA512_REG = r'\b[0-9a-fA-F]{128}\b'
 IOC_NAME = {
-    "ip": IP_REG,
+    "ip": {"ipv4": IP_REG, "ipv6": IPV6_REG},
     "ipv4": IP_REG,
     "ipv6": IPV6_REG,
     "domain": DOMAIN_REG,
@@ -189,3 +191,21 @@ ACTION_ID = ["lookup_c2_domain",
              ]
 
 DEFAULT_REQUEST_TIMEOUT = 60  # in seconds
+
+PASSIVE_IOC = {'ipv4_regex': 'ipv4', 'domain_regex': 'domain'}
+DYNAMIC_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip', 'email_regex': 'email'}
+PASSIVEHASH_IOC = {'ipv4_regex': 'ipv4', 'domain_regex': 'domain'}
+C2ATTRIBUTION_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip',
+                     'email_regex': 'email', 'domain_regex': 'domain',
+                     'sha256_regex': "sha256"}
+WHOIS_IOC = {'phone_regex': 'phone', 'email_regex': 'email',
+             'domain_regex': 'domain'}
+WHOIS_CURRENT_NAMES = {'domain_regex': 'domain'}
+SINKHOLE_IOC = {'ipv4_regex': 'ipv4'}
+SSL_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip', 'sha1_regex': 'hash'}
+DEVICE_IOC = {'ipv4_regex': 'ipv4', 'ipv6_regex': 'ipv6'}
+SAMPLE_INFORMATION_IOC = {"md5_regex": "hash", "sha256_regex": "hash",
+                          "sha1_regex": "hash", "sha512_regex": "hash"}
+SAMPLE_IOC = {"md5_regex": "md5"}
+OS_INDICATOR_IOC = {"md5_regex": "md5", "sha256_regex": "sha256",
+                    "sha1_regex": "sha1"}

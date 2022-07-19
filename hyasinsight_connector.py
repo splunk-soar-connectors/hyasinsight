@@ -63,7 +63,6 @@ class HyasInsightConnector(BaseConnector):
         )
 
     def _process_html_response(self, response, action_result):
-        # An html response, treat it like an error
         status_code = response.status_code
 
         try:
@@ -113,17 +112,10 @@ class HyasInsightConnector(BaseConnector):
             action_result.add_debug_data({'r_status_code': r.status_code})
             action_result.add_debug_data({'r_text': r.text})
             action_result.add_debug_data({'r_headers': r.headers})
-
-        # Process each 'Content-Type' of response separately
-
         # Process a json response
         if 'json' in r.headers.get('Content-Type', ''):
             return self._process_json_response(r, action_result)
 
-        # Process an HTML response, Do this no matter what the api talks.
-        # There is a high chance of a PROXY in between phantom and the rest of
-        # world, in case of errors, PROXY's return HTML, this function parses
-        # the error and adds it to the action_result.
         if 'html' in r.headers.get('Content-Type', ''):
             return self._process_html_response(r, action_result)
 
@@ -186,14 +178,10 @@ class HyasInsightConnector(BaseConnector):
             self, endpoint, action_result, data=None, headers=None,
             method="post"
     ):
-        # **kwargs can be any additional parameters that requests.request
-        # accepts
         try:
             request_func = getattr(requests, method, timeout=DEFAULT_REQUEST_TIMEOUT)
 
         except AttributeError:
-            # Set the action_result status to error,
-            # the handler function will most probably return as is
             return RetVal(
                 action_result.set_status(
                     phantom.APP_ERROR, f"Unsupported method: {method}"
@@ -202,8 +190,6 @@ class HyasInsightConnector(BaseConnector):
             )
 
         except Exception as e:
-            # Set the action_result status to error,
-            # the handler function will most probably return as is
             error_message = self._get_error_message_from_exception(e)
             return RetVal(
                 action_result.set_status(
@@ -222,8 +208,6 @@ class HyasInsightConnector(BaseConnector):
             response = request_func(url, data=data, headers=headers)
 
         except Exception as e:
-            # Set the action_result status to error,
-            # the handler function will most probably return as is
             error_message = self._get_error_message_from_exception(e)
             return RetVal(
                 action_result.set_status(
@@ -242,18 +226,39 @@ class HyasInsightConnector(BaseConnector):
 
     def validating_ioc(self, action_result, ioc, val):
         """
-        Function that checks given ioc and return True if ioc is valid
+        Function that checks given ioc and return IOC_NAME if ioc is valid
         IP/Domain/Email/Phone/SHA256.
         :param ioc: IP address/Email/Phone/SHA256/Domain
         :return: status (success/failure)
         """
+        ioc_type = ioc
+        ioc_names_list = IOC_NAME
+
         try:
-            if ioc in IOC_NAME:
-                if "ip" in ioc:
-                    return bool(re.fullmatch(IP_REG, val)) or bool(
-                        re.fullmatch(IPV6_REG, val))
+            if ioc_type in ioc_names_list.keys():
+                if ioc_type == "ip":
+                    ip_dict = ioc_names_list[ioc_type]
+                    for key, value in ip_dict.items():
+                        regex = value
+                        if (re.fullmatch(regex, val)):
+                            ioc_name = key + "_regex"
+                            return ioc_name
+
+                elif ioc_type == "hash":
+                    self.debug_print("In Hash")
+                    hash_dict = ioc_names_list['hash']
+                    for key, value in hash_dict.items():
+                        regex = value
+                        if (re.fullmatch(regex, val)):
+                            ioc_name = key + "_regex"
+                            return ioc_name
+                    return None
+
                 else:
-                    return bool(re.fullmatch(IOC_NAME[ioc], val))
+                    regex = ioc_names_list[ioc_type]
+                    if (re.fullmatch(regex, val)):
+                        ioc_name = ioc_type + "_regex"
+                        return ioc_name
             return RetVal(
                 action_result.set_status(
                     phantom.APP_ERROR, "Unable to locate ioc type."
@@ -293,782 +298,314 @@ class HyasInsightConnector(BaseConnector):
         )
 
         if phantom.is_fail(ret_val):
-            # the call to the 3rd party device or service failed,
-            # action result should contain all the error details
-            # for now the return is commented out,
-            # but after implementation, return from here
             self.save_progress(HYAS_TEST_CONN_FAILED)
             return action_result.get_status()
-
-        # Return success
 
         self.save_progress(HYAS_TEST_CONN_PASSED)
         return action_result.set_status(phantom.APP_SUCCESS)
 
-        # For now return Error with a message,
-        # in case of success we don't set the message, but use the summary
-
     def _handle_lookup_command_and_control_domain(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = DOMAIN
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = DOMAIN
         endpoint = C2ATTRIBUTION
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
-
+        ioc_dict = C2ATTRIBUTION_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_command_and_control_email(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = EMAIL
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = EMAIL
         endpoint = C2ATTRIBUTION
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
-
+        ioc_dict = C2ATTRIBUTION_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_command_and_control_ip(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = IP
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = IP
         endpoint = C2ATTRIBUTION
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
-
+        ioc_dict = C2ATTRIBUTION_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_whois_domain(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = DOMAIN
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = DOMAIN
         endpoint = WHOIS
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        ioc_dict = WHOIS_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_whois_email(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = EMAIL
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = EMAIL
         endpoint = WHOIS
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        ioc_dict = WHOIS_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_whois_phone(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = PHONE
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = PHONE
         endpoint = WHOIS
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        ioc_dict = WHOIS_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_dynamicdns_email(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = EMAIL
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = EMAIL
         endpoint = DYNAMICDNS
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        ioc_dict = DYNAMIC_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_dynamicdns_ip(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = IP
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = IP
         endpoint = DYNAMICDNS
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        ioc_dict = DYNAMIC_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_sinkhole_ip(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = IPV4
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = IPV4
         endpoint = SINKHOLE
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        ioc_dict = SINKHOLE_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_passivehash_ip(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = IPV4
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = IPV4
         endpoint = PASSIVEHASH
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        ioc_dict = PASSIVEHASH_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_passivehash_domain(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = DOMAIN
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = DOMAIN
         endpoint = PASSIVEHASH
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        ioc_dict = PASSIVEHASH_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_ssl_certificate_ip(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = IP
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = IP
         endpoint = SSL
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        ioc_dict = SSL_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_passivedns_domain(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = DOMAIN
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = DOMAIN
         endpoint = PASSIVEDNS
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        ioc_dict = PASSIVE_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_current_whois_domain(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = DOMAIN
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
-        endpoint = WHOIS
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = DOMAIN
+        endpoint = CURRENT_WHOIS
+        ioc_dict = WHOIS_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_passivedns_ip(self, param):
-        # Implement the handler here
-        # use self.save_progress(...) to send progress messages back to the
-        # platform
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
-        indictor_type = IPV4
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = IPV4
         endpoint = PASSIVEDNS
-
-        # Access action parameters passed in the 'param' dictionary
-
-        # Required values can be accessed directly
+        ioc_dict = PASSIVE_IOC
         self.save_progress("Checking the Indicator value")
-        self.handle_all_actions(param, endpoint, indictor_type)
-
-    def validating_hash(self, action_result, ioc_type, ioc_value):
-        hash_dict = IOC_NAME['hash']
-        for key, value in hash_dict.items():
-            regex = value
-            if re.fullmatch(regex, ioc_value):
-                ioc_name = key
-                return ioc_name
-        return None
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_mobile_geolocation_information_ip(self, param):
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
         action_result = self.add_action_result(ActionResult(dict(param)))
-        indicator_value = param['ip']
-
-        if bool(re.fullmatch(IP_REG, indicator_value)):
-            indicator_type = IPV4
-        elif bool(re.fullmatch(IPV6_REG, indicator_value)):
-            indicator_type = IPV6
-        else:
-            indicator_type = IP
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
-
+        indicator_type = IP
         endpoint = DEVICEGEO
-        all_response = {}
-
+        ioc_dict = DEVICE_IOC
         self.save_progress("Checking the Indicator value")
-        if self.validating_ioc(
-                action_result,
-                indicator_type,
-                indicator_value
-        ):
-            payload = json.dumps({
-                'applied_filters': {
-                    indicator_type: indicator_value
-                }
-            })
-            ret_val, response = self._make_rest_call(
-                endpoint,
-                action_result,
-                data=payload,
-                headers=self._headers,
-            )
-            if phantom.is_fail(ret_val):
-                # the call to the 3rd party device or service failed, action
-                # result should contain all the error details
-                # for now the return is commented out, but after
-                # implementation, return from here
-                # return action_result.get_status()
-                return ret_val
-
-            # Now post process the data,  uncomment code as you deem fit
-
-            # Add the response into the data section
-            try:
-                all_response[endpoint] = self.get_flatten_json_response(
-                    response)
-
-                action_result.add_data(all_response)
-                return action_result.set_status(phantom.APP_SUCCESS)
-            except:
-                return action_result.set_status(
-                    phantom.APP_ERROR,
-                    "unable to flatten json response.",
-                    None,
-                )
-
-            # Add a dictionary that is made up of the most important values
-            # from data into the summary
-            # summary = action_result.update_summary({})
-            # summary['num_data'] = len(action_result['data'])
-
-            # Return success, no need to set the message, only the status
-            # BaseConnector will create a textual message based off of the
-            # summary dictionary
-            # return action_result.set_status(phantom.APP_SUCCESS)
-
-        return action_result.set_status(
-            phantom.APP_ERROR, HYAS_ERR_MSG_INVALID_INDICATOR_VALUE
-        )
-
-    def handle_all_actions(self, param, endpoint, indictor_type):
-        action_result = self.add_action_result(ActionResult(dict(param)))
-        indictor_value = param[indictor_type]
-        all_response = {}
-
-        if self.validating_ioc(
-                action_result,
-                indictor_type,
-                indictor_value
-        ):
-            if endpoint == CURRENT_WHOIS:
-                payload = json.dumps(
-                    {
-                        "applied_filters": {
-                            indictor_type: indictor_value,
-                            "current": True,
-                        }
-                    }
-                )
-            else:
-                payload = json.dumps(
-                    {
-                        "applied_filters": {
-                            indictor_type: indictor_value
-                        }
-                    }
-                )
-
-            ret_val, response = self._make_rest_call(
-                endpoint,
-                action_result,
-                data=payload,
-                headers=self._headers,
-            )
-
-            if phantom.is_fail(ret_val):
-                # the call to the 3rd party device or service failed, action
-                # result should contain all the error details
-                # for now the return is commented out, but after
-                # implementation, return from here
-                # return action_result.get_status()
-                return ret_val
-
-            # Now post process the data,  uncomment code as you deem fit
-
-            # Add the response into the data section
-            try:
-                if endpoint != SSL and endpoint != CURRENT_WHOIS:
-                    all_response[endpoint] = self.get_flatten_json_response(
-                        response
-                    )
-                elif endpoint == SSL:
-                    response = response.get(SSL_CERTS)
-                    all_response[endpoint] = self.get_flatten_json_response(
-                        response
-                    )
-
-                elif endpoint == CURRENT_WHOIS:
-                    response = response.get(ITEMS)
-                    endpoint = CURRENT_WHOIS_NAME
-                    all_response[endpoint] = self.get_flatten_json_response(
-                        response
-                    )
-
-                action_result.add_data(all_response)
-                return action_result.set_status(phantom.APP_SUCCESS)
-            except:
-                return action_result.set_status(
-                    phantom.APP_ERROR,
-                    "unable to flatten json response.",
-                    None,
-                )
-
-            # Add a dictionary that is made up of the most important values
-            # from data into the summary
-            # summary = action_result.update_summary({})
-            # summary['num_data'] = len(action_result['data'])
-
-            # Return success, no need to set the message, only the status
-            # BaseConnector will create a textual message based off of the
-            # summary dictionary
-            # return action_result.set_status(phantom.APP_SUCCESS)
-
-        return action_result.set_status(
-            phantom.APP_ERROR, HYAS_ERR_MSG_INVALID_INDICATOR_VALUE
-        )
-
-        # For now return Error with a message, in case of success we don't
-        # set the message, but use the summary
-        # return action_result.set_status(phantom.APP_ERROR, "Action not yet
-        # implemented")
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_malware_information_hash(self, param):
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
         action_result = self.add_action_result(ActionResult(dict(param)))
-        indicator_value = param['hash']
-        indicator_type = "hash"
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        indicator_type = HASH
         endpoint = SAMPLE_INFORMATION
-        all_response = {}
-
-        validate_indicator = self.validating_hash(action_result,
-                                                  indicator_type,
-                                                  indicator_value)
+        ioc_dict = SAMPLE_INFORMATION_IOC
         self.save_progress("Checking the Indicator value")
-        if validate_indicator:
-            payload = json.dumps({
-                'applied_filters': {
-                    indicator_type: indicator_value
-                }
-            })
-            ret_val, response = self._make_rest_call(
-                endpoint,
-                action_result,
-                data=payload,
-                headers=self._headers,
-            )
-
-            if phantom.is_fail(ret_val):
-                # the call to the 3rd party device or service failed, action
-                # result should contain all the error details
-                # for now the return is commented out, but after
-                # implementation, return from here
-                # return action_result.get_status()
-                return ret_val
-
-            # Now post process the data,  uncomment code as you deem fit
-
-            # Add the response into the data section
-            try:
-
-                response = response.get('scan_results')
-                endpoint = SAMPLE_INFORMATION_NAME
-                all_response[endpoint] = self.get_flatten_json_response(
-                    response)
-
-                action_result.add_data(all_response)
-                return action_result.set_status(phantom.APP_SUCCESS)
-            except:
-                return action_result.set_status(
-                    phantom.APP_ERROR,
-                    "unable to flatten json response.",
-                    None,
-                )
-
-            # Add a dictionary that is made up of the most important values
-            # from data into the summary
-            # summary = action_result.update_summary({})
-            # summary['num_data'] = len(action_result['data'])
-
-            # Return success, no need to set the message, only the status
-            # BaseConnector will create a textual message based off of the
-            # summary dictionary
-            # return action_result.set_status(phantom.APP_SUCCESS)
-
-        return action_result.set_status(
-            phantom.APP_ERROR, HYAS_ERR_MSG_INVALID_INDICATOR_VALUE
-        )
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_malware_record_hash(self, param):
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
         action_result = self.add_action_result(ActionResult(dict(param)))
-        indicator_value = param['hash']
-        indicator_type = "hash"
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        indicator_type = HASH
         endpoint = SAMPLE
-        all_response = {}
-
-        validate_indicator = self.validating_hash(action_result,
-                                                  indicator_type,
-                                                  indicator_value)
+        ioc_dict = SAMPLE_IOC
         self.save_progress("Checking the Indicator value")
-        if validate_indicator and validate_indicator == "md5":
-            payload = json.dumps({
-                'applied_filters': {
-                    validate_indicator: indicator_value
-                }
-            })
-            ret_val, response = self._make_rest_call(
-                endpoint,
-                action_result,
-                data=payload,
-                headers=self._headers,
-            )
-
-            if phantom.is_fail(ret_val):
-                # the call to the 3rd party device or service failed, action
-                # result should contain all the error details
-                # for now the return is commented out, but after
-                # implementation, return from here
-                # return action_result.get_status()
-                return ret_val
-
-            # Now post process the data,  uncomment code as you deem fit
-
-            # Add the response into the data section
-            try:
-                all_response[endpoint] = self.get_flatten_json_response(
-                    response)
-
-                action_result.add_data(all_response)
-                return action_result.set_status(phantom.APP_SUCCESS)
-            except:
-                return action_result.set_status(
-                    phantom.APP_ERROR,
-                    "unable to flatten json response.",
-                    None,
-                )
-
-            # Add a dictionary that is made up of the most important values
-            # from data into the summary
-            # summary = action_result.update_summary({})
-            # summary['num_data'] = len(action_result['data'])
-
-            # Return success, no need to set the message, only the status
-            # BaseConnector will create a textual message based off of the
-            # summary dictionary
-            # return action_result.set_status(phantom.APP_SUCCESS)
-
-        return action_result.set_status(
-            phantom.APP_ERROR, MALWARE_RECORD_MD5
-        )
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_command_and_control_hash(self, param):
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
         action_result = self.add_action_result(ActionResult(dict(param)))
-        indicator_value = param['hash']
-        indicator_type = "sha256"
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        indicator_type = HASH
         endpoint = C2ATTRIBUTION
-        all_response = {}
-
-        validate_indicator = self.validating_hash(action_result,
-                                                  indicator_type,
-                                                  indicator_value)
+        ioc_dict = C2ATTRIBUTION_IOC
         self.save_progress("Checking the Indicator value")
-        if validate_indicator and validate_indicator == "sha256":
-            payload = json.dumps({
-                'applied_filters': {
-                    indicator_type: indicator_value
-                }
-            })
-            ret_val, response = self._make_rest_call(
-                endpoint,
-                action_result,
-                data=payload,
-                headers=self._headers,
-            )
-
-            if phantom.is_fail(ret_val):
-                # the call to the 3rd party device or service failed, action
-                # result should contain all the error details
-                # for now the return is commented out, but after
-                # implementation, return from here
-                # return action_result.get_status()
-                return ret_val
-
-            # Now post process the data,  uncomment code as you deem fit
-
-            # Add the response into the data section
-            try:
-                all_response[endpoint] = self.get_flatten_json_response(
-                    response)
-
-                action_result.add_data(all_response)
-                return action_result.set_status(phantom.APP_SUCCESS)
-            except:
-                return action_result.set_status(
-                    phantom.APP_ERROR,
-                    "unable to flatten json response.",
-                    None,
-                )
-
-            # Add a dictionary that is made up of the most important values
-            # from data into the summary
-            # summary = action_result.update_summary({})
-            # summary['num_data'] = len(action_result['data'])
-
-            # Return success, no need to set the message, only the status
-            # BaseConnector will create a textual message based off of the
-            # summary dictionary
-            # return action_result.set_status(phantom.APP_SUCCESS)
-
-        return action_result.set_status(
-            phantom.APP_ERROR, C2_HASH_ERROR_MSG
-        )
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_os_indicator_hash(self, param):
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
         action_result = self.add_action_result(ActionResult(dict(param)))
-        indicator_value = param['hash']
-        indicator_type = "hash"
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        indicator_type = HASH
         endpoint = OS_INDICATOR
-        all_response = {}
-
-        validate_indicator = self.validating_hash(action_result,
-                                                  indicator_type,
-                                                  indicator_value)
+        ioc_dict = OS_INDICATOR_IOC
         self.save_progress("Checking the Indicator value")
-        if validate_indicator:
-            payload = json.dumps({
-                'applied_filters': {
-                    validate_indicator: indicator_value
-                }
-            })
-            ret_val, response = self._make_rest_call(
-                endpoint,
-                action_result,
-                data=payload,
-                headers=self._headers,
-            )
-
-            if phantom.is_fail(ret_val):
-                # the call to the 3rd party device or service failed, action
-                # result should contain all the error details
-                # for now the return is commented out, but after
-                # implementation, return from here
-                # return action_result.get_status()
-                return ret_val
-
-            # Now post process the data,  uncomment code as you deem fit
-
-            # Add the response into the data section
-            try:
-                all_response[endpoint] = self.get_flatten_json_response(
-                    response)
-
-                action_result.add_data(all_response)
-                return action_result.set_status(phantom.APP_SUCCESS)
-            except:
-                return action_result.set_status(
-                    phantom.APP_ERROR,
-                    "unable to flatten json response.",
-                    None,
-                )
-
-            # Add a dictionary that is made up of the most important values
-            # from data into the summary
-            # summary = action_result.update_summary({})
-            # summary['num_data'] = len(action_result['data'])
-
-            # Return success, no need to set the message, only the status
-            # BaseConnector will create a textual message based off of the
-            # summary dictionary
-            # return action_result.set_status(phantom.APP_SUCCESS)
-
-        return action_result.set_status(
-            phantom.APP_ERROR, HYAS_ERR_MSG_INVALID_INDICATOR_VALUE
-        )
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
     def _handle_lookup_ssl_certificate_hash(self, param):
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
         action_result = self.add_action_result(ActionResult(dict(param)))
-        indicator_value = param['hash']
-        indicator_type = "hash"
-        # Add an action result object to self (BaseConnector) to represent
-        # the action for this param
+        indicator_type = HASH
         endpoint = SSL
-        all_response = {}
-
-        validate_indicator = self.validating_hash(action_result,
-                                                  indicator_type,
-                                                  indicator_value)
+        ioc_dict = SSL_IOC
         self.save_progress("Checking the Indicator value")
-        if validate_indicator:
-            payload = json.dumps({
-                'applied_filters': {
-                    indicator_type: indicator_value
-                }
-            })
-            ret_val, response = self._make_rest_call(
-                endpoint,
-                action_result,
-                data=payload,
-                headers=self._headers,
-            )
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                               endpoint, param)
 
-            if phantom.is_fail(ret_val):
-                # the call to the 3rd party device or service failed, action
-                # result should contain all the error details
-                # for now the return is commented out, but after
-                # implementation, return from here
-                # return action_result.get_status()
-                return ret_val
+    def handle_all_actions(self, indicator_type, action_result, ioc_dict,
+                          endpoint, param):
+        all_response = {}
+        indicator_value = param[indicator_type]
 
-            # Now post process the data,  uncomment code as you deem fit
+        validated_ioc_name = self.validating_ioc(action_result, indicator_type,
+                                                 indicator_value)
+        self.debug_print("I am here")
+        self.debug_print(validated_ioc_name)
+        if validated_ioc_name is not None:
+            if validated_ioc_name in ioc_dict.keys():
+                param_name = ioc_dict[validated_ioc_name]
+                if endpoint == CURRENT_WHOIS:
+                    payload = json.dumps(
+                        {
+                            "applied_filters": {
+                                param_name: indicator_value,
+                                "current": True,
+                            }
+                        }
+                    )
+                else:
+                    payload = json.dumps(
+                        {
+                            "applied_filters": {
+                                param_name: indicator_value
+                            }
+                        }
+                    )
 
-            # Add the response into the data section
-            try:
-                response = response.get(SSL_CERTS)
-                all_response[endpoint] = self.get_flatten_json_response(
-                    response)
-
-                action_result.add_data(all_response)
-                return action_result.set_status(phantom.APP_SUCCESS)
-            except:
-                return action_result.set_status(
-                    phantom.APP_ERROR,
-                    "unable to flatten json response.",
-                    None,
+                ret_val, response = self._make_rest_call(
+                    endpoint,
+                    action_result,
+                    data=payload,
+                    headers=self._headers,
                 )
 
-            # Add a dictionary that is made up of the most important values
-            # from data into the summary
-            # summary = action_result.update_summary({})
-            # summary['num_data'] = len(action_result['data'])
+                if phantom.is_fail(ret_val):
+                    return ret_val
 
-            # Return success, no need to set the message, only the status
-            # BaseConnector will create a textual message based off of the
-            # summary dictionary
-            # return action_result.set_status(phantom.APP_SUCCESS)
+                try:
+                    if endpoint != SSL and endpoint != CURRENT_WHOIS and \
+                            endpoint != SAMPLE_INFORMATION:
+                        all_response[endpoint] = self.get_flatten_json_response(
+                            response
+                        )
+                    elif endpoint == SSL:
+                        response = response.get(SSL_CERTS)
+                        all_response[endpoint] = self.get_flatten_json_response(
+                            response
+                        )
+
+                    elif endpoint == CURRENT_WHOIS:
+                        response = response.get(ITEMS)
+                        endpoint = CURRENT_WHOIS_NAME
+                        all_response[endpoint] = self.get_flatten_json_response(
+                            response
+                        )
+                    elif endpoint == SAMPLE_INFORMATION:
+                        response = response.get(SCAN_RESULT)
+                        all_response[SAMPLE_INFORMATION_NAME] = \
+                            self.get_flatten_json_response(response)
+
+                    action_result.add_data(all_response)
+                    return action_result.set_status(phantom.APP_SUCCESS)
+                except:
+                    return action_result.set_status(
+                        phantom.APP_ERROR,
+                        "unable to flatten json response.",
+                        None,
+                    )
 
         return action_result.set_status(
             phantom.APP_ERROR, HYAS_ERR_MSG_INVALID_INDICATOR_VALUE
