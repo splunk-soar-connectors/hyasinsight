@@ -174,12 +174,45 @@ class HyasInsightConnector(BaseConnector):
 
         return flatten_json_response
 
+    def _get_error_message_from_exception(self, error):
+        """This function is used to get appropriate error message from the
+        exception.
+        :param e: Exception object
+        :return: error message
+        """
+        try:
+            if error.args:
+                if len(error.args) > 1:
+                    error_code = error.args[0]
+                    error_msg = error.args[1]
+                elif len(error.args) == 1:
+                    error_code = HYAS_ERR_CODE_MSG
+                    error_msg = error.args[0]
+            else:
+                error_code = HYAS_ERR_CODE_MSG
+                error_msg = HYAS_ERR_MSG_UNAVAILABLE
+        except:
+            error_code = HYAS_ERR_CODE_MSG
+            error_msg = HYAS_ERR_MSG_UNAVAILABLE
+
+        try:
+            if error_code in HYAS_ERR_CODE_MSG:
+                error_text = f"Error Message: {error_msg}"
+            else:
+                error_text = f"Error Code: {error_code}. Error Message: " \
+                             f"{error_msg}"
+
+        except:
+            error_text = HYAS_PARSE_ERR_MSG
+
+        return error_text
+
     def _make_rest_call(
             self, endpoint, action_result, data=None, headers=None,
             method="post"
     ):
         try:
-            request_func = getattr(requests, method, timeout=DEFAULT_REQUEST_TIMEOUT)
+            request_func = getattr(requests, method)
 
         except AttributeError:
             return RetVal(
@@ -245,7 +278,6 @@ class HyasInsightConnector(BaseConnector):
                             return ioc_name
 
                 elif ioc_type == "hash":
-                    self.debug_print("In Hash")
                     hash_dict = ioc_names_list['hash']
                     for key, value in hash_dict.items():
                         regex = value
@@ -542,8 +574,7 @@ class HyasInsightConnector(BaseConnector):
 
         validated_ioc_name = self.validating_ioc(action_result, indicator_type,
                                                  indicator_value)
-        self.debug_print("I am here")
-        self.debug_print(validated_ioc_name)
+        self.save_progress("Creating Payload")
         if validated_ioc_name is not None:
             if validated_ioc_name in ioc_dict.keys():
                 param_name = ioc_dict[validated_ioc_name]
@@ -597,7 +628,7 @@ class HyasInsightConnector(BaseConnector):
                         response = response.get(SCAN_RESULT)
                         all_response[SAMPLE_INFORMATION_NAME] = \
                             self.get_flatten_json_response(response)
-
+                    self.save_progress("Saving Response")
                     action_result.add_data(all_response)
                     return action_result.set_status(phantom.APP_SUCCESS)
                 except:
