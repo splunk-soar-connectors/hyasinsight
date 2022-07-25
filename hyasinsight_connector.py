@@ -238,7 +238,8 @@ class HyasInsightConnector(BaseConnector):
             url = f"{HYAS_BASE_URL}{endpoint}"
 
         try:
-            response = request_func(url, data=data, headers=headers)
+            response = request_func(url, data=data, headers=headers,
+                                    timeout=DEFAULT_REQUEST_TIMEOUT)
 
         except Exception as e:
             error_message = self._get_error_message_from_exception(e)
