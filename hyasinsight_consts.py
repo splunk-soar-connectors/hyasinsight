@@ -190,7 +190,7 @@ ACTION_ID = ["lookup_c2_domain",
              "lookup_current_whois_domain"
              ]
 
-DEFAULT_REQUEST_TIMEOUT = 60  # in seconds
+DEFAULT_REQUEST_TIMEOUT = 600  # in seconds
 
 PASSIVE_IOC = {'ipv4_regex': 'ipv4', 'domain_regex': 'domain'}
 DYNAMIC_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip', 'email_regex': 'email'}

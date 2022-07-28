@@ -2,7 +2,7 @@
 # Hyas Insight
 
 Publisher: Hyas  
-Connector Version: 1\.0\.1  
+Connector Version: 1\.1\.0  
 Product Vendor: Hyas  
 Product Name: Hyas Insight  
 Product Version Supported (regex): "\.\*"  
