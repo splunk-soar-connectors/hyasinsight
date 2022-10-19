@@ -142,7 +142,6 @@ class HyasInsightConnector(BaseConnector):
             if isinstance(json_data, dict):
                 for json_data_in in json_data:
                     flatten(json_data[json_data_in], name + json_data_in + "_")
-
             # If the Nested key-value
             # pair is of list type
             elif isinstance(json_data, list):
@@ -164,7 +163,7 @@ class HyasInsightConnector(BaseConnector):
         """
 
         :param raw_api_response: raw_api response from the API
-        :param endpoint: endpoint
+        :param endpoint: Endpoint
         :return: Flatten Json response
 
         """
@@ -172,7 +171,7 @@ class HyasInsightConnector(BaseConnector):
         if raw_api_response:
             for obj in raw_api_response:
                 if endpoint == OS_INDICATOR:
-                    data = obj.get("data", "{}")
+                    data = json.loads(obj.pop("data", "{}"))
                     obj = {**obj, **data}
                 flatten_json_response.append(self.flatten_json(obj))
 
@@ -680,9 +679,6 @@ class HyasInsightConnector(BaseConnector):
                 try:
                     if endpoint != SSL and endpoint != CURRENT_WHOIS and \
                             endpoint != SAMPLE_INFORMATION:
-                        if endpoint == OS_INDICATOR:
-                            data = response.get('data', '{}')
-                            response = {**response, **data}
                         all_response[endpoint] = self.get_flatten_json_response(
                             response, endpoint
                         )
@@ -723,6 +719,7 @@ class HyasInsightConnector(BaseConnector):
         action_id = self.get_action_identifier()
 
         self.debug_print("action_id", self.get_action_identifier())
+
         call_action = getattr(self, f'_handle_{action_id}')
         ret_val = call_action(param)
 
