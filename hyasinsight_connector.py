@@ -171,7 +171,7 @@ class HyasInsightConnector(BaseConnector):
         if raw_api_response:
             for obj in raw_api_response:
                 if endpoint == OS_INDICATOR:
-                    data = json.loads(obj.pop("data", "{}"))
+                    data = json.loads(obj.get("data", "{}"))
                     obj = {**obj, **data}
                 flatten_json_response.append(self.flatten_json(obj))
 
