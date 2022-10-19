@@ -193,7 +193,7 @@ ACTION_ID = ["lookup_c2_domain",
 DEFAULT_REQUEST_TIMEOUT = 600  # in seconds
 
 PASSIVE_IOC = {'ipv4_regex': 'ipv4', 'domain_regex': 'domain'}
-DYNAMIC_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip', 'email_regex': 'email'}
+DYNAMIC_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip', 'email_regex': 'email', 'domain_regex': 'domain'}
 PASSIVEHASH_IOC = {'ipv4_regex': 'ipv4', 'domain_regex': 'domain'}
 C2ATTRIBUTION_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip',
                      'email_regex': 'email', 'domain_regex': 'domain',
@@ -202,10 +202,10 @@ WHOIS_IOC = {'phone_regex': 'phone', 'email_regex': 'email',
              'domain_regex': 'domain'}
 WHOIS_CURRENT_NAMES = {'domain_regex': 'domain'}
 SINKHOLE_IOC = {'ipv4_regex': 'ipv4'}
-SSL_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip', 'sha1_regex': 'hash'}
+SSL_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip', 'sha1_regex': 'hash', 'domain_regex': 'domain'}
 DEVICE_IOC = {'ipv4_regex': 'ipv4', 'ipv6_regex': 'ipv6'}
 SAMPLE_INFORMATION_IOC = {"md5_regex": "hash", "sha256_regex": "hash",
                           "sha1_regex": "hash", "sha512_regex": "hash"}
-SAMPLE_IOC = {"md5_regex": "md5"}
+SAMPLE_IOC = {"md5_regex": "md5", 'domain_regex': 'domain', 'ipv4_regex': 'ipv4'}
 OS_INDICATOR_IOC = {"md5_regex": "md5", "sha256_regex": "sha256",
-                    "sha1_regex": "sha1"}
+                    "sha1_regex": "sha1", 'domain_regex': 'domain', 'ipv4_regex': 'ipv4', 'ipv6_regex': 'ipv6'}
