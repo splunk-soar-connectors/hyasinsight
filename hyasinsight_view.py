@@ -68,6 +68,12 @@ def display_view(provides, all_app_runs, context):
                'lookup malware record hash': 'hyasinsight_display_view.html',
                'lookup os indicator hash': 'hyasinsight_display_view.html',
                'lookup ssl certificate hash': 'hyasinsight_display_view.html',
-               'lookup devicegeo ip': 'hyasinsight_display_view.html'
+               'lookup devicegeo ip': 'hyasinsight_display_view.html',
+               'lookup dynamicdns domain': 'hyasinsight_display_view.html',
+               'lookup malware record domain': 'hyasinsight_display_view.html',
+               'lookup ssl certificate domain': 'hyasinsight_display_view.html',
+               'lookup os indicator domain': 'hyasinsight_display_view.html',
+               'lookup malware record ip': 'hyasinsight_display_view.html',
+               'lookup os indicator ip': 'hyasinsight_display_view.html'
                }
     return actions[provides]

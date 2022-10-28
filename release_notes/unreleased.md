@@ -1,1 +1,2 @@
 **Unreleased**
+* Added new actions: lookup dynamicdns domain, lookup malware record ip, lookup malware record domain, lookup ssl certificate domain, lookup os indicator domain, and lookup os indicator ip [PAPP-28033]

@@ -842,9 +842,7 @@
                 </td>
                 <td>
                     <a href="javascript:;">
-                        {{
-                        ssl_certificate.geo_isp_autonomous_system_organization
-                        }}
+                        {{ ssl_certificate.geo_isp_autonomous_system_organization }}
                         &nbsp;
                     </a>
                 </td>
@@ -916,16 +914,13 @@
                 </td>
                 <td>
                     <a href="javascript:;">
-                        {{
-                        ssl_certificate.ssl_cert_issuer_organizationalUnitName
-                        }}
+                        {{ ssl_certificate.ssl_cert_issuer_organizationalUnitName }}
                         &nbsp;
                     </a>
                 </td>
                 <td>
                     <a href="javascript:;">
-                        {{ ssl_certificate.ssl_cert_issuer_stateOrProvinceName
-                        }}
+                        {{ ssl_certificate.ssl_cert_issuer_stateOrProvinceName }}
                         &nbsp;
                     </a>
                 </td>
@@ -991,16 +986,13 @@
                 </td>
                 <td>
                     <a href="javascript:;">
-                        {{
-                        ssl_certificate.ssl_cert_subject_organizationalUnitName
-                        }}
+                        {{ ssl_certificate.ssl_cert_subject_organizationalUnitName }}
                         &nbsp;
                     </a>
                 </td>
                 <td>
                     <a href="javascript:;">
-                        {{ ssl_certificate.ssl_cert_subject_stateOrProvinceName
-                        }}
+                        {{ ssl_certificate.ssl_cert_subject_stateOrProvinceName }}
                         &nbsp;
                     </a>
                 </td>
@@ -1425,6 +1417,11 @@
                class="datatable wf-table-horizontal">
             <thead>
             <tr>
+                <th>Correlation Score</th>
+                <th>Host IP</th>
+                <th>Nameserver</th>
+                <th>Stub Count</th>
+                <th>Type</th>
                 <th>Context</th>
                 <th>Data</th>
                 <th>Datetime</th>
@@ -1447,6 +1444,36 @@
             <tbody>
             {% for os in data.os_indicators %}
             <tr>
+                <td>
+                    <a href="javascript:;">
+                        {{ os.map_correlation_score }}
+                        &nbsp;
+                    </a>
+                </td>
+                <td>
+                    <a href="javascript:;">
+                        {{ os.map_host_ips_myArrayList }}
+                        &nbsp;
+                    </a>
+                </td>
+                <td>
+                    <a href="javascript:;">
+                        {{ os.map_nameservers_myArrayList }}
+                        &nbsp;
+                    </a>
+                </td>
+                <td>
+                    <a href="javascript:;">
+                        {{ os.map_stub_count }}
+                        &nbsp;
+                    </a>
+                </td>
+                <td>
+                    <a href="javascript:;">
+                        {{ os.map_type }}
+                        &nbsp;
+                    </a>
+                </td>
                 <td>
                     <a href="javascript:;">
                         {{ os.context }}
