@@ -142,7 +142,6 @@ class HyasInsightConnector(BaseConnector):
             if isinstance(json_data, dict):
                 for json_data_in in json_data:
                     flatten(json_data[json_data_in], name + json_data_in + "_")
-
             # If the Nested key-value
             # pair is of list type
             elif isinstance(json_data, list):
@@ -160,16 +159,20 @@ class HyasInsightConnector(BaseConnector):
         flatten(response)
         return json_flatten
 
-    def get_flatten_json_response(self, raw_api_response):
+    def get_flatten_json_response(self, raw_api_response, endpoint):
         """
 
         :param raw_api_response: raw_api response from the API
+        :param endpoint: Endpoint
         :return: Flatten Json response
 
         """
         flatten_json_response = []
         if raw_api_response:
             for obj in raw_api_response:
+                if endpoint == OS_INDICATOR:
+                    data = json.loads(obj.get("data", "{}"))
+                    obj = {**obj, **data}
                 flatten_json_response.append(self.flatten_json(obj))
 
         return flatten_json_response
@@ -425,6 +428,17 @@ class HyasInsightConnector(BaseConnector):
         self.handle_all_actions(indicator_type, action_result, ioc_dict,
                                endpoint, param)
 
+    def _handle_lookup_dynamicdns_domain(self, param):
+        self.save_progress(
+            "In action handler for: {0}".format(self.get_action_identifier()))
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = DOMAIN
+        endpoint = DYNAMICDNS
+        ioc_dict = DYNAMIC_IOC
+        self.save_progress("Checking the Indicator value")
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                                endpoint, param)
+
     def _handle_lookup_sinkhole_ip(self, param):
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
@@ -535,6 +549,28 @@ class HyasInsightConnector(BaseConnector):
         self.handle_all_actions(indicator_type, action_result, ioc_dict,
                                endpoint, param)
 
+    def _handle_lookup_malware_record_domain(self, param):
+        self.save_progress(
+            "In action handler for: {0}".format(self.get_action_identifier()))
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = DOMAIN
+        endpoint = SAMPLE
+        ioc_dict = SAMPLE_IOC
+        self.save_progress("Checking the Indicator value")
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                                endpoint, param)
+
+    def _handle_lookup_malware_record_ip(self, param):
+        self.save_progress(
+            "In action handler for: {0}".format(self.get_action_identifier()))
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = IPV4
+        endpoint = SAMPLE
+        ioc_dict = SAMPLE_IOC
+        self.save_progress("Checking the Indicator value")
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                                endpoint, param)
+
     def _handle_lookup_command_and_control_hash(self, param):
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
@@ -557,6 +593,28 @@ class HyasInsightConnector(BaseConnector):
         self.handle_all_actions(indicator_type, action_result, ioc_dict,
                                endpoint, param)
 
+    def _handle_lookup_os_indicator_domain(self, param):
+        self.save_progress(
+            "In action handler for: {0}".format(self.get_action_identifier()))
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = DOMAIN
+        endpoint = OS_INDICATOR
+        ioc_dict = OS_INDICATOR_IOC
+        self.save_progress("Checking the Indicator value")
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                                endpoint, param)
+
+    def _handle_lookup_os_indicator_ip(self, param):
+        self.save_progress(
+            "In action handler for: {0}".format(self.get_action_identifier()))
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = IP
+        endpoint = OS_INDICATOR
+        ioc_dict = OS_INDICATOR_IOC
+        self.save_progress("Checking the Indicator value")
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                                endpoint, param)
+
     def _handle_lookup_ssl_certificate_hash(self, param):
         self.save_progress(
             "In action handler for: {0}".format(self.get_action_identifier()))
@@ -567,6 +625,17 @@ class HyasInsightConnector(BaseConnector):
         self.save_progress("Checking the Indicator value")
         self.handle_all_actions(indicator_type, action_result, ioc_dict,
                                endpoint, param)
+
+    def _handle_lookup_ssl_certificate_domain(self, param):
+        self.save_progress(
+            "In action handler for: {0}".format(self.get_action_identifier()))
+        action_result = self.add_action_result(ActionResult(dict(param)))
+        indicator_type = DOMAIN
+        endpoint = SSL
+        ioc_dict = SSL_IOC
+        self.save_progress("Checking the Indicator value")
+        self.handle_all_actions(indicator_type, action_result, ioc_dict,
+                                endpoint, param)
 
     def handle_all_actions(self, indicator_type, action_result, ioc_dict,
                           endpoint, param):
@@ -611,24 +680,24 @@ class HyasInsightConnector(BaseConnector):
                     if endpoint != SSL and endpoint != CURRENT_WHOIS and \
                             endpoint != SAMPLE_INFORMATION:
                         all_response[endpoint] = self.get_flatten_json_response(
-                            response
+                            response, endpoint
                         )
                     elif endpoint == SSL:
                         response = response.get(SSL_CERTS)
                         all_response[endpoint] = self.get_flatten_json_response(
-                            response
+                            response, endpoint
                         )
 
                     elif endpoint == CURRENT_WHOIS:
                         response = response.get(ITEMS)
                         endpoint = CURRENT_WHOIS_NAME
                         all_response[endpoint] = self.get_flatten_json_response(
-                            response
+                            response, endpoint
                         )
                     elif endpoint == SAMPLE_INFORMATION:
                         response = response.get(SCAN_RESULT)
                         all_response[SAMPLE_INFORMATION_NAME] = \
-                            self.get_flatten_json_response(response)
+                            self.get_flatten_json_response(response, endpoint)
                     self.save_progress("Saving Response")
                     action_result.add_data(all_response)
                     return action_result.set_status(phantom.APP_SUCCESS)
@@ -651,72 +720,8 @@ class HyasInsightConnector(BaseConnector):
 
         self.debug_print("action_id", self.get_action_identifier())
 
-        if action_id == 'lookup_command_and_control_domain':
-            ret_val = self._handle_lookup_command_and_control_domain(param)
-
-        if action_id == 'lookup_command_and_control_email':
-            ret_val = self._handle_lookup_command_and_control_email(param)
-
-        if action_id == 'lookup_command_and_control_ip':
-            ret_val = self._handle_lookup_command_and_control_ip(param)
-
-        if action_id == 'lookup_command_and_control_hash':
-            ret_val = self._handle_lookup_command_and_control_hash(param)
-
-        if action_id == 'lookup_whois_domain':
-            ret_val = self._handle_lookup_whois_domain(param)
-
-        if action_id == 'lookup_whois_email':
-            ret_val = self._handle_lookup_whois_email(param)
-
-        if action_id == 'lookup_whois_phone':
-            ret_val = self._handle_lookup_whois_phone(param)
-
-        if action_id == 'lookup_dynamicdns_email':
-            ret_val = self._handle_lookup_dynamicdns_email(param)
-
-        if action_id == 'lookup_dynamicdns_ip':
-            ret_val = self._handle_lookup_dynamicdns_ip(param)
-
-        if action_id == 'lookup_sinkhole_ip':
-            ret_val = self._handle_lookup_sinkhole_ip(param)
-
-        if action_id == 'lookup_passivehash_ip':
-            ret_val = self._handle_lookup_passivehash_ip(param)
-
-        if action_id == 'lookup_passivehash_domain':
-            ret_val = self._handle_lookup_passivehash_domain(param)
-
-        if action_id == 'lookup_ssl_certificate_ip':
-            ret_val = self._handle_lookup_ssl_certificate_ip(param)
-
-        if action_id == 'lookup_passivedns_domain':
-            ret_val = self._handle_lookup_passivedns_domain(param)
-
-        if action_id == 'lookup_current_whois_domain':
-            ret_val = self._handle_lookup_current_whois_domain(param)
-
-        if action_id == 'lookup_passivedns_ip':
-            ret_val = self._handle_lookup_passivedns_ip(param)
-
-        if action_id == 'lookup_malware_information_hash':
-            ret_val = self._handle_lookup_malware_information_hash(param)
-
-        if action_id == 'lookup_malware_record_hash':
-            ret_val = self._handle_lookup_malware_record_hash(param)
-
-        if action_id == 'lookup_os_indicator_hash':
-            ret_val = self._handle_lookup_os_indicator_hash(param)
-
-        if action_id == 'lookup_ssl_certificate_hash':
-            ret_val = self._handle_lookup_ssl_certificate_hash(param)
-
-        if action_id == 'lookup_mobile_geolocation_information_ip':
-            ret_val = self._handle_lookup_mobile_geolocation_information_ip(
-                param)
-
-        if action_id == 'test_connectivity':
-            ret_val = self._handle_test_connectivity(param)
+        call_action = getattr(self, f'_handle_{action_id}')
+        ret_val = call_action(param)
 
         return ret_val
 

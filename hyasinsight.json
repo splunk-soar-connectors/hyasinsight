@@ -11,11 +11,11 @@
     "product_version_regex": ".*",
     "publisher": "Hyas",
     "license": "Copyright (c) Hyas, 2022",
-    "app_version": "1.1.0",
+    "app_version": "1.2.0",
     "utctime_updated": "2022-06-29T08:24:29.290348Z",
     "package_name": "phantom_hyasinsight",
     "main_module": "hyasinsight_connector.py",
-    "min_phantom_version": "5.2.0",
+    "min_phantom_version": "5.3.4",
     "fips_compliant": false,
     "app_wizard_version": "1.0.0",
     "contributors": [
@@ -686,6 +686,75 @@
             "versions": "EQ(*)"
         },
         {
+            "action": "lookup dynamicdns domain",
+            "identifier": "lookup_dynamicdns_domain",
+            "description": "Perform this action to get the Dynamicdns Domain Lookup Data for Hyas Insight",
+            "type": "investigate",
+            "read_only": true,
+            "parameters": {
+                "domain": {
+                    "description": "Domain to get Lookup Data for Hyas Insight",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": true,
+                    "contains": [
+                        "domain"
+                    ],
+                    "order": 0,
+                    "name": "domain"
+                }
+            },
+            "output": [
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
+                },
+                {
+                    "data_path": "action_result.parameter.domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ],
+                    "column_name": "Domain",
+                    "column_order": 0
+                },
+                {
+                    "data_path": "action_result.data",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric"
+                }
+            ],
+            "render": {
+                "type": "custom",
+                "width": 12,
+                "height": 5,
+                "view": "hyasinsight_view.display_view",
+                "title": "Domain Lookup"
+            },
+            "versions": "EQ(*)"
+        },
+        {
             "action": "lookup sinkhole ip",
             "identifier": "lookup_sinkhole_ip",
             "description": "Perform this action to get the Sinkhole IP address Lookup Data for Hyas Insight",
@@ -1315,7 +1384,7 @@
             "identifier": "lookup_malware_record_hash",
             "description": "Perform this action to get the Malware Record hash Lookup Data for Hyas Insight",
             "type": "investigate",
-            "read_only": false,
+            "read_only": true,
             "parameters": {
                 "hash": {
                     "description": "Hash to get the lookup data for Hyas Insight",
@@ -1382,6 +1451,136 @@
                 "height": 5,
                 "view": "hyasinsight_view.display_view",
                 "title": "Hash Lookup"
+            },
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "lookup malware record ip",
+            "identifier": "lookup_malware_record_ip",
+            "description": "Perform this action to get the Malware Record IP address Lookup Data for Hyas Insight",
+            "type": "investigate",
+            "read_only": true,
+            "parameters": {
+                "ipv4": {
+                    "description": "IP address to get the lookup data for Hyas Insight",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": true,
+                    "contains": [
+                        "ip",
+                        "ipv4"
+                    ],
+                    "order": 0,
+                    "name": "ipv4",
+                    "id": 1,
+                    "param_name": "ipv4"
+                }
+            },
+            "output": [
+                {
+                    "data_path": "action_result.parameter.ipv4",
+                    "data_type": "string",
+                    "contains": [
+                        "ip",
+                        "ipv4"
+                    ],
+                    "column_name": "ipv4",
+                    "column_order": 0
+                },
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "column_name": "status",
+                    "column_order": 1
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric"
+                }
+            ],
+            "render": {
+                "type": "custom",
+                "width": 12,
+                "height": 5,
+                "view": "hyasinsight_view.display_view",
+                "title": "IP Lookup"
+            },
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "lookup malware record domain",
+            "identifier": "lookup_malware_record_domain",
+            "description": "Perform this action to get the Malware Record Domain Lookup Data for Hyas Insight",
+            "type": "investigate",
+            "read_only": true,
+            "parameters": {
+                "domain": {
+                    "description": "Domain to get the lookup data for Hyas Insight",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": true,
+                    "contains": [
+                        "domain"
+                    ],
+                    "order": 0,
+                    "name": "domain"
+                }
+            },
+            "output": [
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
+                },
+                {
+                    "data_path": "action_result.parameter.domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ],
+                    "column_name": "Domain",
+                    "column_order": 0
+                },
+                {
+                    "data_path": "action_result.data",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric"
+                }
+            ],
+            "render": {
+                "type": "custom",
+                "width": 12,
+                "height": 5,
+                "view": "hyasinsight_view.display_view",
+                "title": "Domain Lookup"
             },
             "versions": "EQ(*)"
         },
@@ -1546,6 +1745,75 @@
             "versions": "EQ(*)"
         },
         {
+            "action": "lookup ssl certificate domain",
+            "identifier": "lookup_ssl_certificate_domain",
+            "description": "Perform this action to get the SSL Certificate Domain Lookup Data for Hyas Insight",
+            "type": "investigate",
+            "read_only": true,
+            "parameters": {
+                "domain": {
+                    "description": "Domain to get Lookup Data for Hyas Insight",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": true,
+                    "contains": [
+                        "domain"
+                    ],
+                    "order": 0,
+                    "name": "domain"
+                }
+            },
+            "output": [
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
+                },
+                {
+                    "data_path": "action_result.parameter.domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ],
+                    "column_name": "Domain",
+                    "column_order": 0
+                },
+                {
+                    "data_path": "action_result.data",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric"
+                }
+            ],
+            "render": {
+                "type": "custom",
+                "width": 12,
+                "height": 5,
+                "view": "hyasinsight_view.display_view",
+                "title": "Domain Lookup"
+            },
+            "versions": "EQ(*)"
+        },
+        {
             "action": "lookup devicegeo ip",
             "identifier": "lookup_mobile_geolocation_information_ip",
             "description": "Perform this action to get the Mobile Geolocation Information IP address Lookup Data for Hyas Insight",
@@ -1619,6 +1887,140 @@
                 "title": "IP Lookup"
             },
             "versions": "EQ(*)"
+        },
+        {
+            "action": "lookup os indicator domain",
+            "identifier": "lookup_os_indicator_domain",
+            "description": "Perform this action to get the OS Indicator Domain Lookup Data for Hyas Insight",
+            "type": "investigate",
+            "read_only": true,
+            "parameters": {
+                "domain": {
+                    "description": "Domain to get lookup data for Hyas Insight",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": true,
+                    "contains": [
+                        "domain"
+                    ],
+                    "order": 0,
+                    "name": "domain",
+                    "id": 1,
+                    "param_name": "domain"
+                }
+            },
+            "output": [
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "column_name": "Status",
+                    "column_order": 1,
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ]
+                },
+                {
+                    "data_path": "action_result.parameter.domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ],
+                    "column_name": "Domain",
+                    "column_order": 0
+                },
+                {
+                    "data_path": "action_result.data",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric"
+                }
+            ],
+            "render": {
+                "type": "custom",
+                "width": 12,
+                "height": 5,
+                "view": "hyasinsight_view.display_view",
+                "title": "Domain Lookup"
+            },
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "lookup os indicator ip",
+            "identifier": "lookup_os_indicator_ip",
+            "description": "Perform this action to get the OS Indicator Lookup Data for IP address Hyas Insight",
+            "type": "investigate",
+            "read_only": true,
+            "parameters": {
+                "ip": {
+                    "description": "IP address to get the lookup data for Hyas Insight",
+                    "data_type": "string",
+                    "required": true,
+                    "primary": true,
+                    "contains": [
+                        "ip",
+                        "ipv4",
+                        "ipv6"
+                    ],
+                    "order": 0,
+                    "name": "ip",
+                    "id": 1,
+                    "param_name": "ip"
+                }
+            },
+            "output": [
+                {
+                    "data_path": "action_result.parameter.ip",
+                    "data_type": "string",
+                    "contains": [
+                        "ip",
+                        "ipv4",
+                        "ipv6"
+                    ],
+                    "column_name": "ip",
+                    "column_order": 0
+                },
+                {
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "column_name": "status",
+                    "column_order": 1
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric"
+                }
+            ],
+            "render": {
+                "type": "custom",
+                "width": 12,
+                "height": 5,
+                "view": "hyasinsight_view.display_view",
+                "title": "IP Lookup"
+            },
+            "versions": "EQ(*)"
         }
     ],
     "directory": "hyasinsight_5c279257-0571-4c90-967d-df21c15123ec",
@@ -1635,7 +2037,7 @@
             },
             {
                 "module": "certifi",
-                "input_file": "wheels/py3/certifi-2022.6.15-py3-none-any.whl"
+                "input_file": "wheels/py3/certifi-2022.9.24-py3-none-any.whl"
             },
             {
                 "module": "chardet",
@@ -1655,7 +2057,7 @@
             },
             {
                 "module": "urllib3",
-                "input_file": "wheels/shared/urllib3-1.26.9-py2.py3-none-any.whl"
+                "input_file": "wheels/shared/urllib3-1.26.12-py2.py3-none-any.whl"
             }
         ]
     },

@@ -2,11 +2,11 @@
 # Hyas Insight
 
 Publisher: Hyas  
-Connector Version: 1\.1\.0  
+Connector Version: 1\.2\.0  
 Product Vendor: Hyas  
 Product Name: Hyas Insight  
 Product Version Supported (regex): "\.\*"  
-Minimum Product Version: 5\.2\.0  
+Minimum Product Version: 5\.3\.4  
 
 This app implements investigative actions that return Hyas Insight Records for the given Indicators
 
@@ -44,6 +44,7 @@ VARIABLE | REQUIRED | TYPE | DESCRIPTION
 [lookup whois phone](#action-lookup-whois-phone) - Perform this action to get the Whois Phone number Lookup Data for Hyas Insight  
 [lookup dynamicdns email](#action-lookup-dynamicdns-email) - Perform this action to get the Dynamicdns Email address Lookup Data for Hyas Insight  
 [lookup dynamicdns ip](#action-lookup-dynamicdns-ip) - Perform this action to get the Dynamicdns IP address Lookup Data for Hyas Insight  
+[lookup dynamicdns domain](#action-lookup-dynamicdns-domain) - Perform this action to get the Dynamicdns Domain Lookup Data for Hyas Insight  
 [lookup sinkhole ip](#action-lookup-sinkhole-ip) - Perform this action to get the Sinkhole IP address Lookup Data for Hyas Insight  
 [lookup passivehash ip](#action-lookup-passivehash-ip) - Perform this action to get the Passivehash IP address Lookup Data for Hyas Insight  
 [lookup passivehash domain](#action-lookup-passivehash-domain) - Perform this action to get the Passivehash Domain Lookup Data for Hyas Insight  
@@ -53,9 +54,14 @@ VARIABLE | REQUIRED | TYPE | DESCRIPTION
 [lookup passivedns ip](#action-lookup-passivedns-ip) - Perform this action to get the Passivedns IP address Lookup Data for Hyas Insight  
 [lookup malware information hash](#action-lookup-malware-information-hash) - Perform this action to get the Malware Information Lookup Data for Hyas Insight  
 [lookup malware record hash](#action-lookup-malware-record-hash) - Perform this action to get the Malware Record hash Lookup Data for Hyas Insight  
+[lookup malware record ip](#action-lookup-malware-record-ip) - Perform this action to get the Malware Record IP address Lookup Data for Hyas Insight  
+[lookup malware record domain](#action-lookup-malware-record-domain) - Perform this action to get the Malware Record Domain Lookup Data for Hyas Insight  
 [lookup os indicator hash](#action-lookup-os-indicator-hash) - Perform this action to get the OS Indicator Lookup Data for Hyas Insight  
 [lookup ssl certificate hash](#action-lookup-ssl-certificate-hash) - Perform this action to get the SSL Certificate hash Lookup Data for Hyas Insight  
+[lookup ssl certificate domain](#action-lookup-ssl-certificate-domain) - Perform this action to get the SSL Certificate Domain Lookup Data for Hyas Insight  
 [lookup devicegeo ip](#action-lookup-devicegeo-ip) - Perform this action to get the Mobile Geolocation Information IP address Lookup Data for Hyas Insight  
+[lookup os indicator domain](#action-lookup-os-indicator-domain) - Perform this action to get the OS Indicator Domain Lookup Data for Hyas Insight  
+[lookup os indicator ip](#action-lookup-os-indicator-ip) - Perform this action to get the OS Indicator Lookup Data for IP address Hyas Insight  
 
 ## action: 'test connectivity'
 Validate the asset configuration for connectivity using supplied configuration
@@ -268,6 +274,28 @@ action\_result\.message | string |
 summary\.total\_objects | numeric | 
 summary\.total\_objects\_successful | numeric |   
 
+## action: 'lookup dynamicdns domain'
+Perform this action to get the Dynamicdns Domain Lookup Data for Hyas Insight
+
+Type: **investigate**  
+Read only: **True**
+
+#### Action Parameters
+PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
+--------- | -------- | ----------- | ---- | --------
+**domain** |  required  | Domain to get Lookup Data for Hyas Insight | string |  `domain` 
+
+#### Action Output
+DATA PATH | TYPE | CONTAINS
+--------- | ---- | --------
+action\_result\.status | string | 
+action\_result\.parameter\.domain | string |  `domain` 
+action\_result\.data | string | 
+action\_result\.summary | string | 
+action\_result\.message | string | 
+summary\.total\_objects | numeric | 
+summary\.total\_objects\_successful | numeric |   
+
 ## action: 'lookup sinkhole ip'
 Perform this action to get the Sinkhole IP address Lookup Data for Hyas Insight
 
@@ -454,7 +482,7 @@ summary\.total\_objects\_successful | numeric |
 Perform this action to get the Malware Record hash Lookup Data for Hyas Insight
 
 Type: **investigate**  
-Read only: **False**
+Read only: **True**
 
 #### Action Parameters
 PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
@@ -466,6 +494,48 @@ DATA PATH | TYPE | CONTAINS
 --------- | ---- | --------
 action\_result\.status | string | 
 action\_result\.parameter\.hash | string |  `hash`  `md5`  `sha256`  `sha1` 
+action\_result\.data | string | 
+action\_result\.summary | string | 
+action\_result\.message | string | 
+summary\.total\_objects | numeric | 
+summary\.total\_objects\_successful | numeric |   
+
+## action: 'lookup malware record ip'
+Perform this action to get the Malware Record IP address Lookup Data for Hyas Insight
+
+Type: **investigate**  
+Read only: **True**
+
+#### Action Parameters
+PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
+--------- | -------- | ----------- | ---- | --------
+**ipv4** |  required  | IP address to get the lookup data for Hyas Insight | string |  `ip`  `ipv4` 
+
+#### Action Output
+DATA PATH | TYPE | CONTAINS
+--------- | ---- | --------
+action\_result\.parameter\.ipv4 | string |  `ip`  `ipv4` 
+action\_result\.status | string | 
+action\_result\.message | string | 
+summary\.total\_objects | numeric | 
+summary\.total\_objects\_successful | numeric |   
+
+## action: 'lookup malware record domain'
+Perform this action to get the Malware Record Domain Lookup Data for Hyas Insight
+
+Type: **investigate**  
+Read only: **True**
+
+#### Action Parameters
+PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
+--------- | -------- | ----------- | ---- | --------
+**domain** |  required  | Domain to get the lookup data for Hyas Insight | string |  `domain` 
+
+#### Action Output
+DATA PATH | TYPE | CONTAINS
+--------- | ---- | --------
+action\_result\.status | string | 
+action\_result\.parameter\.domain | string |  `domain` 
 action\_result\.data | string | 
 action\_result\.summary | string | 
 action\_result\.message | string | 
@@ -517,6 +587,28 @@ action\_result\.message | string |
 summary\.total\_objects | numeric | 
 summary\.total\_objects\_successful | numeric |   
 
+## action: 'lookup ssl certificate domain'
+Perform this action to get the SSL Certificate Domain Lookup Data for Hyas Insight
+
+Type: **investigate**  
+Read only: **True**
+
+#### Action Parameters
+PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
+--------- | -------- | ----------- | ---- | --------
+**domain** |  required  | Domain to get Lookup Data for Hyas Insight | string |  `domain` 
+
+#### Action Output
+DATA PATH | TYPE | CONTAINS
+--------- | ---- | --------
+action\_result\.status | string | 
+action\_result\.parameter\.domain | string |  `domain` 
+action\_result\.data | string | 
+action\_result\.summary | string | 
+action\_result\.message | string | 
+summary\.total\_objects | numeric | 
+summary\.total\_objects\_successful | numeric |   
+
 ## action: 'lookup devicegeo ip'
 Perform this action to get the Mobile Geolocation Information IP address Lookup Data for Hyas Insight
 
@@ -535,6 +627,48 @@ action\_result\.status | string |
 action\_result\.parameter\.ip | string |  `ip`  `ipv4`  `ipv6` 
 action\_result\.data | string | 
 action\_result\.summary | string | 
+action\_result\.message | string | 
+summary\.total\_objects | numeric | 
+summary\.total\_objects\_successful | numeric |   
+
+## action: 'lookup os indicator domain'
+Perform this action to get the OS Indicator Domain Lookup Data for Hyas Insight
+
+Type: **investigate**  
+Read only: **True**
+
+#### Action Parameters
+PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
+--------- | -------- | ----------- | ---- | --------
+**domain** |  required  | Domain to get lookup data for Hyas Insight | string |  `domain` 
+
+#### Action Output
+DATA PATH | TYPE | CONTAINS
+--------- | ---- | --------
+action\_result\.status | string | 
+action\_result\.parameter\.domain | string |  `domain` 
+action\_result\.data | string | 
+action\_result\.summary | string | 
+action\_result\.message | string | 
+summary\.total\_objects | numeric | 
+summary\.total\_objects\_successful | numeric |   
+
+## action: 'lookup os indicator ip'
+Perform this action to get the OS Indicator Lookup Data for IP address Hyas Insight
+
+Type: **investigate**  
+Read only: **True**
+
+#### Action Parameters
+PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
+--------- | -------- | ----------- | ---- | --------
+**ip** |  required  | IP address to get the lookup data for Hyas Insight | string |  `ip`  `ipv4`  `ipv6` 
+
+#### Action Output
+DATA PATH | TYPE | CONTAINS
+--------- | ---- | --------
+action\_result\.parameter\.ip | string |  `ip`  `ipv4`  `ipv6` 
+action\_result\.status | string | 
 action\_result\.message | string | 
 summary\.total\_objects | numeric | 
 summary\.total\_objects\_successful | numeric | 
