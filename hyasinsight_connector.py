@@ -189,24 +189,24 @@ class HyasInsightConnector(BaseConnector):
                     error_code = error.args[0]
                     error_msg = error.args[1]
                 elif len(error.args) == 1:
-                    error_code = HYAS_ERROR_CODE_MSG
+                    error_code = HYAS_ERROR_CODE_MESSAGE
                     error_msg = error.args[0]
             else:
-                error_code = HYAS_ERROR_CODE_MSG
+                error_code = HYAS_ERROR_CODE_MESSAGE
                 error_msg = HYAS_ERROR_MESSAGE_UNAVAILABLE
         except:
-            error_code = HYAS_ERROR_CODE_MSG
+            error_code = HYAS_ERROR_CODE_MESSAGE
             error_msg = HYAS_ERROR_MESSAGE_UNAVAILABLE
 
         try:
-            if error_code in HYAS_ERROR_CODE_MSG:
+            if error_code in HYAS_ERROR_CODE_MESSAGE:
                 error_text = f"Error Message: {error_msg}"
             else:
                 error_text = f"Error Code: {error_code}. Error Message: " \
                              f"{error_msg}"
 
         except:
-            error_text = HYAS_PARSE_ERROR_MSG
+            error_text = HYAS_PARSE_ERROR_MESSAGE
 
         return error_text
 
