@@ -755,6 +755,7 @@ class HyasInsightConnector(BaseConnector):
         self._headers = {
             HYAS_JSON_APIKEY_HEADER: self._apikey,
             "Content-Type": "application/json",
+            "User-Agent": "Splunk SOAR"
         }
 
         # self._base_url = config.get('base_url')
