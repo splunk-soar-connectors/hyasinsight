@@ -189,24 +189,24 @@ class HyasInsightConnector(BaseConnector):
                     error_code = error.args[0]
                     error_msg = error.args[1]
                 elif len(error.args) == 1:
-                    error_code = HYAS_ERR_CODE_MSG
+                    error_code = HYAS_ERROR_CODE_MSG
                     error_msg = error.args[0]
             else:
-                error_code = HYAS_ERR_CODE_MSG
-                error_msg = HYAS_ERR_MSG_UNAVAILABLE
+                error_code = HYAS_ERROR_CODE_MSG
+                error_msg = HYAS_ERROR_MESSAGE_UNAVAILABLE
         except:
-            error_code = HYAS_ERR_CODE_MSG
-            error_msg = HYAS_ERR_MSG_UNAVAILABLE
+            error_code = HYAS_ERROR_CODE_MSG
+            error_msg = HYAS_ERROR_MESSAGE_UNAVAILABLE
 
         try:
-            if error_code in HYAS_ERR_CODE_MSG:
+            if error_code in HYAS_ERROR_CODE_MSG:
                 error_text = f"Error Message: {error_msg}"
             else:
                 error_text = f"Error Code: {error_code}. Error Message: " \
                              f"{error_msg}"
 
         except:
-            error_text = HYAS_PARSE_ERR_MSG
+            error_text = HYAS_PARSE_ERROR_MSG
 
         return error_text
 
@@ -709,7 +709,7 @@ class HyasInsightConnector(BaseConnector):
                     )
 
         return action_result.set_status(
-            phantom.APP_ERROR, HYAS_ERR_MSG_INVALID_INDICATOR_VALUE
+            phantom.APP_ERROR, HYAS_ERROR_MESSAGE_INVALID_INDICATOR_VALUE
         )
 
     def handle_action(self, param):
@@ -748,7 +748,7 @@ class HyasInsightConnector(BaseConnector):
             self._apikey = config[HYAS_JSON_APIKEY]
         except KeyError as ke:
             return self._initialize_error(
-                HYAS_ERR_ASSET_API_KEY_,
+                HYAS_ERROR_ASSET_API_KEY_,
                 Exception(f"KeyError: {ke}"),
             )
 
