@@ -1,6 +1,6 @@
 # File: hyasinsight_consts.py
 #
-# Copyright (c) Hyas, 2022
+# Copyright (c) Hyas, 2023
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -97,7 +97,7 @@ IOC_NAME = {
 
 # status messages
 HYAS_ERR_MSG_INVALID_INDICATOR_VALUE = "Invalid Indicator value"
-HYAS_INVALID_APIKEY_ERROR = "Please provide a valid api key"
+HYAS_INVALID_APIKEY_ERROR = "Please provide a valid api key"    # pragma: allowlist secret
 HYAS_TEST_CONN_PASSED = "Test Connectivity Passed"
 HYAS_TEST_CONN_FAILED = "Test Connectivity Failed."
 

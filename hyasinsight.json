@@ -10,8 +10,8 @@
     "python_version": "3",
     "product_version_regex": ".*",
     "publisher": "Hyas",
-    "license": "Copyright (c) Hyas, 2022",
-    "app_version": "1.0.0",
+    "license": "Copyright (c) Hyas, 2023",
+    "app_version": "1.2.0",
     "utctime_updated": "2022-06-29T08:24:29.290348Z",
     "package_name": "phantom_hyasinsight",
     "main_module": "hyasinsight_connector.py",
@@ -226,32 +226,21 @@
                 "input_file": "wheels/py3/beautifulsoup4-4.9.1-py3-none-any.whl"
             },
             {
-                "module": "certifi",
-                "input_file": "wheels/py3/certifi-2022.6.15-py3-none-any.whl"
-            },
-            {
-                "module": "chardet",
-                "input_file": "wheels/shared/chardet-3.0.4-py2.py3-none-any.whl"
-            },
-            {
-                "module": "idna",
-                "input_file": "wheels/shared/idna-2.10-py2.py3-none-any.whl"
-            },
-            {
-                "module": "requests",
-                "input_file": "wheels/shared/requests-2.25.0-py2.py3-none-any.whl"
-            },
-            {
                 "module": "soupsieve",
                 "input_file": "wheels/py3/soupsieve-2.3.2.post1-py3-none-any.whl"
-            },
-            {
-                "module": "urllib3",
-                "input_file": "wheels/shared/urllib3-1.26.9-py2.py3-none-any.whl"
             }
         ]
     },
     "pip39_dependencies": {
-        "wheel": []
+        "wheel": [
+            {
+                "module": "beautifulsoup4",
+                "input_file": "wheels/py3/beautifulsoup4-4.9.1-py3-none-any.whl"
+            },
+            {
+                "module": "soupsieve",
+                "input_file": "wheels/py3/soupsieve-2.4.1-py3-none-any.whl"
+            }
+        ]
     }
 }
