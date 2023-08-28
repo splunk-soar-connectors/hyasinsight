@@ -11,7 +11,7 @@ Minimum Product Version: 5\.3\.4
 This app implements investigative actions that return HYAS Insight Records for the given Indicators
 
 [comment]: # " File: README.md"
-[comment]: # "  Copyright (c) HYAS, 2022"
+[comment]: # "  Copyright (c) Hyas, 2023"
 [comment]: # "  Licensed under the Apache License, Version 2.0 (the 'License');"
 [comment]: # "  you may not use this file except in compliance with the License."
 [comment]: # "  You may obtain a copy of the License at"
