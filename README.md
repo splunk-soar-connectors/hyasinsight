@@ -2,11 +2,11 @@
 # HYAS Insight
 
 Publisher: HYAS  
-Connector Version: 1\.2\.0  
+Connector Version: 1.3.0  
 Product Vendor: HYAS  
 Product Name: HYAS Insight  
-Product Version Supported (regex): "\.\*"  
-Minimum Product Version: 5\.3\.4  
+Product Version Supported (regex): ".\*"  
+Minimum Product Version: 5.5.0  
 
 This app implements investigative actions that return HYAS Insight Records for the given Indicators
 
@@ -87,15 +87,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **domain** |  required  | Domain to get Lookup Data for HYAS Insight | string |  `domain` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.domain | string |  `domain`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup commandcontrol email'
 Perform this action to get the C2 Email address Lookup Data for HYAS Insight
@@ -109,15 +109,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **email** |  required  | Email address to get Lookup Data for HYAS Insight | string |  `email` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.email | string |  `email` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.email | string |  `email`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup commandcontrol ip'
 Perform this action to get the C2 IP Lookup Data for HYAS Insight
@@ -131,15 +131,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **ip** |  required  | IP address to get Lookup Data for HYAS Insight | string |  `ip`  `ipv4`  `ipv6` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.ip | string |  `ip`  `ipv4`  `ipv6` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.ip | string |  `ip`  `ipv4`  `ipv6`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup commandcontrol hash'
 Perform this action to get the C2 Hash Lookup Data for HYAS Insight
@@ -153,15 +153,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **hash** |  required  | Hash to get Lookup Data for HYAS Insight | string |  `sha256`  `hash` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.hash | string |  `sha256`  `hash` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.hash | string |  `sha256`  `hash`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup whois domain'
 Perform this action to get the Whois Domain Lookup Data for HYAS Insight
@@ -175,15 +175,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **domain** |  required  | Domain to get Lookup Data for HYAS Insight | string |  `domain` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.domain | string |  `domain`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup whois email'
 Perform this action to get the Whois Email address Lookup Data for HYAS Insight
@@ -197,15 +197,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **email** |  required  | Email address to get Lookup Data for HYAS Insight | string |  `email` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.email | string |  `email` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.email | string |  `email`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup whois phone'
 Perform this action to get the Whois Phone number Lookup Data for HYAS Insight
@@ -219,16 +219,16 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **phone** |  required  | Phone number to get Lookup Data for HYAS Insight | string |  `phone`  `phone number` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.phone | string |  `number` 
-action\_result\.parameter\.phone | string |  `phone`  `phone number` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.phone | string |  `number`  |   +84909095309 
+action_result.parameter.phone | string |  `phone`  `phone number`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup dynamicdns email'
 Perform this action to get the Dynamicdns Email address Lookup Data for HYAS Insight
@@ -242,15 +242,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **email** |  required  | Email address to get Lookup Data for HYAS Insight | string |  `email` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.email | string |  `email` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.email | string |  `email`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup dynamicdns ip'
 Perform this action to get the Dynamicdns IP address Lookup Data for HYAS Insight
@@ -264,15 +264,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **ip** |  required  | IP address to get Lookup Data for HYAS Insight | string |  `ip`  `ipv6` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.ip | string |  `ip`  `ipv6` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.ip | string |  `ip`  `ipv6`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup dynamicdns domain'
 Perform this action to get the Dynamicdns Domain Lookup Data for HYAS Insight
@@ -286,15 +286,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **domain** |  required  | Domain to get Lookup Data for HYAS Insight | string |  `domain` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.domain | string |  `domain`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup sinkhole ip'
 Perform this action to get the Sinkhole IP address Lookup Data for HYAS Insight
@@ -308,16 +308,16 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **ipv4** |  required  | IP address to get Lookup Data for HYAS Insight | string |  `ip` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.ipv4 | string |  `ip` 
-action\_result\.parameter\.ipv4 | string |  `ip` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.ipv4 | string |  `ip`  |   4.4.4.4 
+action_result.parameter.ipv4 | string |  `ip`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup passivehash ip'
 Perform this action to get the Passivehash IP address Lookup Data for HYAS Insight
@@ -331,16 +331,16 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **ipv4** |  required  | IP address to get Lookup Data for HYAS Insight | string |  `ip` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.ipv4 | string |  `ip` 
-action\_result\.parameter\.ipv4 | string |  `ip` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.ipv4 | string |  `ip`  |   8.8.8.8 
+action_result.parameter.ipv4 | string |  `ip`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup passivehash domain'
 Perform this action to get the Passivehash Domain Lookup Data for HYAS Insight
@@ -354,16 +354,16 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **domain** |  required  | Domain to get Lookup Data for HYAS Insight | string |  `domain` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.domain | string |  `domain`  |   dummy.com 
+action_result.parameter.domain | string |  `domain`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup ssl certificate ip'
 Perform this action to get the SSL Certificate Lookup Data for HYAS Insight
@@ -377,15 +377,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **ip** |  required  | IP address to get Lookup Data for HYAS Insight | string |  `ip`  `ipv6` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.ip | string |  `ip`  `ipv6` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.ip | string |  `ip`  `ipv6`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup passivedns domain'
 Perform this action to get the Passivedns Domain Lookup Data for HYAS Insight
@@ -399,16 +399,16 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **domain** |  required  | Domain to get Lookup Data for HYAS Insight | string |  `domain` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.domain | string |  `domain`  |   google.com 
+action_result.parameter.domain | string |  `domain`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup current whois domain'
 Perform this action to get the Whois current Domain Lookup Data for HYAS Insight
@@ -422,16 +422,16 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **domain** |  required  | Domain to get Lookup Data for HYAS Insight | string |  `domain` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.domain | string |  `domain`  |   google.com 
+action_result.parameter.domain | string |  `domain`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup passivedns ip'
 Perform this action to get the Passivedns IP address Lookup Data for HYAS Insight
@@ -445,16 +445,16 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **ipv4** |  required  | IP address to get Lookup Data for HYAS Insight | string |  `ip`  `ipv6` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.ipv4 | string |  `ip` 
-action\_result\.parameter\.ipv4 | string |  `ip`  `ipv6` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.ipv4 | string |  `ip`  |   8.8.8.8 
+action_result.parameter.ipv4 | string |  `ip`  `ipv6`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup malware information hash'
 Perform this action to get the Malware Information Lookup Data for HYAS Insight
@@ -468,15 +468,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **hash** |  required  | Hash to get lookup data for HYAS Insight | string |  `md5`  `hash` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.hash | string |  `md5` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.hash | string |  `md5`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup malware record hash'
 Perform this action to get the Malware Record hash Lookup Data for HYAS Insight
@@ -490,15 +490,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **hash** |  required  | Hash to get the lookup data for HYAS Insight | string |  `hash`  `md5`  `sha256`  `sha1` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.hash | string |  `hash`  `md5`  `sha256`  `sha1` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.hash | string |  `hash`  `md5`  `sha256`  `sha1`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup malware record ip'
 Perform this action to get the Malware Record IP address Lookup Data for HYAS Insight
@@ -512,13 +512,13 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **ipv4** |  required  | IP address to get the lookup data for HYAS Insight | string |  `ip`  `ipv4` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.parameter\.ipv4 | string |  `ip`  `ipv4` 
-action\_result\.status | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.parameter.ipv4 | string |  `ip`  `ipv4`  |  
+action_result.status | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup malware record domain'
 Perform this action to get the Malware Record Domain Lookup Data for HYAS Insight
@@ -532,15 +532,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **domain** |  required  | Domain to get the lookup data for HYAS Insight | string |  `domain` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.domain | string |  `domain`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup os indicator hash'
 Perform this action to get the OS Indicator Lookup Data for HYAS Insight
@@ -554,15 +554,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **hash** |  required  | Hash to get lookup data for HYAS Insight | string |  `hash`  `md5`  `sha1`  `sha256` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.hash | string |  `hash`  `md5`  `sha1`  `sha256` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.hash | string |  `hash`  `md5`  `sha1`  `sha256`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup ssl certificate hash'
 Perform this action to get the SSL Certificate hash Lookup Data for HYAS Insight
@@ -576,16 +576,16 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **hash** |  required  | Hash to get lookup data for HYAS Insight | string |  `md5`  `hash`  `sha1`  `sha256` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.hash | string |  `ip` 
-action\_result\.parameter\.hash | string |  `md5`  `hash`  `sha1`  `sha256` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.hash | string |  `ip`  |   8.8.8.8 
+action_result.parameter.hash | string |  `md5`  `hash`  `sha1`  `sha256`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup ssl certificate domain'
 Perform this action to get the SSL Certificate Domain Lookup Data for HYAS Insight
@@ -599,15 +599,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **domain** |  required  | Domain to get Lookup Data for HYAS Insight | string |  `domain` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.domain | string |  `domain`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup devicegeo ip'
 Perform this action to get the Mobile Geolocation Information IP address Lookup Data for HYAS Insight
@@ -621,15 +621,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **ip** |  required  | IP address to get the lookup data for HYAS Insight | string |  `ip`  `ipv4`  `ipv6` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.ip | string |  `ip`  `ipv4`  `ipv6` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.ip | string |  `ip`  `ipv4`  `ipv6`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup os indicator domain'
 Perform this action to get the OS Indicator Domain Lookup Data for HYAS Insight
@@ -643,15 +643,15 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **domain** |  required  | Domain to get lookup data for HYAS Insight | string |  `domain` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.status | string | 
-action\_result\.parameter\.domain | string |  `domain` 
-action\_result\.data | string | 
-action\_result\.summary | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric |   
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.status | string |  |   success  failed 
+action_result.parameter.domain | string |  `domain`  |  
+action_result.data | string |  |  
+action_result.summary | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |    
 
 ## action: 'lookup os indicator ip'
 Perform this action to get the OS Indicator Lookup Data for IP address HYAS Insight
@@ -665,10 +665,10 @@ PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
 **ip** |  required  | IP address to get the lookup data for HYAS Insight | string |  `ip`  `ipv4`  `ipv6` 
 
 #### Action Output
-DATA PATH | TYPE | CONTAINS
---------- | ---- | --------
-action\_result\.parameter\.ip | string |  `ip`  `ipv4`  `ipv6` 
-action\_result\.status | string | 
-action\_result\.message | string | 
-summary\.total\_objects | numeric | 
-summary\.total\_objects\_successful | numeric | 
+DATA PATH | TYPE | CONTAINS | EXAMPLE VALUES
+--------- | ---- | -------- | --------------
+action_result.parameter.ip | string |  `ip`  `ipv4`  `ipv6`  |  
+action_result.status | string |  |  
+action_result.message | string |  |  
+summary.total_objects | numeric |  |  
+summary.total_objects_successful | numeric |  |  
