@@ -1,6 +1,6 @@
 # File: hyasinsight_consts.py
 #
-# Copyright (c) Hyas, 2022
+# Copyright (c) HYAS, 2022-2023
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -98,29 +98,29 @@ IOC_NAME = {
 }
 
 # status messages
-HYAS_ERR_MSG_INVALID_INDICATOR_VALUE = "Invalid Indicator value"
+HYAS_ERROR_MESSAGE_INVALID_INDICATOR_VALUE = "Invalid Indicator value"
 HYAS_INVALID_APIKEY_ERROR = "Please provide a valid api key"  # pragma: allowlist secret
 HYAS_TEST_CONN_PASSED = "Test Connectivity Passed"
 HYAS_TEST_CONN_FAILED = "Test Connectivity Failed."
 
-HYAS_ERR_ASSET_API_KEY_ = "API Key asset setting not configured! Please validate asset configuration and save"  # pragma: allowlist secret
-HYAS_ERR_CODE_MSG = "Error code unavailable"
-HYAS_ERR_MSG_UNAVAILABLE = (
+HYAS_ERROR_ASSET_API_KEY_ = "API Key asset setting not configured! Please validate asset configuration and save"  # pragma: allowlist secret
+HYAS_ERROR_CODE_MESSAGE = "Error code unavailable"
+HYAS_ERROR_MESSAGE_UNAVAILABLE = (
     "Error message unavailable."
     " Please check the asset configuration "
     "and|or action parameters"
 )
-HYAS_PARSE_ERR_MSG = (
+HYAS_PARSE_ERROR_MESSAGE = (
     "Unable to parse the error message. Please check the asset "
     "configuration and|or action parameters"
 )
-HYAS_HTML_ERR_MSG = "Please check the asset configuration and|or action " \
+HYAS_HTML_ERROR_MESSAGE = "Please check the asset configuration and|or action " \
                     "parameters"
-HYAS_ASSET_ERR_MSG = "Please check the asset configuration and|or action " \
+HYAS_ASSET_ERROR_MESSAGE = "Please check the asset configuration and|or action " \
                      "parameters"
 MALWARE_RECORD_MD5 = "Invalid indicator value. malware record accept only " \
                      "md5 hash"
-C2_HASH_ERROR_MSG = "Invalid indicator value. C2 attribution accept only sha256"
+C2_HASH_ERROR_MESSAGE = "Invalid indicator value. C2 attribution accept only sha256"
 
 # Jsons used in params, result, summary etc.
 ACTION_ID_PARAM = {

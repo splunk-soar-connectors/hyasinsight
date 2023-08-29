@@ -1,21 +1,21 @@
 {
     "appid": "5c279257-0571-4c90-967d-df21c15123ec",
-    "name": "Hyas Insight",
-    "description": "This app implements investigative actions that return Hyas Insight Records for the given Indicators",
+    "name": "HYAS Insight",
+    "description": "This app implements investigative actions that return HYAS Insight Records for the given Indicators",
     "type": "investigative",
-    "product_vendor": "Hyas",
+    "product_vendor": "HYAS",
     "logo": "logo_hyasinsight.svg",
     "logo_dark": "logo_hyasinsight_dark.svg",
-    "product_name": "Hyas Insight",
+    "product_name": "HYAS Insight",
     "python_version": "3",
     "product_version_regex": ".*",
-    "publisher": "Hyas",
-    "license": "Copyright (c) Hyas, 2022",
-    "app_version": "1.2.0",
+    "publisher": "HYAS",
+    "license": "Copyright (c) HYAS, 2022-2023",
+    "app_version": "1.3.0",
     "utctime_updated": "2022-06-29T08:24:29.290348Z",
     "package_name": "phantom_hyasinsight",
     "main_module": "hyasinsight_connector.py",
-    "min_phantom_version": "5.3.4",
+    "min_phantom_version": "5.5.0",
     "fips_compliant": false,
     "app_wizard_version": "1.0.0",
     "contributors": [
@@ -47,12 +47,12 @@
         {
             "action": "lookup commandcontrol domain",
             "identifier": "lookup_command_and_control_domain",
-            "description": "Perform this action to get the C2 Domain Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the C2 Domain Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "domain": {
-                    "description": "Domain to get Lookup Data for Hyas Insight",
+                    "description": "Domain to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -116,12 +116,12 @@
         {
             "action": "lookup commandcontrol email",
             "identifier": "lookup_command_and_control_email",
-            "description": "Perform this action to get the C2 Email address Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the C2 Email address Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "email": {
-                    "description": "Email address to get Lookup Data for Hyas Insight",
+                    "description": "Email address to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -185,12 +185,12 @@
         {
             "action": "lookup commandcontrol ip",
             "identifier": "lookup_command_and_control_ip",
-            "description": "Perform this action to get the C2 IP Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the C2 IP Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ip": {
-                    "description": "IP address to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -258,12 +258,12 @@
         {
             "action": "lookup commandcontrol hash",
             "identifier": "lookup_command_and_control_hash",
-            "description": "Perform this action to get the C2 Hash Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the C2 Hash Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "hash": {
-                    "description": "Hash to get Lookup Data for Hyas Insight",
+                    "description": "Hash to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -329,12 +329,12 @@
         {
             "action": "lookup whois domain",
             "identifier": "lookup_whois_domain",
-            "description": "Perform this action to get the Whois Domain Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Whois Domain Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "domain": {
-                    "description": "Domain to get Lookup Data for Hyas Insight",
+                    "description": "Domain to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -398,12 +398,12 @@
         {
             "action": "lookup whois email",
             "identifier": "lookup_whois_email",
-            "description": "Perform this action to get the Whois Email address Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Whois Email address Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "email": {
-                    "description": "Email address to get Lookup Data for Hyas Insight",
+                    "description": "Email address to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -467,12 +467,12 @@
         {
             "action": "lookup whois phone",
             "identifier": "lookup_whois_phone",
-            "description": "Perform this action to get the Whois Phone number Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Whois Phone number Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "phone": {
-                    "description": "Phone number to get Lookup Data for Hyas Insight",
+                    "description": "Phone number to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -548,12 +548,12 @@
         {
             "action": "lookup dynamicdns email",
             "identifier": "lookup_dynamicdns_email",
-            "description": "Perform this action to get the Dynamicdns Email address Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Dynamicdns Email address Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "email": {
-                    "description": "Email address to get Lookup Data for Hyas Insight",
+                    "description": "Email address to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -617,12 +617,12 @@
         {
             "action": "lookup dynamicdns ip",
             "identifier": "lookup_dynamicdns_ip",
-            "description": "Perform this action to get the Dynamicdns IP address Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Dynamicdns IP address Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ip": {
-                    "description": "IP address to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -688,12 +688,12 @@
         {
             "action": "lookup dynamicdns domain",
             "identifier": "lookup_dynamicdns_domain",
-            "description": "Perform this action to get the Dynamicdns Domain Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Dynamicdns Domain Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "domain": {
-                    "description": "Domain to get Lookup Data for Hyas Insight",
+                    "description": "Domain to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -757,12 +757,12 @@
         {
             "action": "lookup sinkhole ip",
             "identifier": "lookup_sinkhole_ip",
-            "description": "Perform this action to get the Sinkhole IP address Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Sinkhole IP address Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ipv4": {
-                    "description": "IP address to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -838,12 +838,12 @@
         {
             "action": "lookup passivehash ip",
             "identifier": "lookup_passivehash_ip",
-            "description": "Perform this action to get the Passivehash IP address Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Passivehash IP address Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ipv4": {
-                    "description": "IP address to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -919,12 +919,12 @@
         {
             "action": "lookup passivehash domain",
             "identifier": "lookup_passivehash_domain",
-            "description": "Perform this action to get the Passivehash Domain Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Passivehash Domain Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "domain": {
-                    "description": "Domain to get Lookup Data for Hyas Insight",
+                    "description": "Domain to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -998,12 +998,12 @@
         {
             "action": "lookup ssl certificate ip",
             "identifier": "lookup_ssl_certificate_ip",
-            "description": "Perform this action to get the SSL Certificate Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the SSL Certificate Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ip": {
-                    "description": "IP address to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1069,12 +1069,12 @@
         {
             "action": "lookup passivedns domain",
             "identifier": "lookup_passivedns_domain",
-            "description": "Perform this action to get the Passivedns Domain Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Passivedns Domain Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "domain": {
-                    "description": "Domain to get Lookup Data for Hyas Insight",
+                    "description": "Domain to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1148,12 +1148,12 @@
         {
             "action": "lookup current whois domain",
             "identifier": "lookup_current_whois_domain",
-            "description": "Perform this action to get the Whois current Domain Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Whois current Domain Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "domain": {
-                    "description": "Domain to get Lookup Data for Hyas Insight",
+                    "description": "Domain to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1227,12 +1227,12 @@
         {
             "action": "lookup passivedns ip",
             "identifier": "lookup_passivedns_ip",
-            "description": "Perform this action to get the Passivedns IP address Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Passivedns IP address Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ipv4": {
-                    "description": "IP address to get Lookup Data for Hyas Insight",
+                    "description": "IP address to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1310,12 +1310,12 @@
         {
             "action": "lookup malware information hash",
             "identifier": "lookup_malware_information_hash",
-            "description": "Perform this action to get the Malware Information Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Malware Information Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "hash": {
-                    "description": "Hash to get lookup data for Hyas Insight",
+                    "description": "Hash to get lookup data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1382,12 +1382,12 @@
         {
             "action": "lookup malware record hash",
             "identifier": "lookup_malware_record_hash",
-            "description": "Perform this action to get the Malware Record hash Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Malware Record hash Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "hash": {
-                    "description": "Hash to get the lookup data for Hyas Insight",
+                    "description": "Hash to get the lookup data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1457,12 +1457,12 @@
         {
             "action": "lookup malware record ip",
             "identifier": "lookup_malware_record_ip",
-            "description": "Perform this action to get the Malware Record IP address Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Malware Record IP address Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ipv4": {
-                    "description": "IP address to get the lookup data for Hyas Insight",
+                    "description": "IP address to get the lookup data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1518,12 +1518,12 @@
         {
             "action": "lookup malware record domain",
             "identifier": "lookup_malware_record_domain",
-            "description": "Perform this action to get the Malware Record Domain Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Malware Record Domain Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "domain": {
-                    "description": "Domain to get the lookup data for Hyas Insight",
+                    "description": "Domain to get the lookup data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1587,12 +1587,12 @@
         {
             "action": "lookup os indicator hash",
             "identifier": "lookup_os_indicator_hash",
-            "description": "Perform this action to get the OS Indicator Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the OS Indicator Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "hash": {
-                    "description": "Hash to get lookup data for Hyas Insight",
+                    "description": "Hash to get lookup data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1662,12 +1662,12 @@
         {
             "action": "lookup ssl certificate hash",
             "identifier": "lookup_ssl_certificate_hash",
-            "description": "Perform this action to get the SSL Certificate hash Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the SSL Certificate hash Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "hash": {
-                    "description": "Hash to get lookup data for Hyas Insight",
+                    "description": "Hash to get lookup data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1747,12 +1747,12 @@
         {
             "action": "lookup ssl certificate domain",
             "identifier": "lookup_ssl_certificate_domain",
-            "description": "Perform this action to get the SSL Certificate Domain Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the SSL Certificate Domain Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "domain": {
-                    "description": "Domain to get Lookup Data for Hyas Insight",
+                    "description": "Domain to get Lookup Data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1816,12 +1816,12 @@
         {
             "action": "lookup devicegeo ip",
             "identifier": "lookup_mobile_geolocation_information_ip",
-            "description": "Perform this action to get the Mobile Geolocation Information IP address Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the Mobile Geolocation Information IP address Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ip": {
-                    "description": "IP address to get the lookup data for Hyas Insight",
+                    "description": "IP address to get the lookup data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1891,12 +1891,12 @@
         {
             "action": "lookup os indicator domain",
             "identifier": "lookup_os_indicator_domain",
-            "description": "Perform this action to get the OS Indicator Domain Lookup Data for Hyas Insight",
+            "description": "Perform this action to get the OS Indicator Domain Lookup Data for HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "domain": {
-                    "description": "Domain to get lookup data for Hyas Insight",
+                    "description": "Domain to get lookup data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -1962,12 +1962,12 @@
         {
             "action": "lookup os indicator ip",
             "identifier": "lookup_os_indicator_ip",
-            "description": "Perform this action to get the OS Indicator Lookup Data for IP address Hyas Insight",
+            "description": "Perform this action to get the OS Indicator Lookup Data for IP address HYAS Insight",
             "type": "investigate",
             "read_only": true,
             "parameters": {
                 "ip": {
-                    "description": "IP address to get the lookup data for Hyas Insight",
+                    "description": "IP address to get the lookup data for HYAS Insight",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -2036,32 +2036,21 @@
                 "input_file": "wheels/py3/beautifulsoup4-4.9.1-py3-none-any.whl"
             },
             {
-                "module": "certifi",
-                "input_file": "wheels/py3/certifi-2022.9.24-py3-none-any.whl"
-            },
-            {
-                "module": "chardet",
-                "input_file": "wheels/shared/chardet-3.0.4-py2.py3-none-any.whl"
-            },
-            {
-                "module": "idna",
-                "input_file": "wheels/shared/idna-2.10-py2.py3-none-any.whl"
-            },
-            {
-                "module": "requests",
-                "input_file": "wheels/shared/requests-2.25.0-py2.py3-none-any.whl"
-            },
-            {
                 "module": "soupsieve",
                 "input_file": "wheels/py3/soupsieve-2.3.2.post1-py3-none-any.whl"
-            },
-            {
-                "module": "urllib3",
-                "input_file": "wheels/shared/urllib3-1.26.12-py2.py3-none-any.whl"
             }
         ]
     },
     "pip39_dependencies": {
-        "wheel": []
+        "wheel": [
+            {
+                "module": "beautifulsoup4",
+                "input_file": "wheels/py3/beautifulsoup4-4.9.1-py3-none-any.whl"
+            },
+            {
+                "module": "soupsieve",
+                "input_file": "wheels/py3/soupsieve-2.4.1-py3-none-any.whl"
+            }
+        ]
     }
 }
