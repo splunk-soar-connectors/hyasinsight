@@ -1,6 +1,6 @@
 # File: hyasinsight_connector.py
 #
-# Copyright (c) Hyas, 2022
+# Copyright (c) HYAS, 2022-2023
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -187,26 +187,26 @@ class HyasInsightConnector(BaseConnector):
             if error.args:
                 if len(error.args) > 1:
                     error_code = error.args[0]
-                    error_msg = error.args[1]
+                    error_message = error.args[1]
                 elif len(error.args) == 1:
-                    error_code = HYAS_ERR_CODE_MSG
-                    error_msg = error.args[0]
+                    error_code = HYAS_ERROR_CODE_MESSAGE
+                    error_message = error.args[0]
             else:
-                error_code = HYAS_ERR_CODE_MSG
-                error_msg = HYAS_ERR_MSG_UNAVAILABLE
+                error_code = HYAS_ERROR_CODE_MESSAGE
+                error_message = HYAS_ERROR_MESSAGE_UNAVAILABLE
         except:
-            error_code = HYAS_ERR_CODE_MSG
-            error_msg = HYAS_ERR_MSG_UNAVAILABLE
+            error_code = HYAS_ERROR_CODE_MESSAGE
+            error_message = HYAS_ERROR_MESSAGE_UNAVAILABLE
 
         try:
-            if error_code in HYAS_ERR_CODE_MSG:
-                error_text = f"Error Message: {error_msg}"
+            if error_code in HYAS_ERROR_CODE_MESSAGE:
+                error_text = f"Error Message: {error_message}"
             else:
                 error_text = f"Error Code: {error_code}. Error Message: " \
-                             f"{error_msg}"
+                             f"{error_message}"
 
         except:
-            error_text = HYAS_PARSE_ERR_MSG
+            error_text = HYAS_PARSE_ERROR_MESSAGE
 
         return error_text
 
@@ -709,7 +709,7 @@ class HyasInsightConnector(BaseConnector):
                     )
 
         return action_result.set_status(
-            phantom.APP_ERROR, HYAS_ERR_MSG_INVALID_INDICATOR_VALUE
+            phantom.APP_ERROR, HYAS_ERROR_MESSAGE_INVALID_INDICATOR_VALUE
         )
 
     def handle_action(self, param):
@@ -748,13 +748,14 @@ class HyasInsightConnector(BaseConnector):
             self._apikey = config[HYAS_JSON_APIKEY]
         except KeyError as ke:
             return self._initialize_error(
-                HYAS_ERR_ASSET_API_KEY_,
+                HYAS_ERROR_ASSET_API_KEY_,
                 Exception(f"KeyError: {ke}"),
             )
 
         self._headers = {
             HYAS_JSON_APIKEY_HEADER: self._apikey,
             "Content-Type": "application/json",
+            "User-Agent": "Splunk SOAR"
         }
 
         # self._base_url = config.get('base_url')
