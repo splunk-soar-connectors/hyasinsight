@@ -10,7 +10,7 @@
     "python_version": "3",
     "product_version_regex": ".*",
     "publisher": "HYAS",
-    "license": "Copyright (c) HYAS, 2022-2023",
+    "license": "Copyright (c) HYAS, 2022-2025",
     "app_version": "1.3.0",
     "utctime_updated": "2022-06-29T08:24:29.290348Z",
     "package_name": "phantom_hyasinsight",
@@ -1344,7 +1344,8 @@
                     "data_path": "action_result.parameter.hash",
                     "data_type": "string",
                     "contains": [
-                        "md5"
+                        "md5",
+                        "hash"
                     ],
                     "column_name": "Hash",
                     "column_order": 0
