@@ -1,6 +1,6 @@
 # File: hyasinsight_consts.py
 #
-# Copyright (c) HYAS, 2022-2023
+# Copyright (c) HYAS, 2022-2025
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -37,9 +37,9 @@ WHOIS = "whois"
 SAMPLE = "sample"
 SAMPLE_INFORMATION = "sample/information"
 OS_INDICATOR = "os_indicators"
-CURRENT_WHOIS_BASE_URL = 'https://api.hyas.com'
-CURRENT_WHOIS = '/whois/v1'
-CURRENT_WHOIS_NAME = 'current_whois'
+CURRENT_WHOIS_BASE_URL = "https://api.hyas.com"
+CURRENT_WHOIS = "/whois/v1"
+CURRENT_WHOIS_NAME = "current_whois"
 SSL_CERTS = "ssl_certs"
 ITEMS = "items"
 SCAN_RESULT = "scan_results"
@@ -59,22 +59,26 @@ IP_REG = (
     r"^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.)"
     "{3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])$"
 )
-IPV6_REG = r"(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1," \
-           r"7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1," \
-           r"4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1," \
-           r"4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1," \
-           r"3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1," \
-           r"2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1," \
-           r"4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0," \
-           r"4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(" \
-           r"2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0," \
-           r"1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[" \
-           r"0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0," \
-           r"1}[0-9]){0,1}[0-9]))"
+IPV6_REG = (
+    r"(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,"
+    r"7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,"
+    r"4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,"
+    r"4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,"
+    r"3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,"
+    r"2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,"
+    r"4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,"
+    r"4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|("
+    r"2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,"
+    r"1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2["
+    r"0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,"
+    r"1}[0-9]){0,1}[0-9]))"
+)
 
-DOMAIN_REG = r"^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-_]{0," \
-                     r"61}[A-Za-z0-9])?\.)+[" \
-                     r"A-Za-z0-9][A-Za-z0-9-_]{0,61}[A-Za-z]$"
+DOMAIN_REG = (
+    r"^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-_]{0,"
+    r"61}[A-Za-z0-9])?\.)+["
+    r"A-Za-z0-9][A-Za-z0-9-_]{0,61}[A-Za-z]$"
+)
 
 EMAIL_REG = r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}"
 PHONE_REG = r"^\+?[1-9]\d{1,14}$"
@@ -84,8 +88,8 @@ URL_REG = (
     "\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)"
 )
 MD5_REG = r"(^[a-fA-F0-9]{32}$)"
-SHA1_REG = r'\b[0-9a-fA-F]{40}\b'
-SHA512_REG = r'\b[0-9a-fA-F]{128}\b'
+SHA1_REG = r"\b[0-9a-fA-F]{40}\b"
+SHA512_REG = r"\b[0-9a-fA-F]{128}\b"
 IOC_NAME = {
     "ip": {"ipv4": IP_REG, "ipv6": IPV6_REG},
     "ipv4": IP_REG,
@@ -93,8 +97,7 @@ IOC_NAME = {
     "domain": DOMAIN_REG,
     "email": EMAIL_REG,
     "phone": PHONE_REG,
-    "hash": {'sha256': SHA_REG, "md5": MD5_REG, "sha1": SHA1_REG,
-             'sha512': SHA512_REG},
+    "hash": {"sha256": SHA_REG, "md5": MD5_REG, "sha1": SHA1_REG, "sha512": SHA512_REG},
 }
 
 # status messages
@@ -105,21 +108,11 @@ HYAS_TEST_CONN_FAILED = "Test Connectivity Failed."
 
 HYAS_ERROR_ASSET_API_KEY_ = "API Key asset setting not configured! Please validate asset configuration and save"  # pragma: allowlist secret
 HYAS_ERROR_CODE_MESSAGE = "Error code unavailable"
-HYAS_ERROR_MESSAGE_UNAVAILABLE = (
-    "Error message unavailable."
-    " Please check the asset configuration "
-    "and|or action parameters"
-)
-HYAS_PARSE_ERROR_MESSAGE = (
-    "Unable to parse the error message. Please check the asset "
-    "configuration and|or action parameters"
-)
-HYAS_HTML_ERROR_MESSAGE = "Please check the asset configuration and|or action " \
-                    "parameters"
-HYAS_ASSET_ERROR_MESSAGE = "Please check the asset configuration and|or action " \
-                     "parameters"
-MALWARE_RECORD_MD5 = "Invalid indicator value. malware record accept only " \
-                     "md5 hash"
+HYAS_ERROR_MESSAGE_UNAVAILABLE = "Error message unavailable. Please check the asset configuration and|or action parameters"
+HYAS_PARSE_ERROR_MESSAGE = "Unable to parse the error message. Please check the asset configuration and|or action parameters"
+HYAS_HTML_ERROR_MESSAGE = "Please check the asset configuration and|or action parameters"
+HYAS_ASSET_ERROR_MESSAGE = "Please check the asset configuration and|or action parameters"
+MALWARE_RECORD_MD5 = "Invalid indicator value. malware record accept only md5 hash"
 C2_HASH_ERROR_MESSAGE = "Invalid indicator value. C2 attribution accept only sha256"
 
 # Jsons used in params, result, summary etc.
@@ -141,8 +134,7 @@ ACTION_ID_PARAM = {
     "lookup_passivedns_ip": "ip",
     "lookup_passivedns_domain": "domain",
     "lookup_ssl_certificate_ip": "ip",
-    "lookup_current_whois_domain": "domain"
-
+    "lookup_current_whois_domain": "domain",
 }
 
 IOC_DETAILS = {
@@ -155,57 +147,56 @@ IOC_DETAILS = {
     "lookup_whois_phone": {"endpoint": WHOIS, "indicator_type": PHONE},
     "lookup_device_geo_ipv4": {"endpoint": DEVICEGEO, "indicator_type": IPV4},
     "lookup_device_geo_ipv6": {"endpoint": DEVICEGEO, "indicator_type": IPV6},
-    "lookup_dynamicdns_email": {"endpoint": DYNAMICDNS,
-                                "indicator_type": EMAIL},
+    "lookup_dynamicdns_email": {"endpoint": DYNAMICDNS, "indicator_type": EMAIL},
     "lookup_dynamicdns_ip": {"endpoint": DYNAMICDNS, "indicator_type": IP},
     "lookup_sinkhole_ip": {"endpoint": SINKHOLE, "indicator_type": IPV4},
     "lookup_passivehash_ip": {"endpoint": PASSIVEHASH, "indicator_type": IPV4},
-    "lookup_passivehash_domain": {"endpoint": PASSIVEHASH,
-                                  "indicator_type": DOMAIN},
-    "lookup_passivedns_domain": {"endpoint": PASSIVEDNS,
-                                 "indicator_type": DOMAIN},
+    "lookup_passivehash_domain": {"endpoint": PASSIVEHASH, "indicator_type": DOMAIN},
+    "lookup_passivedns_domain": {"endpoint": PASSIVEDNS, "indicator_type": DOMAIN},
     "lookup_passivedns_ip": {"endpoint": PASSIVEDNS, "indicator_type": IPV4},
     "lookup_ssl_certificate_ip": {"endpoint": SSL, "indicator_type": IP},
-    "lookup_current_whois_domain": {"endpoint": CURRENT_WHOIS,
-                                    "indicator_type": DOMAIN}
+    "lookup_current_whois_domain": {"endpoint": CURRENT_WHOIS, "indicator_type": DOMAIN},
 }
 
-ACTION_ID = ["lookup_c2_domain",
-             "lookup__c2__email",
-             "lookup_c2_ip",
-             "lookup_c2_sha256",
-             "lookup_whois_domain",
-             "lookup_device_geo_ipv4",
-             "lookup_device_geo_ipv6",
-             "lookup_whois_email",
-             "lookup_whois_phone",
-             "lookup_dynamicdns_email",
-             "lookup_dynamicdns_ip",
-             "lookup_sinkhole_ip",
-             "lookup_passivehash_ip",
-             "lookup_passivehash_domain",
-             "lookup_passivedns_ip",
-             "lookup_passivedns_domain",
-             "lookup_ssl_certificate_ip",
-             "lookup_current_whois_domain"
-             ]
+ACTION_ID = [
+    "lookup_c2_domain",
+    "lookup__c2__email",
+    "lookup_c2_ip",
+    "lookup_c2_sha256",
+    "lookup_whois_domain",
+    "lookup_device_geo_ipv4",
+    "lookup_device_geo_ipv6",
+    "lookup_whois_email",
+    "lookup_whois_phone",
+    "lookup_dynamicdns_email",
+    "lookup_dynamicdns_ip",
+    "lookup_sinkhole_ip",
+    "lookup_passivehash_ip",
+    "lookup_passivehash_domain",
+    "lookup_passivedns_ip",
+    "lookup_passivedns_domain",
+    "lookup_ssl_certificate_ip",
+    "lookup_current_whois_domain",
+]
 
 DEFAULT_REQUEST_TIMEOUT = 600  # in seconds
 
-PASSIVE_IOC = {'ipv4_regex': 'ipv4', 'domain_regex': 'domain'}
-DYNAMIC_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip', 'email_regex': 'email', 'domain_regex': 'domain'}
-PASSIVEHASH_IOC = {'ipv4_regex': 'ipv4', 'domain_regex': 'domain'}
-C2ATTRIBUTION_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip',
-                     'email_regex': 'email', 'domain_regex': 'domain',
-                     'sha256_regex': "sha256"}
-WHOIS_IOC = {'phone_regex': 'phone', 'email_regex': 'email',
-             'domain_regex': 'domain'}
-WHOIS_CURRENT_NAMES = {'domain_regex': 'domain'}
-SINKHOLE_IOC = {'ipv4_regex': 'ipv4'}
-SSL_IOC = {'ipv4_regex': 'ip', 'ipv6_regex': 'ip', 'sha1_regex': 'hash', 'domain_regex': 'domain'}
-DEVICE_IOC = {'ipv4_regex': 'ipv4', 'ipv6_regex': 'ipv6'}
-SAMPLE_INFORMATION_IOC = {"md5_regex": "hash", "sha256_regex": "hash",
-                          "sha1_regex": "hash", "sha512_regex": "hash"}
-SAMPLE_IOC = {"md5_regex": "md5", 'domain_regex': 'domain', 'ipv4_regex': 'ipv4'}
-OS_INDICATOR_IOC = {"md5_regex": "md5", "sha256_regex": "sha256",
-                    "sha1_regex": "sha1", 'domain_regex': 'domain', 'ipv4_regex': 'ipv4', 'ipv6_regex': 'ipv6'}
+PASSIVE_IOC = {"ipv4_regex": "ipv4", "domain_regex": "domain"}
+DYNAMIC_IOC = {"ipv4_regex": "ip", "ipv6_regex": "ip", "email_regex": "email", "domain_regex": "domain"}
+PASSIVEHASH_IOC = {"ipv4_regex": "ipv4", "domain_regex": "domain"}
+C2ATTRIBUTION_IOC = {"ipv4_regex": "ip", "ipv6_regex": "ip", "email_regex": "email", "domain_regex": "domain", "sha256_regex": "sha256"}
+WHOIS_IOC = {"phone_regex": "phone", "email_regex": "email", "domain_regex": "domain"}
+WHOIS_CURRENT_NAMES = {"domain_regex": "domain"}
+SINKHOLE_IOC = {"ipv4_regex": "ipv4"}
+SSL_IOC = {"ipv4_regex": "ip", "ipv6_regex": "ip", "sha1_regex": "hash", "domain_regex": "domain"}
+DEVICE_IOC = {"ipv4_regex": "ipv4", "ipv6_regex": "ipv6"}
+SAMPLE_INFORMATION_IOC = {"md5_regex": "hash", "sha256_regex": "hash", "sha1_regex": "hash", "sha512_regex": "hash"}
+SAMPLE_IOC = {"md5_regex": "md5", "domain_regex": "domain", "ipv4_regex": "ipv4"}
+OS_INDICATOR_IOC = {
+    "md5_regex": "md5",
+    "sha256_regex": "sha256",
+    "sha1_regex": "sha1",
+    "domain_regex": "domain",
+    "ipv4_regex": "ipv4",
+    "ipv6_regex": "ipv6",
+}
