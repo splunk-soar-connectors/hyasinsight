@@ -2023,11 +2023,5 @@
             },
             "versions": "EQ(*)"
         }
-    ],
-    "directory": "hyasinsight_5c279257-0571-4c90-967d-df21c15123ec",
-    "version": 1,
-    "appname": "-",
-    "executable": "spawn3",
-    "disabled": false,
-    "custom_made": true
+    ]
 }
