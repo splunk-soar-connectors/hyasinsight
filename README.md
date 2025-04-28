@@ -1,7 +1,7 @@
 # HYAS Insight
 
 Publisher: HYAS \
-Connector Version: 1.3.0 \
+Connector Version: 1.3.1 \
 Product Vendor: HYAS \
 Product Name: HYAS Insight \
 Minimum Product Version: 5.5.0
