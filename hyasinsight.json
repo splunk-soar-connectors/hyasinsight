@@ -7,7 +7,7 @@
     "logo": "logo_hyasinsight.svg",
     "logo_dark": "logo_hyasinsight_dark.svg",
     "product_name": "HYAS Insight",
-    "python_version": "3",
+    "python_version": ["3.9", "3.13"],
     "product_version_regex": ".*",
     "publisher": "HYAS",
     "license": "Copyright (c) HYAS, 2022-2025",
