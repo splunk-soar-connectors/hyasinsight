@@ -1,9 +1,9 @@
 # HYAS Insight
 
-Publisher: HYAS \
-Connector Version: 1.3.1 \
-Product Vendor: HYAS \
-Product Name: HYAS Insight \
+Publisher: HYAS <br>
+Connector Version: 1.3.1 <br>
+Product Vendor: HYAS <br>
+Product Name: HYAS Insight <br>
 Minimum Product Version: 5.5.0
 
 This app implements investigative actions that return HYAS Insight Records for the given Indicators
@@ -18,40 +18,40 @@ VARIABLE | REQUIRED | TYPE | DESCRIPTION
 
 ### Supported Actions
 
-[test connectivity](#action-test-connectivity) - Validate the asset configuration for connectivity using supplied configuration \
-[lookup commandcontrol domain](#action-lookup-commandcontrol-domain) - Perform this action to get the C2 Domain Lookup Data for HYAS Insight \
-[lookup commandcontrol email](#action-lookup-commandcontrol-email) - Perform this action to get the C2 Email address Lookup Data for HYAS Insight \
-[lookup commandcontrol ip](#action-lookup-commandcontrol-ip) - Perform this action to get the C2 IP Lookup Data for HYAS Insight \
-[lookup commandcontrol hash](#action-lookup-commandcontrol-hash) - Perform this action to get the C2 Hash Lookup Data for HYAS Insight \
-[lookup whois domain](#action-lookup-whois-domain) - Perform this action to get the Whois Domain Lookup Data for HYAS Insight \
-[lookup whois email](#action-lookup-whois-email) - Perform this action to get the Whois Email address Lookup Data for HYAS Insight \
-[lookup whois phone](#action-lookup-whois-phone) - Perform this action to get the Whois Phone number Lookup Data for HYAS Insight \
-[lookup dynamicdns email](#action-lookup-dynamicdns-email) - Perform this action to get the Dynamicdns Email address Lookup Data for HYAS Insight \
-[lookup dynamicdns ip](#action-lookup-dynamicdns-ip) - Perform this action to get the Dynamicdns IP address Lookup Data for HYAS Insight \
-[lookup dynamicdns domain](#action-lookup-dynamicdns-domain) - Perform this action to get the Dynamicdns Domain Lookup Data for HYAS Insight \
-[lookup sinkhole ip](#action-lookup-sinkhole-ip) - Perform this action to get the Sinkhole IP address Lookup Data for HYAS Insight \
-[lookup passivehash ip](#action-lookup-passivehash-ip) - Perform this action to get the Passivehash IP address Lookup Data for HYAS Insight \
-[lookup passivehash domain](#action-lookup-passivehash-domain) - Perform this action to get the Passivehash Domain Lookup Data for HYAS Insight \
-[lookup ssl certificate ip](#action-lookup-ssl-certificate-ip) - Perform this action to get the SSL Certificate Lookup Data for HYAS Insight \
-[lookup passivedns domain](#action-lookup-passivedns-domain) - Perform this action to get the Passivedns Domain Lookup Data for HYAS Insight \
-[lookup current whois domain](#action-lookup-current-whois-domain) - Perform this action to get the Whois current Domain Lookup Data for HYAS Insight \
-[lookup passivedns ip](#action-lookup-passivedns-ip) - Perform this action to get the Passivedns IP address Lookup Data for HYAS Insight \
-[lookup malware information hash](#action-lookup-malware-information-hash) - Perform this action to get the Malware Information Lookup Data for HYAS Insight \
-[lookup malware record hash](#action-lookup-malware-record-hash) - Perform this action to get the Malware Record hash Lookup Data for HYAS Insight \
-[lookup malware record ip](#action-lookup-malware-record-ip) - Perform this action to get the Malware Record IP address Lookup Data for HYAS Insight \
-[lookup malware record domain](#action-lookup-malware-record-domain) - Perform this action to get the Malware Record Domain Lookup Data for HYAS Insight \
-[lookup os indicator hash](#action-lookup-os-indicator-hash) - Perform this action to get the OS Indicator Lookup Data for HYAS Insight \
-[lookup ssl certificate hash](#action-lookup-ssl-certificate-hash) - Perform this action to get the SSL Certificate hash Lookup Data for HYAS Insight \
-[lookup ssl certificate domain](#action-lookup-ssl-certificate-domain) - Perform this action to get the SSL Certificate Domain Lookup Data for HYAS Insight \
-[lookup devicegeo ip](#action-lookup-devicegeo-ip) - Perform this action to get the Mobile Geolocation Information IP address Lookup Data for HYAS Insight \
-[lookup os indicator domain](#action-lookup-os-indicator-domain) - Perform this action to get the OS Indicator Domain Lookup Data for HYAS Insight \
+[test connectivity](#action-test-connectivity) - Validate the asset configuration for connectivity using supplied configuration <br>
+[lookup commandcontrol domain](#action-lookup-commandcontrol-domain) - Perform this action to get the C2 Domain Lookup Data for HYAS Insight <br>
+[lookup commandcontrol email](#action-lookup-commandcontrol-email) - Perform this action to get the C2 Email address Lookup Data for HYAS Insight <br>
+[lookup commandcontrol ip](#action-lookup-commandcontrol-ip) - Perform this action to get the C2 IP Lookup Data for HYAS Insight <br>
+[lookup commandcontrol hash](#action-lookup-commandcontrol-hash) - Perform this action to get the C2 Hash Lookup Data for HYAS Insight <br>
+[lookup whois domain](#action-lookup-whois-domain) - Perform this action to get the Whois Domain Lookup Data for HYAS Insight <br>
+[lookup whois email](#action-lookup-whois-email) - Perform this action to get the Whois Email address Lookup Data for HYAS Insight <br>
+[lookup whois phone](#action-lookup-whois-phone) - Perform this action to get the Whois Phone number Lookup Data for HYAS Insight <br>
+[lookup dynamicdns email](#action-lookup-dynamicdns-email) - Perform this action to get the Dynamicdns Email address Lookup Data for HYAS Insight <br>
+[lookup dynamicdns ip](#action-lookup-dynamicdns-ip) - Perform this action to get the Dynamicdns IP address Lookup Data for HYAS Insight <br>
+[lookup dynamicdns domain](#action-lookup-dynamicdns-domain) - Perform this action to get the Dynamicdns Domain Lookup Data for HYAS Insight <br>
+[lookup sinkhole ip](#action-lookup-sinkhole-ip) - Perform this action to get the Sinkhole IP address Lookup Data for HYAS Insight <br>
+[lookup passivehash ip](#action-lookup-passivehash-ip) - Perform this action to get the Passivehash IP address Lookup Data for HYAS Insight <br>
+[lookup passivehash domain](#action-lookup-passivehash-domain) - Perform this action to get the Passivehash Domain Lookup Data for HYAS Insight <br>
+[lookup ssl certificate ip](#action-lookup-ssl-certificate-ip) - Perform this action to get the SSL Certificate Lookup Data for HYAS Insight <br>
+[lookup passivedns domain](#action-lookup-passivedns-domain) - Perform this action to get the Passivedns Domain Lookup Data for HYAS Insight <br>
+[lookup current whois domain](#action-lookup-current-whois-domain) - Perform this action to get the Whois current Domain Lookup Data for HYAS Insight <br>
+[lookup passivedns ip](#action-lookup-passivedns-ip) - Perform this action to get the Passivedns IP address Lookup Data for HYAS Insight <br>
+[lookup malware information hash](#action-lookup-malware-information-hash) - Perform this action to get the Malware Information Lookup Data for HYAS Insight <br>
+[lookup malware record hash](#action-lookup-malware-record-hash) - Perform this action to get the Malware Record hash Lookup Data for HYAS Insight <br>
+[lookup malware record ip](#action-lookup-malware-record-ip) - Perform this action to get the Malware Record IP address Lookup Data for HYAS Insight <br>
+[lookup malware record domain](#action-lookup-malware-record-domain) - Perform this action to get the Malware Record Domain Lookup Data for HYAS Insight <br>
+[lookup os indicator hash](#action-lookup-os-indicator-hash) - Perform this action to get the OS Indicator Lookup Data for HYAS Insight <br>
+[lookup ssl certificate hash](#action-lookup-ssl-certificate-hash) - Perform this action to get the SSL Certificate hash Lookup Data for HYAS Insight <br>
+[lookup ssl certificate domain](#action-lookup-ssl-certificate-domain) - Perform this action to get the SSL Certificate Domain Lookup Data for HYAS Insight <br>
+[lookup devicegeo ip](#action-lookup-devicegeo-ip) - Perform this action to get the Mobile Geolocation Information IP address Lookup Data for HYAS Insight <br>
+[lookup os indicator domain](#action-lookup-os-indicator-domain) - Perform this action to get the OS Indicator Domain Lookup Data for HYAS Insight <br>
 [lookup os indicator ip](#action-lookup-os-indicator-ip) - Perform this action to get the OS Indicator Lookup Data for IP address HYAS Insight
 
 ## action: 'test connectivity'
 
 Validate the asset configuration for connectivity using supplied configuration
 
-Type: **test** \
+Type: **test** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -66,7 +66,7 @@ No Output
 
 Perform this action to get the C2 Domain Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -91,7 +91,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the C2 Email address Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -116,7 +116,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the C2 IP Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -141,7 +141,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the C2 Hash Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -166,7 +166,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Whois Domain Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -191,7 +191,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Whois Email address Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -216,7 +216,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Whois Phone number Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -242,7 +242,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Dynamicdns Email address Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -267,7 +267,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Dynamicdns IP address Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -292,7 +292,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Dynamicdns Domain Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -317,7 +317,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Sinkhole IP address Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -343,7 +343,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Passivehash IP address Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -369,7 +369,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Passivehash Domain Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -395,7 +395,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the SSL Certificate Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -420,7 +420,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Passivedns Domain Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -446,7 +446,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Whois current Domain Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -472,7 +472,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Passivedns IP address Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -498,7 +498,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Malware Information Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -523,7 +523,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Malware Record hash Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -548,7 +548,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Malware Record IP address Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -571,7 +571,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Malware Record Domain Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -596,7 +596,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the OS Indicator Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -621,7 +621,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the SSL Certificate hash Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -647,7 +647,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the SSL Certificate Domain Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -672,7 +672,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the Mobile Geolocation Information IP address Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -697,7 +697,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the OS Indicator Domain Lookup Data for HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -722,7 +722,7 @@ summary.total_objects_successful | numeric | | |
 
 Perform this action to get the OS Indicator Lookup Data for IP address HYAS Insight
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -745,7 +745,7 @@ ______________________________________________________________________
 
 Auto-generated Splunk SOAR Connector documentation.
 
-Copyright 2025 Splunk Inc.
+Copyright 2026 Splunk Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
