@@ -1,1 +1,4 @@
 **Unreleased**
+
+* Updated connector development tooling and supported Python versions.
+* Escaped every caller- or API-controlled value embedded in widget JavaScript handlers.

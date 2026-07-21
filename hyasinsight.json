@@ -7,10 +7,10 @@
     "logo": "logo_hyasinsight.svg",
     "logo_dark": "logo_hyasinsight_dark.svg",
     "product_name": "HYAS Insight",
-    "python_version": "3",
+    "python_version": "3.9, 3.13",
     "product_version_regex": ".*",
     "publisher": "HYAS",
-    "license": "Copyright (c) HYAS, 2022-2025",
+    "license": "Copyright (c) HYAS, 2022-2026",
     "app_version": "1.3.1",
     "utctime_updated": "2025-04-28T19:56:05.804130Z",
     "package_name": "phantom_hyasinsight",
@@ -2023,5 +2023,11 @@
             },
             "versions": "EQ(*)"
         }
-    ]
+    ],
+    "pip39_dependencies": {
+        "wheel": []
+    },
+    "pip313_dependencies": {
+        "wheel": []
+    }
 }
